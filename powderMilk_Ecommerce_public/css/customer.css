@@ -124,7 +124,7 @@ table{
     background-color: #f7f7f7;
     font-weight: 700;
 }
-a:visited, a{
+a:visited{
     color: #222831;
     text-decoration: none;
     outline: 0;
@@ -230,6 +230,12 @@ input[type="password"]{
     padding:10px 20px;
     display: block;
     position: relative;
+}
+.item_menu_profile.active{
+    background-color: #f7f7f7;
+    color: #f85915;
+    font-weight: 200;
+
 }
 #input_info_account .title_profile_page{
     padding-left: 0;

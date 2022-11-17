@@ -37,7 +37,6 @@
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/customer.css">
 
-
 </head>
 
 <body>
@@ -69,10 +68,12 @@
         <button class="btn float-start" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-start" role="button">
             <i class="bi bi-list fs-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-start"></i>
         </button>
-        <div class="offcanvas offcanvas-start w-25" tabindex="-1" id="offcanvas-start" data-bs-keyboard="false" data-bs-backdrop="false">
+        <div class="offcanvas offcanvas-start w-25" tabindex="-1" id="offcanvas-start" data-bs-keyboard="false"
+             data-bs-backdrop="false">
             <div class="offcanvas-header">
-                <h6 class="offcanvas-title d-none d-sm-block" >Menu</h6>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <h6 class="offcanvas-title d-none d-sm-block">Menu</h6>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
             </div>
             <div class="offcanvas-body px-0">
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
@@ -83,14 +84,16 @@
                     </li>
                     <li>
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link text-truncate">
-                            <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                            <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                        </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link text-truncate">
                             <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Orders</span></a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a href="#" class="nav-link dropdown-toggle  text-truncate" id="menuside-dropdown"
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Bootstrap</span>
                         </a>
                         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
@@ -151,16 +154,20 @@
                     </div>
                 </div>
                 <!--                start   right size-->
-                <button class="btn-sm-square bg-white rounded-circle ms-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-end" role="button" >
+                <button class="btn-sm-square bg-white rounded-circle ms-3" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvas-end" role="button">
                     <small class="fa fa-shopping-bag text-body"></small>
                 </button>
-                <div class="offcanvas offcanvas-end w-25" tabindex="-1" id="offcanvas-end" data-bs-keyboard="false" data-bs-backdrop="false">
+                <div class="offcanvas offcanvas-end w-25" tabindex="-1" id="offcanvas-end" data-bs-keyboard="false"
+                     data-bs-backdrop="false">
                     <div class="offcanvas-header">
-                        <h6 class="offcanvas-title d-none d-sm-block" >Menu</h6>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <h6 class="offcanvas-title d-none d-sm-block">Menu</h6>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body px-0">
-                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start"
+                            id="shipping-cart-dropdown">
                             <li class="nav-item">
                                 <a href="#" class="nav-link text-truncate">
                                     <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
@@ -168,15 +175,18 @@
                             </li>
                             <li>
                                 <a href="#submenu1" data-bs-toggle="collapse" class="nav-link text-truncate">
-                                    <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                                    <i class="fs-5 bi-speedometer2"></i><span
+                                        class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link text-truncate">
                                     <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Orders</span></a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Bootstrap</span>
+                                <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fs-5 bi-bootstrap"></i><span
+                                        class="ms-1 d-none d-sm-inline">Bootstrap</span>
                                 </a>
                                 <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdown">
                                     <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -190,11 +200,13 @@
                             </li>
                             <li>
                                 <a href="#" class="nav-link text-truncate">
-                                    <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Products</span></a>
+                                    <i class="fs-5 bi-grid"></i><span
+                                        class="ms-1 d-none d-sm-inline">Products</span></a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link text-truncate">
-                                    <i class="fs-5 bi-people"></i><span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                                    <i class="fs-5 bi-people"></i><span class="ms-1 d-none d-sm-inline">Customers</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -207,10 +219,10 @@
 </div>
 <!-- Navbar End -->
 
-
 <!--start main -->
+
 <div id="v3_wrapper_container" class="width_common">
-    <div class="container-xxl">
+    <div class="container-xl">
         <div id="wrapper_container" class="width_common">
             <div id="profile_page" class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3">
@@ -224,143 +236,80 @@
                             <a href="" class="txt_666">Edit Account</a>
                         </div>
                         <div class="menu_profile width_common">
-                            <a href="customer.html" class="item_menu_profile active"> Account Management</a>
-                            <a href="accountInformation.html" class="item_menu_profile">Account Infomation</a>
+                            <a href="customer.html" class="item_menu_profile "> Account Management</a>
+                            <a href="accountInformation.html" class="item_menu_profile active">Account Infomation</a>
                             <a href="myOrders.html" class="item_menu_profile">My Order</a>
-                            <a href="receiveAddress.html" class="item_menu_profile">Receive Address List</a>
-                            <a href="changepassword.html" class="item_menu_profile">Change Password</a>
+                            <a href="receiveAddress.html" class="item_menu_profile">receive Address List</a>
+                            <a href="changepassword.html" class="item_menu_profile ">Change Password</a>
+
 
                         </div>
-                </div>
+                    </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 ">
-                    <div id="box_latest_order" class="width_common space_bottom_20">
-                        <div class="title_profile_page">Latest Orders
-                            <a class="txt_color_1 txt_seemore" href="myOrders.html">
-                                All Orders <i class="fa fa-caret-right"></i>
-                            </a>
-                        </div>
-                        <div class="content_box_profile_page">
-                            <table class="tb_latest_order" cellspacing="0" cellpadding="0">
-                                <thead>
-                                <tr>
-                                    <td scope="col" class="col_orderID">Order ID</td>
-                                    <td scope="col" class="col_date">Date purchase</td>
-                                    <td scope="col" class="col_total">Total</td>
-                                    <td scope="col" class="col_status text-center">status</td>
-                                    <td scope="col" class="col_view_detail">&nbsp;</td>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <a href="order_id/7178107/">22050211806</a>
-                                    </td>
-                                    <td>02/05/2022</td>
-                                    <td class="col_total"><span class="price">148,000 ₫</span></td>
-                                    <td class="col_status text-center">
-                                        <span class="item_status_order" style="background-color: #4b8c6c">
-                                        Completed                                       </span>
-                                    </td>
-                                    <td class="text-right">
-                                        <a href="order_id/7178107/" class="action view">
-                                            <span>See order</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="order_id/2607869/">20111910603</a>
-                                    </td>
-                                    <td>19/11/2020</td>
-                                    <td class="col_total"><span class="price">354,000 ₫</span></td>
-                                    <td class="col_status text-center">
-                                        <span class="item_status_order" style="background-color: #4b8c6c">
-                                        Completed                                       </span>
-                                    </td>
-                                    <td class="text-right">
-                                        <a href="order_id/2607869/" class="action view">
-                                            <span>See order</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div id="box_account_info" class="width_common space_bottom_20">
-                        <div class="title_profile_page">Account Information</div>
-                        <div class="content_box_profile_page">
+                    <div id="input_info_account" class="width_common space_bottom_20">
+                        <form class="form form-edit-account" action="" method="post" id="form-account"
+                              autocomplete="off" novalidate="novalidate">
+                            <input type="hidden" class="tokenKey" data-name=""
+                                   name="" value="">
+                            <div class="title_profile_page">Change your information</div>
+                            <br>
+                            <br>
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-xs-6">
-                                    <div class="block_info_account width_common relative">
-                                        <div class="name_account space_bottom_5">
-                                            <strong>Ngoan Hoàng</strong>
-                                        </div>
-                                        <div class="email_account space_bottom_5">0326497648</div>
-                                        <a class="txt_color_1 txt_xemthem" href="accountInformation.html">Edit</a>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="password">Name :</label>
+                                        <input type="password" required="" class="form-control" id="password"
+                                               name="password" placeholder="Name">
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-xs-6 hidden">
-                                    <div class="block_info_account width_common relative">
-                                        <strong>Updating promotion information</strong>
-                                        <form action=" " method="post">
-                                            <input name="form_key" type="hidden" value="gNRvOqt14hxP13Gy">
-                                            <div class="cking_info">
-                                                <label>
-                                                    <input type="checkbox" name="isSubscribed" class="isSubscribed" value="1">Sign up
-                                                </label>
-                                            </div>
-                                            <button type="button" class="btn btn_site_1 btn_site_dangky_thongtin _btnSaveSubscribeNewLetter" data-subscribed="0">Lưu thay đổi</button>
-                                        </form>
-                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordNew">Phone :</label>
+                                        <input type="password" required="" class="form-control" id="passwordNew"
+                                               name="passwordNew" placeholder="phone">
 
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordConfirm">Birth year :</label>
+                                        <input type="password" required="" class="form-control" id="passwordConfirm"
+                                               name="passwordConfirm" placeholder="dd-mm-yy">
+
+                                    </div>
+                                    <button type="submit" class="btn btn_site_1 width_common">Update</button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                    <div id="box_address" class="width_common space_bottom_20">
-                        <div class="title_profile_page">My Address
-                            <a class="txt_color_1 txt_seemore" href="receiveAddress.html">Address management</a>
-                        </div>
-                        <div class="content_box_profile_page">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 space_bottom_10">
-                                    <div class="item_address relative width_common">
-                                        <div class="name_address space_bottom_5">
-                                            <strong>Ngoan Hoàng</strong> - 0326497648                                        </div>
-                                        <div class="address_detail">639 lê văn việt ,p tân phú Q9, Phường Tân Phú, Quận 9, Hồ Chí Minh</div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 space_bottom_10">
-                                    <div class="item_address relative width_common">
-                                        <div class="name_address space_bottom_5">
-                                            <strong>Ngoan Hoàng</strong> - 0326497648                                        </div>
-                                        <div class="address_detail">Đại Học Nông Lâm, Kp6, Phường Linh Trung, Thủ Đức</div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 space_bottom_10">
-                                    <div class="item_address relative width_common">
-                                        <div class="name_address space_bottom_5">
-                                            <strong>Ngoan Hoàng</strong> - 0326497648                                        </div>
-                                        <div class="address_detail">KTX khu D, Đại học Nông Lâm, Phường Linh Trung, Thủ Đức</div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-
-
                 </div>
-            </div>
             </div>
         </div>
     </div>
+</div>
 <!--end main-->
 
-
+<!--     Footer slogan start-->
+<div class="slogan_footer row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="col-lg-4 col-md-3 col-sm-6 col-xs-6">
+            <div class="item_slogan text-center">
+                <div><img src="img/graphics/icon_footer_1.svg" class="loading" data-was-processed="true"></div>
+                <div class="txt_slogan"><br>Cash On Delivery</div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-6 col-xs-6">
+            <div class="item_slogan text-center">
+                <div><img src="img/graphics/icon_footer_3.svg" class="loading" data-was-processed="true"></div>
+                <div class="txt_slogan"><br>Free Refunds <br> and exchanges 14 days</div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-6 col-xs-6">
+            <div class="item_slogan text-center">
+                <div><img src="img/graphics/icon_footer_4.svg" class="loading" data-was-processed="true"></div>
+                <div class="txt_slogan"><br>Global<br> Reputable brand</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--     Footer slogan end-->
 
 <!-- Footer Start -->
 <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -414,6 +363,7 @@
                     &copy; <a href="#">HaChaMilk</a>, Copyright @GreenTea.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     Designed By <a href="">GreenTea member</a>
                 </div>
             </div>
@@ -421,8 +371,6 @@
     </div>
 </div>
 <!-- Footer End -->
-
-
 
 <!-- Back to Top -->
 <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
