@@ -13,7 +13,7 @@
 }
 .width_common{
     width: 100%;
-    float: left;
+    /*float: left;*/
 }
 #wrapper_container{
     background-color: #f2f1f6;
@@ -36,9 +36,7 @@
     margin-right: 10px;
 
 }
-.block_menu_profile{
-    background-color: #fff3cd;
-}
+
 .space_bottom_20{
     margin-bottom: 20px;
 }
@@ -126,7 +124,7 @@ table{
     background-color: #f7f7f7;
     font-weight: 700;
 }
-a:visited, a{
+a:visited{
     color: #222831;
     text-decoration: none;
     outline: 0;
@@ -233,6 +231,12 @@ input[type="password"]{
     display: block;
     position: relative;
 }
+.item_menu_profile.active{
+    background-color: #f7f7f7;
+    color: #f85915;
+    font-weight: 200;
+
+}
 #input_info_account .title_profile_page{
     padding-left: 0;
     padding-top: 0;
@@ -289,28 +293,28 @@ label {
     -ms-user-select: none;
     user-select: none;
 }
-.dropdown-menu{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 160px;
-    padding: 5px 0;
-    margin: 2px 0 0;
-    font-size: 14px;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 4px;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-}
+/*.dropdown-menu{*/
+/*    position: absolute;*/
+/*    top: 100%;*/
+/*    left: 0;*/
+/*    z-index: 1000;*/
+/*    display: none;*/
+/*    float: left;*/
+/*    min-width: 160px;*/
+/*    padding: 5px 0;*/
+/*    margin: 2px 0 0;*/
+/*    font-size: 14px;*/
+/*    text-align: left;*/
+/*    list-style: none;*/
+/*    background-color: #fff;*/
+/*    -webkit-background-clip: padding-box;*/
+/*    background-clip: padding-box;*/
+/*    border: 1px solid #ccc;*/
+/*    border: 1px solid rgba(0,0,0,.15);*/
+/*    border-radius: 4px;*/
+/*    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);*/
+/*    box-shadow: 0 6px 12px rgba(0,0,0,.175);*/
+/*}*/
 
 ul, ol{
     margin-top: 0;
