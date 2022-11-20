@@ -8,7 +8,7 @@
     font-size: 16px;
     font-weight: 700;
     padding: 10px;
-    border-top: 3px solid rgba(13, 34, 140, 0.6);
+    border-top: 3px solid rgba(5, 45, 250, 0.6);
     margin-bottom: 10px;
 }
 #box_hoadon .content_common_site {
@@ -30,4 +30,11 @@
 #box_hoadon .btn_site_2{
     padding: 10px;
     width: 100%;
+}
+#profile_page{
+    margin-top: 9rem;
+}
+.title_donhang{
+    padding: 0 10px 10px;
+    font-size: 18px;
 }
