@@ -2,6 +2,7 @@
     background: #fff;
     width: 100%;
     float: left;
+    margin-top: 37px;
 }
 #box_hoadon .title_common_site {
     border-bottom: 1px solid #e5e5e5;
@@ -31,10 +32,45 @@
     padding: 10px;
     width: 100%;
 }
-#profile_page{
-    margin-top: 9rem;
+#profile_page.row{
+    border-bottom: 1px #333333!important;
+}
+#wrapper_container{
+    margin-top: 150px!important;
+    background-color: #fcf7f3;
 }
 .title_donhang{
     padding: 0 10px 10px;
     font-size: 18px;
+}
+.btn_site_2 {
+    background: #ff6600;
+    border: 1px solid #ff6600;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    font-weight: 700;
+    font-size: 15px;
+}#box_hoadon .btn_site_2{
+    padding: 10px;
+    width: 100%;
+ }
+
+table tr:nth-child(odd){
+
+    background-color: #edf1ed;
+}
+table tr:nth-child(even){
+    background-color: #b7bbbb;
+
+}
+thead tr {
+    background-color: darkgrey!important;
+}
+.checkout_payment_method_title{
+    font-size: 1.125rem;
+    width: 12.5rem;
+    color: #222;
+
 }

@@ -142,7 +142,7 @@
                     <a href="#" class="btn-sm-square bg-white rounded-circle ms-3 nav-link " data-bs-toggle="dropdown">
                         <small class="fa fa-user text-body"></small></a>
                     <div class="dropdown-menu m-0">
-                        <a href="register.html" class="dropdown-item">Account</a>
+                        <a href="signIn_signUp/register.html" class="dropdown-item">Account</a>
                         <a href="#" class="dropdown-item">Order Management</a>
                         <a href="#" class="dropdown-item">Your Address</a>
                         <a href="#" class="dropdown-item">Log out</a>
@@ -205,7 +205,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <!--                end right size-->
             </div>
         </div>
@@ -214,7 +213,6 @@
 <!-- Navbar End -->
 
 <!--main shopping cart start-->
-
 <div id="v3_wrapper_container" class="width_common">
     <div class="container-xl account-orders">
         <div id="wrapper_container" class="width_common">
@@ -261,6 +259,15 @@
                                     <td><span class="txt_333">1</span></td>
                                     <td><strong class="txt_color_2">554,000 đ</strong></td>
                                 </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td> <a href="checkout.html" class="txt_color_1">
+                                        <i class="fa fa-caret-left"></i>Keep Shopping</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td style="float: right"> <button class="btn btn_site_2" type="submit" onclick="window.pageCartStatic.onClick('cartCheckOutClick', this)">Tiến hành đặt hàng</button>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -304,8 +311,9 @@
         </div>
     </div>
 </div>
-
 <!--main shopping cart end-->
+
+
 <!-- Footer Start -->
 <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
