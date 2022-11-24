@@ -37,7 +37,6 @@
     <link rel="stylesheet" href="../css/style.min.css">
     <link rel="stylesheet" href="../css/customer.css">
 
-
 </head>
 
 <body>
@@ -93,7 +92,7 @@
                             <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Orders</span></a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle  text-truncate" id="dropdown"
+                        <a href="#" class="nav-link dropdown-toggle  text-truncate" id="menuside-dropdown"
                            data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Bootstrap</span>
                         </a>
@@ -126,7 +125,7 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="../index.html" class="nav-item nav-link active">Home</a>
                 <a href="../about.html" class="nav-item nav-link">About Us</a>
-                <a href="../product.html" class="nav-item nav-link">Products</a>
+                <a href="../product/product.html" class="nav-item nav-link">Products</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
@@ -148,7 +147,7 @@
                     <a href="#" class="btn-sm-square bg-white rounded-circle ms-3 nav-link " data-bs-toggle="dropdown">
                         <small class="fa fa-user text-body"></small></a>
                     <div class="dropdown-menu m-0">
-                        <a href="../signIn_signUp/register.html" class="dropdown-item">Account</a>
+                        <a href="../signIn_signUp_page/register.html" class="dropdown-item">Account</a>
                         <a href="#" class="dropdown-item">Order Management</a>
                         <a href="#" class="dropdown-item">Your Address</a>
                         <a href="#" class="dropdown-item">Log out</a>
@@ -167,7 +166,8 @@
                                 aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body px-0">
-                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start"
+                            id="shipping-cart-dropdown">
                             <li class="nav-item">
                                 <a href="#" class="nav-link text-truncate">
                                     <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
@@ -219,11 +219,10 @@
 </div>
 <!-- Navbar End -->
 
-
 <!--start main -->
 
 <div id="v3_wrapper_container" class="width_common">
-    <div class="container-xl account-orders">
+    <div class="container-xl">
         <div id="wrapper_container" class="width_common">
             <div id="profile_page" class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3">
@@ -238,107 +237,47 @@
                         </div>
                         <div class="menu_profile width_common">
                             <a href="customerManagement.html" class="item_menu_profile "> Account Management</a>
-                            <a href="accountInformation.html" class="item_menu_profile">Account Infomation</a>
-                            <a href="myOrders.html" class="item_menu_profile active">My Order</a>
+                            <a href="accountInformation.html" class="item_menu_profile active">Account Infomation</a>
+                            <a href="listOrders.html" class="item_menu_profile">My Order</a>
                             <a href="receiveAddress.html" class="item_menu_profile">receive Address List</a>
-                            <a href="../editCustomer/changepassword.html" class="item_menu_profile">Change Password</a>
+                            <a href="../editCustomer_page/changepassword.html" class="item_menu_profile ">Change Password</a>
+
 
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 ">
-                    <div id="box_chitietdonhang" class="width_common space_bottom_20">
-                        <div class="content_box_profile_page order_type_">
-                            <div class="block_fillter_donhang space_bottom_20 relative">
-                                <div class="tab_fillter_donhang relative width_common space_bottom_20">
-                                    <a href="/sales/order/history/" title="Mua online"
-                                       class="item_filler_donhang active">Mua online</a>
-                                </div>
-                                <div id="container-filters">
-                                    <div class="tab_sub_fillter_donhang width_common">
-                                        <a href="javascript:;" data-filter_time=""
-                                           class="_order_filler_status item_sub_filler_donhang active">Tất cả</a>
-                                        <a href="javascript:;" class="_order_filler_status item_sub_filler_donhang "
-                                           data-filter_status="pending">Mới đặt</a><a href="javascript:;"
-                                                                                      class="_order_filler_status item_sub_filler_donhang "
-                                                                                      data-filter_status="processing">Đang
-                                        xử lý</a><a href="javascript:;"
-                                                    class="_order_filler_status item_sub_filler_donhang "
-                                                    data-filter_status="complete">Thành công</a><a href="javascript:;"
-                                                                                                   class="_order_filler_status item_sub_filler_donhang "
-                                                                                                   data-filter_status="canceled">Đã
-                                        hủy</a></div>
-                                    <div class="block_view_short_fillter">
-                                        Hiển thị
-                                        <div class="dropdown">
-                                            <button class="btn btn-default dropdown-toggle" type="button"
-                                                    id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                Tất cả <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"
-                                                style="left: 0px;">
-                                                <li class="active"><a href="javascript:;" data-filter_time=""
-                                                                      class="_order_filler_times">Tất cả</a></li>
-                                                <li class=""><a href="javascript:;" class="_order_filler_times"
-                                                                data-filter_time="last_day">Trong 1 ngày</a></li>
-                                                <li class=""><a href="javascript:;" class="_order_filler_times"
-                                                                data-filter_time="last_week">Trong 1 tuần</a></li>
-                                                <li class=""><a href="javascript:;" class="_order_filler_times"
-                                                                data-filter_time="last_month">Trong 1 tháng</a></li>
-                                                <li class=""><a href="javascript:;" class="_order_filler_times"
-                                                                data-filter_time="last_month_three">Trong 3 tháng</a>
-                                                </li>
-                                                <li class=""><a href="javascript:;" class="_order_filler_times"
-                                                                data-filter_time="last_month_six">Trong 6 tháng</a></li>
-                                                <li class=""><a href="javascript:;" class="_order_filler_times"
-                                                                data-filter_time="last_year">Trong 1 năm</a></li>
-                                            </ul>
-                                        </div>
+                    <div id="input_info_account" class="width_common space_bottom_20">
+                        <form class="form form-edit-account" action="" method="post" id="form-account"
+                              autocomplete="off" novalidate="novalidate">
+                            <input type="hidden" class="tokenKey" data-name=""
+                                   name="" value="">
+                            <div class="title_profile_page">Change your information</div>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="password">Name :</label>
+                                        <input type="password" required="" class="form-control" id="password"
+                                               name="password" placeholder="Name">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="passwordNew">Phone :</label>
+                                        <input type="password" required="" class="form-control" id="passwordNew"
+                                               name="passwordNew" placeholder="phone">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordConfirm">Birth year :</label>
+                                        <input type="password" required="" class="form-control" id="passwordConfirm"
+                                               name="passwordConfirm" placeholder="dd-mm-yy">
+
+                                    </div>
+                                    <button type="submit" class="btn btn_site_1 width_common">Update</button>
                                 </div>
-                                <div class="clearfix"></div>
                             </div>
-                            <table class="table caption-top">
-                                <caption>List of users</caption>
-                                <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">ID orders</th>
-                                    <th scope="col">Order Date</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Payment</th>
-                                    <th scope="col">Total</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td> <a href="../orderDetail.html" class="txt_666"><span class="txt_color_1">22050211806</span> </a></td>
-                                    <td><span class="txt_333">19/11/2020</span></td>
-                                    <td><span class="item_status_order" style="background-color: #4b8c6c">Hoàn tất</span></td>
-                                    <td><span class="txt_333">Thanh toán khi nhận hàng</span></td>
-                                    <td><strong class="txt_color_2">354,000 đ</strong></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td> <a href="../orderDetail.html" class="txt_666"><span class="txt_color_1">22050211806</span> </a></td>
-                                    <td><span class="txt_333">19/11/2020</span></td>
-                                    <td><span class="item_status_order" style="background-color: #4b8c6c">Hoàn tất</span></td>
-                                    <td><span class="txt_333">Thanh toán khi nhận hàng</span></td>
-                                    <td><strong class="txt_color_2">354,000 đ</strong></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td> <a href="../orderDetail.html" class="txt_666"><span class="txt_color_1">22050211806</span> </a></td>
-                                    <td><span class="txt_333">19/11/2020</span></td>
-                                    <td><span class="item_status_order" style="background-color: #4b8c6c">Hoàn tất</span></td>
-                                    <td><span class="txt_333">Thanh toán khi nhận hàng</span></td>
-                                    <td><strong class="txt_color_2">354,000 đ</strong></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -347,28 +286,24 @@
 </div>
 <!--end main-->
 
-
 <!--     Footer slogan start-->
 <div class="slogan_footer row">
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="col-lg-4 col-md-3 col-sm-6 col-xs-6">
             <div class="item_slogan text-center">
-                <div><img src="../img/graphics/icon_footer_1.svg" class="loading"
-                          data-was-processed="true"></div>
+                <div><img src="../img/graphics/icon_footer_1.svg" class="loading" data-was-processed="true"></div>
                 <div class="txt_slogan"><br>Cash On Delivery</div>
             </div>
         </div>
         <div class="col-lg-4 col-md-3 col-sm-6 col-xs-6">
             <div class="item_slogan text-center">
-                <div><img src="../img/graphics/icon_footer_3.svg" class="loading"
-                          data-was-processed="true"></div>
+                <div><img src="../img/graphics/icon_footer_3.svg" class="loading" data-was-processed="true"></div>
                 <div class="txt_slogan"><br>Free Refunds <br> and exchanges 14 days</div>
             </div>
         </div>
         <div class="col-lg-4 col-md-3 col-sm-6 col-xs-6">
             <div class="item_slogan text-center">
-                <div><img src="../img/graphics/icon_footer_4.svg" class="loading"
-                          data-was-processed="true"></div>
+                <div><img src="../img/graphics/icon_footer_4.svg" class="loading" data-was-processed="true"></div>
                 <div class="txt_slogan"><br>Global<br> Reputable brand</div>
             </div>
         </div>
@@ -437,10 +372,8 @@
 </div>
 <!-- Footer End -->
 
-
 <!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
-        class="bi bi-arrow-up"></i></a>
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -450,10 +383,9 @@
 <script src="../lib/waypoints/waypoints.min.js"></script>
 <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="../js/bootstrap.bundle.min.js"></script>
-<script src="../js/hachamilk-0.1.295.min.js"></script>
 
 <!-- Template Javascript -->
 <script src="../js/main.js"></script>
-
 </body>
+
 </html>
