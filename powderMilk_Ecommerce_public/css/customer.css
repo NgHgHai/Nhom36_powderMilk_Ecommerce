@@ -13,7 +13,6 @@
 }
 .width_common{
     width: 100%;
-    /*float: left;*/
 }
 #wrapper_container{
     background-color: #f2f1f6;
@@ -217,10 +216,7 @@ input[type="password"]{
 .slogan_footer{
     padding: 40px;
 }
-/*.container.py-5{*/
-/*    width: 1140px;*/
-/*    height: 230px;*/
-/*}*/
+
 .menu_profile.active{
     background-color: #f7f7f7;
     color: rgba(2, 49, 124, 0.89);
@@ -293,28 +289,6 @@ label {
     -ms-user-select: none;
     user-select: none;
 }
-/*.dropdown-menu{*/
-/*    position: absolute;*/
-/*    top: 100%;*/
-/*    left: 0;*/
-/*    z-index: 1000;*/
-/*    display: none;*/
-/*    float: left;*/
-/*    min-width: 160px;*/
-/*    padding: 5px 0;*/
-/*    margin: 2px 0 0;*/
-/*    font-size: 14px;*/
-/*    text-align: left;*/
-/*    list-style: none;*/
-/*    background-color: #fff;*/
-/*    -webkit-background-clip: padding-box;*/
-/*    background-clip: padding-box;*/
-/*    border: 1px solid #ccc;*/
-/*    border: 1px solid rgba(0,0,0,.15);*/
-/*    border-radius: 4px;*/
-/*    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);*/
-/*    box-shadow: 0 6px 12px rgba(0,0,0,.175);*/
-/*}*/
 
 ul, ol{
     margin-top: 0;
@@ -429,4 +403,9 @@ button {
 #v3_wrapper_container.width_common{
     background: inherit!important;
 
+}
+span.txt_default{
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
