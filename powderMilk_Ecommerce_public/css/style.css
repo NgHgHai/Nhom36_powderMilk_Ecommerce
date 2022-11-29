@@ -2,6 +2,7 @@
 body {
     background: #f6f7f8;
     background: linear-gradient(to right, #eff4fa, #add3ee);
+    font-family: Tahoma;
 }
 :root {
     --primary: #1995ad;

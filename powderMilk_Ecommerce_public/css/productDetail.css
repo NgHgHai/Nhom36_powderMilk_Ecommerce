@@ -258,18 +258,15 @@ img.img-fluid:hover{
     margin: 0;
     padding: 0;
 }
-.item_slogan img{
-    float: left;
-    width: 130px;
-    height: 130px;
-}
 .txt_slogan{
-float: left;
-    font-size: 14px;
+    font-size: 15px;
     margin-top: -20px;
-    margin-left: 55px;
+    margin-left: 0px
 }
-
+.item_slogan img{
+    width: 80%;
+    height: 80%;
+}
 ul, li{
     list-style: none;
     padding: 0;
@@ -278,7 +275,7 @@ li{
     margin: 10px 0;
 }
 img.loading{
-    margin: 20px 50px;
+    margin: 20px 20px;
 }
 
 /*slogan footer*/
@@ -473,6 +470,8 @@ label.radio input:checked+span::before {
 .qty-container .qty-btn-minus{
     margin-right: -1px;
 }
+
+/*product detail table*/
 .tt_box_detail {
     font-weight: 700;
     /* color: #326e52; */
@@ -487,10 +486,23 @@ label.radio input:checked+span::before {
 .tb_info_sanpham{
     width: 100%;
 }
+.tb_info_sanpham tr td.bg_info_sp {
+    background: #cbcecc;
+}
+.tb_info_sanpham td.col_tb_info_sp {
+    width: 30%;
+}
+.tb_info_sanpham td {
+    padding: 7px 20px;
+    border: 1px solid #eaeaea;
+}
 table{
     background-color: transparent;
 }
 table{
     border-collapse: collapse;
     border-spacing: 0;
+}
+.table_info_sp{
+    background-color: whitesmoke;
 }
