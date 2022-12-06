@@ -35,4 +35,11 @@ h1.slideInDown{
     width: 40%;
     height: 40%;
 }
+.container-fluid #header-carousel .carousel-inner .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
+.container .img-slider .img-item {
+    margin: 0px 5px 0px 0px;
+}
 
