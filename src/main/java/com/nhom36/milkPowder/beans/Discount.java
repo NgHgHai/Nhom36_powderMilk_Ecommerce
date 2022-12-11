@@ -1,4 +1,4 @@
-package com.nhom36.milkPowder.model;
+package com.nhom36.milkPowder.beans;
 
 import java.time.LocalDateTime;
 
@@ -114,4 +114,6 @@ public class Discount {
                 ", updateAt=" + updateAt +
                 '}';
     }
+
+
 }
