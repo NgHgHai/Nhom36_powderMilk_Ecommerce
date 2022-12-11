@@ -205,4 +205,12 @@ public class Product {
     public void setUpdateAt(LocalDateTime updateAt) {
         this.updateAt = updateAt;
     }
+
+    public double getPriceWasDiscount() {
+
+        if (discount != null) {
+            return price - (price * discount.getDiscountPercent() / 100);
+        }
+        return price;
+    }
 }
