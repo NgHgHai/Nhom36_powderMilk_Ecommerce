@@ -14,6 +14,7 @@ public class Discount {
     private LocalDateTime updateAt;
 
     public Discount() {
+
     }
 
     public Discount(String id, String name, String desc, double discountPercent, int active, LocalDateTime startAt, LocalDateTime finishAt, LocalDateTime createAt, LocalDateTime updateAt) {

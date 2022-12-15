@@ -2,17 +2,18 @@ package com.nhom36.milkPowder.db;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.jdbi.v3.core.Jdbi;
-import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 
 import static com.nhom36.milkPowder.db.DBProperties.*;
 
 public class JDBIConnector {
     private static Jdbi jdbi;
-    private JDBIConnector(){}
 
-    private static void makeConnect(){
+    private JDBIConnector() {
+    }
+
+    private static void makeConnect() {
         MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setURL("jdbc:mysql://"+getHost()+":"+getPort()+"/"+getDatabaseName());
+        dataSource.setURL("jdbc:mysql://" + getHost() + ":" + getPort() + "/" + getDatabaseName());
         dataSource.setUser(getUserName());
         dataSource.setPassword(getPassword());
 
@@ -23,10 +24,11 @@ public class JDBIConnector {
             e.printStackTrace();
         }
         jdbi = Jdbi.create(dataSource);
-        jdbi.installPlugin(new SqlObjectPlugin());
+        jdbi.installPlugin(new org.jdbi.v3.sqlobject.SqlObjectPlugin());
     }
-    public static Jdbi get(){
-        if(jdbi == null)
+
+    public static Jdbi get() {
+        if (jdbi == null)
             makeConnect();
         return jdbi;
     }
