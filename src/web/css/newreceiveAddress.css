@@ -1,0 +1,57 @@
+#profile_page{
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+#input_add_address{
+    padding: 10px 20px 20px 20px;
+    background: #fff;
+    margin-bottom: 0;
+    width: 100%;
+    float: left;
+
+}
+#input_add_address .block_input_account {
+    padding: 0 0 10px 0;
+    border: none;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+.width_common{
+    width: 100%;
+    float: left;
+}
+.space_bottom_20{
+    margin-bottom: 20px;
+}
+.relative{
+    position: relative;
+}
+.row{
+    margin-right: -10px;
+    margin-left: -10px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
