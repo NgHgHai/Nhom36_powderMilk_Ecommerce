@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Cart {
 private String id;
 private String customerId;
-private double totalPrice;
+private Double totalPrice;
 private LocalDateTime createAt;
 private LocalDateTime updateAt;
 private List<CartItem> cartItemList = new ArrayList<CartItem>();
