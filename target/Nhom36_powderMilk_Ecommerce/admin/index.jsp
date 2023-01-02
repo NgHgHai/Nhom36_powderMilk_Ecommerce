@@ -1,3 +1,5 @@
+<%@page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
@@ -115,7 +117,7 @@
     <p class="menu-label">General</p>
     <ul class="menu-list">
       <li class="active">
-        <a href="index.html">
+        <a href="index.jsp">
           <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
           <span class="menu-item-label">Dashboard</span>
         </a>
@@ -263,32 +265,7 @@
       </div>
     </div>
 
-    <div class="card mb-6">
-      <header class="card-header">
-        <p class="card-header-title">
-          <span class="icon"><i class="mdi mdi-finance"></i></span>
-          Performance
-        </p>
-        <a href="#" class="card-header-icon">
-          <span class="icon"><i class="mdi mdi-reload"></i></span>
-        </a>
-      </header>
-      <div class="card-content">
-        <div class="chart-area">
-          <div class="h-full">
-            <div class="chartjs-size-monitor">
-              <div class="chartjs-size-monitor-expand">
-                <div></div>
-              </div>
-              <div class="chartjs-size-monitor-shrink">
-                <div></div>
-              </div>
-            </div>
-            <canvas id="big-line-chart" width="2992" height="1000" class="chartjs-render-monitor block" style="height: 400px; width: 1197px;"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
 
     <div class="card has-table">
