@@ -1,6 +1,5 @@
 create database Nhom36_powderMilk_Ecommerce;
 use Nhom36_powderMilk_Ecommerce;
-
 create table blog
 (
     `id`        varchar(10)   not null
@@ -140,5 +139,13 @@ create table user
     `create_at` datetime     not null,
     `update_at` datetime     not null
 );
+create table ImageProduct(
+    id varchar(10) not null ,
+    link varchar(255) not null,
+    product_id varchar(10) not null,
+    create_at datetime not null,
+    update_at datetime not null,
+    primary key (id,product_id)
+);
+
 alter table  product modify column name nvarchar(255) ;
-select * from Nhom36_powderMilk_Ecommerce.product;

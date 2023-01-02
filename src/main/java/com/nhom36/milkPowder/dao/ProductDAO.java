@@ -47,6 +47,4 @@ public interface ProductDAO {
     @SqlQuery("select * from Product order by price asc ")
     ArrayList<Product> allPriceUp();
 
-
-
 }
