@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="Nhom36_powderMilk_Ecommerce-1.0-SNAPSHOT.war">
+    <root id="archive" name="Nhom36_powderMilk_Ecommerce.war">
       <element id="artifact" artifact-name="Nhom36_powderMilk_Ecommerce:war exploded" />
     </root>
   </artifact>
