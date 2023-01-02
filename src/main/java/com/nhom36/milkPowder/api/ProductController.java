@@ -24,6 +24,10 @@ public class ProductController extends HttpServlet {
                 List<Product> products = productService.list();
                 printWriter.println(new JsonUtil().toJSon(products));
             }
+            if(id !=null){
+                Product product = productService.findById(id);
+                printWriter.print(new JsonUtil().toJSon(product));
+            }
 
     }
 

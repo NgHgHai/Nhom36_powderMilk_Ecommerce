@@ -2,7 +2,7 @@ package com.nhom36.milkPowder.beans;
 
 import java.time.LocalDateTime;
 
-public class ImageProduct {
+public class ProductImage {
     private String id;
     private String url;
     private String productId;
@@ -10,10 +10,10 @@ public class ImageProduct {
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public ImageProduct() {
+    public ProductImage() {
     }
 
-    public ImageProduct(String id, String url, String productId, int active,LocalDateTime createAt, LocalDateTime updateAt) {
+    public ProductImage(String id, String url, String productId, int active, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.url = url;
         this.productId = productId;

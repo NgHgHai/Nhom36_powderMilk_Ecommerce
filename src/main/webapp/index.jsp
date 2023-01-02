@@ -11,7 +11,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="OneDrive/Desktop/ltw/Nhom36_powderMilk_Ecommerce/src/main/webapp/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -355,13 +355,13 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="product-item">
                             <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="${p.im}" alt="">
+                                <img class="img-fluid w-100" src="${p.imgDisplay}" alt="">
                                 <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
                                     New
                                 </div>
                             </div>
                             <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa bột XO I am Mother Mom</a>
+                                <a class="d-block h5 mb-2" href="product">Sữa bột XO I am Mother Mom</a>
                                 <span class="text-primary me-1">300.000VND</span>
                                 <span class="text-body text-decoration-line-through">400.000VND</span><br>
                                 <span class="text-primary me-1">400gr</span>
@@ -377,6 +377,7 @@
                             </div>
                         </div>
                     </div>
+                        </c:forEach>
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="product-item">
                             <div class="position-relative bg-light overflow-hidden">
@@ -1260,5 +1261,4 @@
 <script src="js/carouselCustom.js"></script>
 <script src="js/jquery.slicknav.js"></script>
 </body>
-
 </html>
