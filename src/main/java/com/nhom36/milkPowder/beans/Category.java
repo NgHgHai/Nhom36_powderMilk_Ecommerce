@@ -43,4 +43,24 @@ public class Category {
                 ", updateAt=" + updateAt +
                 '}';
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public LocalDateTime getCreateAt() {
+        return createAt;
+    }
+
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

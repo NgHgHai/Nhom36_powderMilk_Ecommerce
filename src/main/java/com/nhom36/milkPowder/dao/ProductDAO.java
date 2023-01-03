@@ -15,18 +15,13 @@ public interface ProductDAO {
     @SqlQuery("select * from Product")
     List<Product> list();
 
-    @SqlQuery("select * from Product where id = :id")
-    Product getProduct(@Bind("id") String id);
 
     @SqlQuery("select * from Product where id = :id")
     Product findById(@Bind("id") String id);
 
 
-
     @SqlUpdate("delete from Product where id = :id")
     int deleteProduct(@Bind("id") String id);
-
-
 
 
     @SqlUpdate("INSERT INTO `Product`(`id`,`name`,`price`,`minSaletime`,`maxSaletime`,`desc`,`img_display`," +
@@ -47,4 +42,6 @@ public interface ProductDAO {
     @SqlQuery("select * from Product order by price asc ")
     ArrayList<Product> allPriceUp();
 
+    @SqlUpdate("delete from Product where id = :id")
+    int delete(@Bind("id") int parseInt);
 }
