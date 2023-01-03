@@ -325,6 +325,7 @@
 <!-- Product Start -->
 <div id="product-list" class="container-xxl py-5">
     <div class="container">
+
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-6">
                 <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s"
@@ -349,6 +350,7 @@
             </div>
         </div>
         <div class="tab-content">
+            <c:forEach var="item" items="${map}">
             <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
                     <c:forEach var="p" items="${item.getValue()}">
@@ -361,7 +363,7 @@
                                 </div>
                             </div>
                             <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="product">Sữa bột XO I am Mother Mom</a>
+                                <a class="d-block h5 mb-2" href="product">${p.name}</a>
                                 <span class="text-primary me-1">300.000VND</span>
                                 <span class="text-body text-decoration-line-through">400.000VND</span><br>
                                 <span class="text-primary me-1">400gr</span>
@@ -378,181 +380,9 @@
                         </div>
                     </div>
                         </c:forEach>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/prenant/product-2.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa bột XO Mom</a>
-                                <span class="text-primary me-1">216.000VND</span>
-                                <span class="text-body text-decoration-line-through">266.00VND</span><br>
-                                <span class="text-primary me-1">400gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/prenant/product-3.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa bột Abbott Similac Mom IQ</a>
-                                <span class="text-primary me-1">150.000VND</span>
-                                <span class="text-body text-decoration-line-through">200.000VND</span><br>
-                                <span class="text-primary me-1">400gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/prenant/product-4.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa bột Dumex Mama Gold</a>
-                                <span class="text-primary me-1">340.000VND</span>
-                                <span class="text-body text-decoration-line-through">400.000VND</span><br>
-                                <span class="text-primary me-1">800gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/prenant/product-5.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa bột Abbott Similac Mom IQ</a>
-                                <span class="text-primary me-1">395.000VND</span>
-                                <span class="text-body text-decoration-line-through">430.000VND</span><br>
-                                <span class="text-primary me-1">900gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/prenant/product-6.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa bột Dutch Lady Cô gái Hà Lan Mum</a>
-                                <span class="text-primary me-1">93.000VND</span>
-                                <span class="text-body text-decoration-line-through">140.000VND</span><br>
-                                <span class="text-primary me-1">400gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/prenant/product-7.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa bột Dutch Lady Cô gái Hà Lan Mum</a>
-                                <span class="text-primary me-1">178.000VND</span>
-                                <span class="text-body text-decoration-line-through">240.000VND</span><br>
-                                <span class="text-primary me-1">900gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/prenant/product-8.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa bột Dielac Mama</a>
-                                <span class="text-primary me-1">200.000VND</span>
-                                <span class="text-body text-decoration-line-through">250.000VND</span><br>
-                                <span class="text-primary me-1">900gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            </c:forEach>
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
                         <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
                     </div>

@@ -39,7 +39,7 @@ public class ApiProductController extends HttpServlet {
         String path = req.getPathInfo();
         PrintWriter out = resp.getWriter();
         if (path.equals("/add")) {
-            NewProduct product = new NewProduct();
+            Product product = new Product();
 
             try {
                 BeanUtils.populate(product, req.getParameterMap());
