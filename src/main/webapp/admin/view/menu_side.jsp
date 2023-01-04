@@ -18,7 +18,7 @@
         <p class="menu-label">General</p>
         <ul class="menu-list">
             <li class="active">
-                <a href="/AdminController">
+                <a href="/DashboardsController">
                     <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
                     <span class="menu-item-label">Dashboard</span>
                 </a>
@@ -26,12 +26,6 @@
         </ul>
         <p class="menu-label">Examples</p>
         <ul class="menu-list">
-            <li class="--set-active-tables-html">
-                <a href="../TableController">
-                    <span class="icon"><i class="mdi mdi-table"></i></span>
-                    <span class="menu-item-label">Tables</span>
-                </a>
-            </li>
 
             <li class="--set-active-profile-html">
                 <a href="../ProfileControler">
@@ -68,7 +62,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#void">
+                        <a href="/ProductsController">
                             <span>Product</span>
                         </a>
                     </li>

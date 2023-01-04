@@ -4,26 +4,16 @@
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard - Admin One Tailwind CSS Admin Dashboard</title>
-
-    <!-- Tailwind is included -->
-
-    <link rel="apple-touch-icon" sizes="180x180" href="admin/img/logo.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="admin/img/logo.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="admin/img/favicon-16x16.png"/>
-    <link rel="stylesheet" href="admin/css/main.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+    <jsp:include page="setup/head.jsp"></jsp:include>
 
 </head>
 <body>
 
 <div id="app">
 
-
-    <jsp:include page="view/header-admin.jsp"></jsp:include>
+    <%--header of admin--%>
+    <jsp:include page="view/header_admin.jsp"></jsp:include>
+    <%--Menu-side of admin--%>
     <jsp:include page="view/menu_side.jsp"></jsp:include>
 
     <section class="is-title-bar">
@@ -49,6 +39,7 @@
     </section>
 
     <section class="section main-section">
+        <%--Thông số của web--%>
         <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
             <%-- this is dashboard card      --%>
             <div class="card">
@@ -102,7 +93,7 @@
         </div>
 
 
-        <%-- this is dashboard table      --%>
+        <%--this is client table--%>
         <div class="card has-table">
             <header class="card-header">
                 <p class="card-header-title">
@@ -180,7 +171,7 @@
                 </table>
             </div>
         </div>
-
+        <%--this is order table--%>
         <div class="card has-table">
             <header class="card-header">
                 <p class="card-header-title">
@@ -279,25 +270,9 @@
         </div>
 
     </section>
+    <%--footer  admin--%>
+    <jsp:include page="view/footer_admin.jsp"></jsp:include>
 
-    <footer class="footer">
-        <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
-            <div class="flex items-center justify-start space-x-3">
-                <div>
-                    © 2021, nhom36
-                </div>
-
-                <div>
-                    <p>Distributed By: <a href="https://github.com/NgHgHai/Nhom36_powderMilk_Ecommerce" target="_blank">Nhóm
-                        36</a></p>
-                </div>
-                <a href="https://github.com/justboil/admin-one-tailwind" style="height: 20px">
-                    <img src="https://img.shields.io/github/v/release/justboil/admin-one-tailwind?color=%23999">
-                </a>
-            </div>
-
-        </div>
-    </footer>
 
     <div id="sample-modal" class="modal">
         <div class="modal-background --jb-modal-close"></div>
@@ -358,11 +333,6 @@
         $('#table-new-order').DataTable();
     });
 </script>
-<script>function renderButton(data) {
-    if (data == "1")
-        return <div class="  status_order red  ">Đã hủy</div>;
-    else
-        return <div class="  status_order green  ">Đã giao</div>;
-}</script>
+
 </body>
 </html>
