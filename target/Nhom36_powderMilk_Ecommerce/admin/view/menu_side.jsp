@@ -47,17 +47,17 @@
                 </a>
                 <ul>
                     <li>
-                        <a href="#void">
+                        <a href="/CustommersController">
                             <span>Custommer</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#void">
+                        <a href="/OrdersController">
                             <span>Order</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#void">
+                        <a href="/CategorysController">
                             <span>Category</span>
                         </a>
                     </li>

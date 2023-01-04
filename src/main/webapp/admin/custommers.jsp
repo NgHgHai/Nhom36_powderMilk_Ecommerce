@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: hoanghai
-  Date: 2023-01-04
-  Time: 11:57 PM
+  Date: 2023-01-05
+  Time: 3:57 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
@@ -10,227 +10,92 @@
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HachaMilk-Admin</title>
-
-    <!-- Tailwind is included -->
-    <link rel="stylesheet" href="admin/css/main.css?v=1628755089081">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="admin/img/apple-touch-icon.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="admin/img/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="admin/img/favicon-16x16.png"/>
-    <link rel="mask-icon" href="admin/img/safari-pinned-tab.svg" color="#00b4b6"/>
-
-    <meta name="description" content="Admin One - free Tailwind dashboard">
-
-    <meta property="og:url" content="https://justboil.github.io/admin-one-tailwind/">
-    <meta property="og:site_name" content="JustBoil.me">
-    <meta property="og:title" content="Admin One HTML">
-    <meta property="og:description" content="Admin One - free Tailwind dashboard">
-    <meta property="og:image" content="https://justboil.me/images/one-tailwind/repository-preview-hi-res.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="960">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Admin One HTML">
-    <meta property="twitter:description" content="Admin One - free Tailwind dashboard">
-    <meta property="twitter:image:src" content="https://justboil.me/images/one-tailwind/repository-preview-hi-res.png">
-    <meta property="twitter:image:width" content="1920">
-    <meta property="twitter:image:height" content="960">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-130795909-1');
-    </script>
+    <jsp:include page="setup/head.jsp"></jsp:include>
 
 </head>
 <body>
 
 <div id="app">
-
-    <nav id="navbar-main" class="navbar is-fixed-top">
-        <div class="navbar-brand">
-            <a class="navbar-item mobile-aside-button">
-                <span class="icon"><i class="mdi mdi-forwardburger mdi-24px"></i></span>
-            </a>
-            <div class="navbar-item">
-                <div class="control"><input placeholder="Search everywhere..." class="input"></div>
-            </div>
-        </div>
-        <div class="navbar-brand is-right">
-            <a class="navbar-item --jb-navbar-menu-toggle" data-target="navbar-menu">
-                <span class="icon"><i class="mdi mdi-dots-vertical mdi-24px"></i></span>
-            </a>
-        </div>
-        <div class="navbar-menu" id="navbar-menu">
-            <div class="navbar-end">
-                <div class="navbar-item dropdown has-divider">
-                    <a class="navbar-link">
-                        <span class="icon"><i class="mdi mdi-menu"></i></span>
-                        <span>Sample Menu</span>
-                        <span class="icon">
-            <i class="mdi mdi-chevron-down"></i>
-          </span>
-                    </a>
-                    <div class="navbar-dropdown">
-                        <a href="profile.jsp" class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-account"></i></span>
-                            <span>My Profile</span>
-                        </a>
-                        <a class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-settings"></i></span>
-                            <span>Settings</span>
-                        </a>
-                        <a class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-email"></i></span>
-                            <span>Messages</span>
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-logout"></i></span>
-                            <span>Log Out</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="navbar-item dropdown has-divider has-user-avatar">
-                    <a class="navbar-link">
-                        <div class="user-avatar">
-                            <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe" class="rounded-full">
-                        </div>
-                        <div class="is-user-name"><span>John Doe</span></div>
-                        <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
-                    </a>
-                    <div class="navbar-dropdown">
-                        <a href="profile.jsp" class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-account"></i></span>
-                            <span>My Profile</span>
-                        </a>
-                        <a class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-settings"></i></span>
-                            <span>Settings</span>
-                        </a>
-                        <a class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-email"></i></span>
-                            <span>Messages</span>
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-logout"></i></span>
-                            <span>Log Out</span>
-                        </a>
-                    </div>
-                </div>
-                <a href="https://justboil.me/tailwind-admin-templates" class="navbar-item has-divider desktop-icon-only">
-                    <span class="icon"><i class="mdi mdi-help-circle-outline"></i></span>
-                    <span>About</span>
-                </a>
-                <a href="https://github.com/justboil/admin-one-tailwind" class="navbar-item has-divider desktop-icon-only">
-                    <span class="icon"><i class="mdi mdi-github-circle"></i></span>
-                    <span>GitHub</span>
-                </a>
-                <a title="Log out" class="navbar-item desktop-icon-only">
-                    <span class="icon"><i class="mdi mdi-logout"></i></span>
-                    <span>Log out</span>
-                </a>
-            </div>
-        </div>
-    </nav>
-
+    <%--header of admin--%>
+    <jsp:include page="view/header_admin.jsp"></jsp:include>
+    <%--Menu-side of admin--%>
     <jsp:include page="view/menu_side.jsp"></jsp:include>
-
+    <%--Thanh hiển thị dẫn mục--%>
     <section class="is-title-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <ul>
                 <li>Admin</li>
-                <li>Tables</li>
+                <li>Custommers</li>
             </ul>
-            <a href="https://justboil.me/" onclick="alert('Coming soon'); return false" target="_blank" class="button blue">
-                <span class="icon"><i class="mdi mdi-credit-card-outline"></i></span>
-                <span>Premium Demo</span>
-            </a>
         </div>
     </section>
-
+    <%--Name and add button--%>
     <section class="is-hero-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <h1 class="title">
-                Responsive Tables
+                Custommer Tables
             </h1>
-            <button class="button light">Button</button>
+            <a href="/AddProductController">
+<%--                <button  class="button red --jb-modal">Add new</button>--%>
+            </a>
         </div>
+
     </section>
 
     <section class="section main-section">
-        <div class="notification blue">
-            <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
-                <div>
-                    <span class="icon"><i class="mdi mdi-buffer"></i></span>
-                    <b>Responsive table</b>
-                </div>
-                <button type="button" class="button small textual --jb-notification-dismiss">Dismiss</button>
-            </div>
-        </div>
+
+        <%--this is custommer table--%>
         <div class="card has-table">
             <header class="card-header">
                 <p class="card-header-title">
                     <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-                    Clients
+                    Custommers
                 </p>
                 <a href="#" class="card-header-icon">
                     <span class="icon"><i class="mdi mdi-reload"></i></span>
                 </a>
             </header>
             <div class="card-content">
-                <table>
+                <table id="table-custommer" class="">
                     <thead>
+                    <%-- this is name of colum    --%>
                     <tr>
-                        <th class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </th>
-                        <th class="image-cell"></th>
+                        <th></th>
                         <th>Name</th>
-                        <th>Company</th>
-                        <th>City</th>
-                        <th>Progress</th>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Address</th>
                         <th>Created</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
+
+                    <%-- this is colum of table     --%>
+                    <c:forEach var="user" items="${user}"></c:forEach>
+                    <% for (int i = 0; i < 50; i++) {%>
+
+
                     <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
                         <td class="image-cell">
                             <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="rounded-full">
+                                <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg"
+                                     class="rounded-full">
                             </div>
                         </td>
                         <td data-label="Name">Rebecca Bauch</td>
-                        <td data-label="Company">Daugherty-Daniel</td>
-                        <td data-label="City">South Cory</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="79">79</progress>
+                        <td data-label="Id">#02938</td>
+                        <td data-label="Email">hhlata@gmail.com</td>
+                        <td data-label="Address">
+                            TP.HCM
                         </td>
                         <td data-label="Created">
                             <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
                         </td>
                         <td class="actions-cell">
                             <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                                <button class="button small green --jb-modal" data-target="sample-modal-2"
+                                        type="button">
                                     <span class="icon"><i class="mdi mdi-eye"></i></span>
                                 </button>
                                 <button class="button small red --jb-modal" data-target="sample-modal" type="button">
@@ -239,708 +104,28 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/felicita-yundt.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Felicita Yundt</td>
-                        <td data-label="Company">Johns-Weissnat</td>
-                        <td data-label="City">East Ariel</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="67">67</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Jan 8, 2021">Jan 8, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/mr-larry-satterfield-v.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Mr. Larry Satterfield V</td>
-                        <td data-label="Company">Hyatt Ltd</td>
-                        <td data-label="City">Windlerburgh</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="16">16</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Dec 18, 2021">Dec 18, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/mr-broderick-kub.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Mr. Broderick Kub</td>
-                        <td data-label="Company">Kshlerin, Bauch and Ernser</td>
-                        <td data-label="City">New Kirstenport</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="71">71</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Sep 13, 2021">Sep 13, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/barry-weber.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Barry Weber</td>
-                        <td data-label="Company">Schulist, Mosciski and Heidenreich</td>
-                        <td data-label="City">East Violettestad</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="80">80</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Jul 24, 2021">Jul 24, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/bert-kautzer-md.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Bert Kautzer MD</td>
-                        <td data-label="Company">Gerhold and Sons</td>
-                        <td data-label="City">Mayeport</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="62">62</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Mar 30, 2021">Mar 30, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/lonzo-steuber.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Lonzo Steuber</td>
-                        <td data-label="Company">Skiles Ltd</td>
-                        <td data-label="City">Marilouville</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="17">17</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Feb 12, 2021">Feb 12, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/jonathon-hahn.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Jonathon Hahn</td>
-                        <td data-label="Company">Flatley Ltd</td>
-                        <td data-label="City">Billiemouth</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="74">74</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Dec 30, 2021">Dec 30, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/ryley-wuckert.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Ryley Wuckert</td>
-                        <td data-label="Company">Heller-Little</td>
-                        <td data-label="City">Emeraldtown</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="54">54</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Jun 28, 2021">Jun 28, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/sienna-hayes.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Sienna Hayes</td>
-                        <td data-label="Company">Conn, Jerde and Douglas</td>
-                        <td data-label="City">Jonathanfort</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="55">55</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Mar 7, 2021">Mar 7, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+
+                    <%}%>
+
                     </tbody>
-                </table>
-                <div class="table-pagination">
-                    <div class="flex items-center justify-between">
-                        <div class="buttons">
-                            <button type="button" class="button active">1</button>
-                            <button type="button" class="button">2</button>
-                            <button type="button" class="button">3</button>
-                        </div>
-                        <small>Page 1 of 3</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="notification green">
-            <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
-                <div>
-                    <span class="icon"><i class="mdi mdi-buffer"></i></span>
-                    <b>Tightly wrapped.</b> Table header becomes card header
-                </div>
-                <button type="button" class="button small textual --jb-notification-dismiss">Dismiss</button>
-            </div>
-        </div>
-
-        <div class="card has-table">
-            <div class="card-content">
-                <table>
-                    <thead>
+                    <tfoot>
                     <tr>
-                        <th class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </th>
-                        <th class="image-cell"></th>
+                        <th></th>
                         <th>Name</th>
-                        <th>Company</th>
-                        <th>City</th>
-                        <th>Progress</th>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Address</th>
                         <th>Created</th>
                         <th></th>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Rebecca Bauch</td>
-                        <td data-label="Company">Daugherty-Daniel</td>
-                        <td data-label="City">South Cory</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="79">79</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/felicita-yundt.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Felicita Yundt</td>
-                        <td data-label="Company">Johns-Weissnat</td>
-                        <td data-label="City">East Ariel</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="67">67</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Jan 8, 2021">Jan 8, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/mr-larry-satterfield-v.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Mr. Larry Satterfield V</td>
-                        <td data-label="Company">Hyatt Ltd</td>
-                        <td data-label="City">Windlerburgh</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="16">16</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Dec 18, 2021">Dec 18, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/mr-broderick-kub.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Mr. Broderick Kub</td>
-                        <td data-label="Company">Kshlerin, Bauch and Ernser</td>
-                        <td data-label="City">New Kirstenport</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="71">71</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Sep 13, 2021">Sep 13, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/barry-weber.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Barry Weber</td>
-                        <td data-label="Company">Schulist, Mosciski and Heidenreich</td>
-                        <td data-label="City">East Violettestad</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="80">80</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Jul 24, 2021">Jul 24, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/bert-kautzer-md.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Bert Kautzer MD</td>
-                        <td data-label="Company">Gerhold and Sons</td>
-                        <td data-label="City">Mayeport</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="62">62</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Mar 30, 2021">Mar 30, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/lonzo-steuber.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Lonzo Steuber</td>
-                        <td data-label="Company">Skiles Ltd</td>
-                        <td data-label="City">Marilouville</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="17">17</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Feb 12, 2021">Feb 12, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/jonathon-hahn.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Jonathon Hahn</td>
-                        <td data-label="Company">Flatley Ltd</td>
-                        <td data-label="City">Billiemouth</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="74">74</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Dec 30, 2021">Dec 30, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/ryley-wuckert.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Ryley Wuckert</td>
-                        <td data-label="Company">Heller-Little</td>
-                        <td data-label="City">Emeraldtown</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="54">54</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Jun 28, 2021">Jun 28, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="checkbox-cell">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/sienna-hayes.svg" class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">Sienna Hayes</td>
-                        <td data-label="Company">Conn, Jerde and Douglas</td>
-                        <td data-label="City">Jonathanfort</td>
-                        <td data-label="Progress" class="progress-cell">
-                            <progress max="100" value="55">55</progress>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Mar 7, 2021">Mar 7, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
+                    </tfoot>
                 </table>
-                <div class="table-pagination">
-                    <div class="flex items-center justify-between">
-                        <div class="buttons">
-                            <button type="button" class="button active">1</button>
-                            <button type="button" class="button">2</button>
-                            <button type="button" class="button">3</button>
-                        </div>
-                        <small>Page 1 of 3</small>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <div class="notification red">
-            <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
-                <div>
-                    <span class="icon"><i class="mdi mdi-buffer"></i></span>
-                    <b>Empty table.</b>
-                </div>
-                <button type="button" class="button small textual --jb-notification-dismiss">Dismiss</button>
-            </div>
-        </div>
-
-        <div class="card empty">
-            <div class="card-content">
-                <div>
-                    <span class="icon large"><i class="mdi mdi-emoticon-sad mdi-48px"></i></span>
-                </div>
-                <p>Nothing's here…</p>
-            </div>
-        </div>
     </section>
-
-    <footer class="footer">
-        <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
-            <div class="flex items-center justify-start space-x-3">
-                <div>
-                    © 2021, JustBoil.me
-                </div>
-                <a href="https://github.com/justboil/admin-one-tailwind" style="height: 20px">
-                    <img src="https://img.shields.io/github/v/release/justboil/admin-one-tailwind?color=%23999">
-                </a>
-            </div>
-
-        </div>
-    </footer>
+    <%--footer  admin--%>
+    <jsp:include page="view/footer_admin.jsp"></jsp:include>
 
     <div id="sample-modal" class="modal">
         <div class="modal-background --jb-modal-close"></div>
@@ -949,8 +134,7 @@
                 <p class="modal-card-title">Sample modal</p>
             </header>
             <section class="modal-card-body">
-                <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
-                <p>This is sample modal</p>
+                <p>Xác nhận <b>XÓA</b></p>
             </section>
             <footer class="modal-card-foot">
                 <button class="button --jb-modal-close">Cancel</button>
@@ -966,8 +150,7 @@
                 <p class="modal-card-title">Sample modal</p>
             </header>
             <section class="modal-card-body">
-                <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
-                <p>This is sample modal</p>
+                <p>Chỉnh sửa dữ liệu và load lên ở đây</p>
             </section>
             <footer class="modal-card-foot">
                 <button class="button --jb-modal-close">Cancel</button>
@@ -978,26 +161,26 @@
 
 </div>
 
-<!-- Scripts below are for demo only -->
-<script type="text/javascript" src="admin/js/main.min.js?v=1628755089081"></script>
+<script src="admin/js/jquery.min.js"></script>
+<script src="admin/js/main.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="admin/js/chart.sample.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" src="admin/js/chart.sample.min.js"></script>
 
-
-<script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '658339141622648');
-    fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=658339141622648&ev=PageView&noscript=1"/></noscript>
 
 <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#table-custommer').DataTable();
+    });
+</script>
 
 </body>
 </html>
