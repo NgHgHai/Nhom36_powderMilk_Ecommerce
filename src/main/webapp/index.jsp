@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" tagdir=""%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="vie">
 
@@ -58,189 +58,11 @@
 
 
 <!-- Navbar Start -->
-<div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-    <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
-        <div class="col-lg-6 px-5 text-start">
-            <small><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</small>
-            <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@example.com</small>
-        </div>
-        <div class="col-lg-6 px-5 text-end">
-            <small>Follow us:</small>
-            <a class="text-body ms-3" href=""><i class="fab fa-facebook-f"></i></a>
-            <a class="text-body ms-3" href=""><i class="fab fa-twitter"></i></a>
-            <a class="text-body ms-3" href=""><i class="fab fa-linkedin-in"></i></a>
-            <a class="text-body ms-3" href=""><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <!--       Start  left Menu Size-->
-        <button class="btn float-start" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-start" role="button">
-            <i class="bi bi-list fs-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-start"></i>
-        </button>
-        <div class="offcanvas offcanvas-start w-25" tabindex="-1" id="offcanvas-start" data-bs-keyboard="false"
-             data-bs-backdrop="false">
-            <div class="offcanvas-header">
-                <h6 class="offcanvas-title d-none d-sm-block">Menu</h6>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body px-0">
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-truncate">
-                            <span class="ms-1 d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="about.html" class="nav-link text-truncate">
-                            <span class="ms-1 d-none d-sm-inline">About Us</span> </a>
-                    </li>
-                    <li>
-                        <a href="product/product.html" class="nav-link text-truncate">
-                            <span class="ms-1 d-none d-sm-inline">Products</span></a>
-                    </li>
-                    <li>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><span
-                                    class="ms-1 d-none d-sm-inline">Pages</span></a>
-                            <div class="dropdown-menu m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="feature.html" class="dropdown-item">Our Features</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="nav-link text-truncate">
-                            <span class="ms-1 d-none d-sm-inline">Contact US</span></a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-        <!--       End  left Menu Size-->
-        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-            <h1 class="fw-bold text-primary m-0">Ha<span class="text-secondary">Cha</span>Milk</h1>
-        </a>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                <a href="product.html" class="nav-item nav-link">Products</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                        <a href="feature.html" class="dropdown-item">Our Features</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-            </div>
-            <div class="d-none d-lg-flex ms-2 ">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn " type="submit"><small class="fa fa-search text-body"></small></button>
-                </form>
-
-                <div class="nav-item dropdown">
-                    <a class="btn-sm-square bg-white rounded-circle ms-3 nav-link " href="customer.html"
-                       data-bs-toggle="dropdown">
-                        <small class="fa fa-user text-body"></small></a>
-                    <div class="dropdown-menu m-0">
-                        <a href="register.html" class="dropdown-item">Account</a>
-                        <a href="customer.html" class="dropdown-item">Order Management</a>
-                        <a href="receiveAddress.html" class="dropdown-item">Your Address</a>
-                        <a href="#" class="dropdown-item">Log out</a>
-                    </div>
-                </div>
-                <!--                start   right size-->
-                <button class="btn-sm-square bg-white rounded-circle ms-3" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvas-end" role="button">
-                    <small class="fa fa-shopping-bag text-body"></small>
-                    <span class="counter_number counter qty">4</span>
-                </button>
-                <div class="offcanvas offcanvas-end w-25" tabindex="-1" id="offcanvas-end" data-bs-keyboard="false"
-                     data-bs-backdrop="false">
-                    <div class="offcanvas-header">
-                        <h6 class="offcanvas-title d-none d-sm-block">Recently added products</h6>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body px-0 ">
-                        <ul class="list-group flex-column mb-sm-auto mb-0 align-items-start">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <img src="img/prenant/product-1.jpg" alt="">
-                                    <p class="fw-bold mb-1 p-3">Sữa Mom </p>
-                                    <p class="text-secondary mb-1 p-3 "> 560000 </p>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="img/prenant/product-1.jpg" alt="">
-                                    <p class="fw-bold mb-1 p-3">Sữa Mom </p>
-                                    <p class="text-secondary mb-1 p-3 "> 560000 </p>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="img/prenant/product-1.jpg" alt="">
-                                    <p class="fw-bold mb-1 p-3">Sữa Mom </p>
-                                    <p class="text-secondary mb-1 p-3 "> 560000 </p>
-                                </div>
-                            </li>
-                        </ul>
-                        <a class="btn btn-primary rounded-3 " href="shoppingcart.html" role="button">view my shopping
-                            cart</a>
-                    </div>
-                </div>
-
-                <!--                end right size-->
-            </div>
-        </div>
-    </nav>
-</div>
+<jsp:include page="viewDefault/header.jsp"></jsp:include>
 <!-- Navbar End -->
 
 
-<div class="container-fluid sidebar-categories">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="hero__categories">
-                <div class="hero__categories__all">
-                    <i class="fa fa-bars"></i>
-                    <span>All departments</span>
-
-                </div>
-                <ul>
-                    <li><h4>Mom and Kids</h4></li>
-                    <li><a href="#">Fresh Meat</a></li>
-                    <li><a href="#">Vegetables</a></li>
-                    <li><a href="#">Fruit & Nut Gifts</a></li>
-                    <li><a href="#">Fresh Berries</a></li>
-                    <li><a href="#">Ocean Foods</a></li>
-                    <li><h4>Adults</h4></li>
-                    <li><a href="#">Butter & Eggs</a></li>
-                    <li><a href="#">Fastfood</a></li>
-                    <li><a href="#">Fresh Onion</a></li>
-                    <li><a href="#">Papayaya & Crisps</a></li>
-                    <li><a href="#">Oatmeal</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-lg-9">
-            <div class="hero__item set-bg" >
-                <div class="hero__text">
-                    <span>Good Milk_ Good Life</span>
-                    <h2>PowderMilk Gold quality</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<jsp:include page="viewDefault/sidebar.jsp"></jsp:include>
 <!--sidebar end-->
 
 
@@ -352,21 +174,22 @@
         <div class="tab-content">
             <c:forEach var="item" items="${map}">
             <div id="tab-1" class="tab-pane fade show p-0 active">
-                <div class="row g-4">
+
+                <div class="row g-4" href="/">
                     <c:forEach var="p" items="${item.getValue()}">
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="product-item">
                             <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="${p.imgDisplay}" alt="">
+                                <img class="img-fluid w-100" src="${p.ImgDisplay}" alt="">
                                 <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
                                     New
                                 </div>
                             </div>
                             <div class="text-center p-4">
                                 <a class="d-block h5 mb-2" href="product">${p.name}</a>
-                                <span class="text-primary me-1">300.000VND</span>
-                                <span class="text-body text-decoration-line-through">400.000VND</span><br>
-                                <span class="text-primary me-1">400gr</span>
+                                <span class="text-primary me-1">${p.getPrice()*0.8}</span>
+                                <span class="text-body text-decoration-line-through">${p.getPrice()}</span><br>
+                                <span class="text-primary me-1">${p.getWeightAmount()+p.getWeightUnits()}</span>
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
@@ -388,424 +211,423 @@
                     </div>
                 </div>
             </div>
-            <div id="tab-2" class="tab-pane fade show p-0">
-                <div class="row g-4">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics1/product-1.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Morinaga số 1(Hagukumi, 0-6 tháng)</a>
-                                <span class="text-primary me-1">539.000VND</span>
-                                <span class="text-body text-decoration-line-through">590.000</span><br>
-                                <span class="text-primary me-1">850gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics1/product-2.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Similac 5G số 1(0-6 tháng)</a>
-                                <span class="text-primary me-1">269.000VND</span>
-                                <span class="text-body text-decoration-line-through">300.000VND</span><br>
-                                <span class="text-primary me-1">400gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics1/product-3.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Blackmores Số 1(0-6 tháng)</a>
-                                <span class="text-primary me-1">525.000VND</span>
-                                <span class="text-body text-decoration-line-through">550.000VND</span><br>
-                                <span class="text-primary me-1">900gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics1/product-4.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Nutramigen A+LGG(0-6 tháng)</a>
-                                <span class="text-primary me-1">519.000VND</span>
-                                <span class="text-body text-decoration-line-through">540.000VND</span><br>
-                                <span class="text-primary me-1">400gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics1/product-5.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Glico Icreo số 0(0-6 tháng)</a>
-                                <span class="text-primary me-1">539.000VND</span>
-                                <span class="text-body text-decoration-line-through">569.000VND</span><br>
-                                <span class="text-primary me-1">800gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics1/product-6.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Morinaga số 1(Hagukumi, 0-6 tháng)</a>
-                                <span class="text-primary me-1">239.000VND</span>
-                                <span class="text-body text-decoration-line-through">269.000VND</span><br>
-                                <span class="text-primary me-1">320gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics1/product-7.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Abbott Grow 1(0-6 tháng)</a>
-                                <span class="text-primary me-1">339.000VND</span>
-                                <span class="text-body text-decoration-line-through">379.000VND</span><br>
-                                <span class="text-primary me-1">900ggr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics1/product-8.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Humana Gold Plus 1(0-6 tháng)</a>
-                                <span class="text-primary me-1">665.00VND</span>
-                                <span class="text-body text-decoration-line-through">705.000VND</span><br>
-                                <span class="text-primary me-1">800gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 text-center">
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
-                    </div>
-                </div>
-            </div>
-            <div id="tab-3" class="tab-pane fade show p-0">
-                <div class="row g-4">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics2/product-1.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Similac 5G số 2(6-12 tháng)</a>
-                                <span class="text-primary me-1">549.000VND</span>
-                                <span class="text-body text-decoration-line-through">579.000VND</span><br>
-                                <span class="text-primary me-1">900gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics2/product-2.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Blackmores Số 2(6-12 tháng)</a>
-                                <span class="text-primary me-1">525.000VND</span>
-                                <span class="text-body text-decoration-line-through">555.000VND</span><br>
-                                <span class="text-primary me-1">900gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics2/product-3.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Enfamil A+ số 2(6-12 tháng) 2Flex
-                                </a>
-                                <span class="text-primary me-1">500.000VND</span>
-                                <span class="text-body text-decoration-line-through">540.000VND</span><br>
-                                <span class="text-primary me-1">830gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics2/product-4.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Enfamil A+ số 2 tháng) 2Flex</a>
-                                <span class="text-primary me-1">919.000VND</span>
-                                <span class="text-body text-decoration-line-through">959.000gr</span><br>
-                                <span class="text-primary me-1">1700gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics2/product-5.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Enfamil A2 NeuroPro số 2(6 - 12 tháng)</a>
-                                <span class="text-primary me-1">699.000VND</span>
-                                <span class="text-body text-decoration-line-through">729.000VND</span><br>
-                                <span class="text-primary me-1">800gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics2/product-6.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Abbott Grow 2 900g (6-12 tháng)</a>
-                                <span class="text-primary me-1">339.000VND</span>
-                                <span class="text-body text-decoration-line-through">369.000VND</span><br>
-                                <span class="text-primary me-1">900gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics2/product-7.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa Similac 5G số 2(6-12 tháng)</a>
-                                <span class="text-primary me-1">269.000VND</span>
-                                <span class="text-body text-decoration-line-through">699.000VND</span><br>
-                                <span class="text-primary me-1">400gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="product-item">
-                            <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="img/graphics2/product-8.jpg" alt="">
-                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New
-                                </div>
-                            </div>
-                            <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Sữa HiPP Organic Combiotic số 2(6-12 tháng)</a>
-                                <span class="text-primary me-1">655.000VND</span>
-                                <span class="text-body text-decoration-line-through">685.000VND</span><br>
-                                <span class="text-primary me-1">800gr</span>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                </small>
-                                <small class="w-50 text-center py-2">
-                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                        to cart</a>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 text-center">
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
-                    </div>
-                </div>
-            </div>
+<%--            <div id="tab-2" class="tab-pane fade show p-0">--%>
+<%--                <div class="row g-4">--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics1/product-1.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Morinaga số 1(Hagukumi, 0-6 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">539.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">590.000</span><br>--%>
+<%--                                <span class="text-primary me-1">850gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics1/product-2.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Similac 5G số 1(0-6 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">269.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">300.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">400gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics1/product-3.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Blackmores Số 1(0-6 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">525.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">550.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">900gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics1/product-4.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Nutramigen A+LGG(0-6 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">519.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">540.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">400gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics1/product-5.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Glico Icreo số 0(0-6 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">539.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">569.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">800gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics1/product-6.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Morinaga số 1(Hagukumi, 0-6 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">239.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">269.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">320gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics1/product-7.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Abbott Grow 1(0-6 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">339.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">379.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">900ggr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics1/product-8.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Humana Gold Plus 1(0-6 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">665.00VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">705.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">800gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-12 text-center">--%>
+<%--                        <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div id="tab-3" class="tab-pane fade show p-0">--%>
+<%--                <div class="row g-4">--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics2/product-1.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Similac 5G số 2(6-12 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">549.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">579.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">900gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics2/product-2.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Blackmores Số 2(6-12 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">525.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">555.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">900gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics2/product-3.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Enfamil A+ số 2(6-12 tháng) 2Flex--%>
+<%--                                </a>--%>
+<%--                                <span class="text-primary me-1">500.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">540.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">830gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics2/product-4.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Enfamil A+ số 2 tháng) 2Flex</a>--%>
+<%--                                <span class="text-primary me-1">919.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">959.000gr</span><br>--%>
+<%--                                <span class="text-primary me-1">1700gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics2/product-5.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Enfamil A2 NeuroPro số 2(6 - 12 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">699.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">729.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">800gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics2/product-6.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Abbott Grow 2 900g (6-12 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">339.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">369.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">900gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics2/product-7.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa Similac 5G số 2(6-12 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">269.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">699.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">400gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-xl-3 col-lg-4 col-md-6">--%>
+<%--                        <div class="product-item">--%>
+<%--                            <div class="position-relative bg-light overflow-hidden">--%>
+<%--                                <img class="img-fluid w-100" src="img/graphics2/product-8.jpg" alt="">--%>
+<%--                                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">--%>
+<%--                                    New--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center p-4">--%>
+<%--                                <a class="d-block h5 mb-2" href="">Sữa HiPP Organic Combiotic số 2(6-12 tháng)</a>--%>
+<%--                                <span class="text-primary me-1">655.000VND</span>--%>
+<%--                                <span class="text-body text-decoration-line-through">685.000VND</span><br>--%>
+<%--                                <span class="text-primary me-1">800gr</span>--%>
+<%--                            </div>--%>
+<%--                            <div class="d-flex border-top">--%>
+<%--                                <small class="w-50 text-center border-end py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>--%>
+<%--                                </small>--%>
+<%--                                <small class="w-50 text-center py-2">--%>
+<%--                                    <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add--%>
+<%--                                        to cart</a>--%>
+<%--                                </small>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-12 text-center">--%>
+<%--                        <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
         </div>
-    </div>
-</div>
+
 <!-- Product End -->
 
 
@@ -890,7 +712,7 @@
                     Would you like to know more information? Click on the next button!</p>
             </div>
             <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
-                <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="about.html">Click here</a>
+                <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="about-us.jsp">Click here</a>
             </div>
         </div>
     </div>
@@ -1007,69 +829,7 @@
 </div>
 <!-- Blog End -->
 
-
-<!-- Footer Start -->
-<div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h1 class="fw-bold text-primary mb-4">Ha<span class="text-secondary">Cha</span>Milk</h1>
-                <p>Temporarily out of stock.<br>
-                    We are working hard to be back in stock as soon as possible.</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                            class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                            class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i
-                            class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Address</h4>
-                <p class="text-primary"><i class="fa fa-map-marker-alt me-3 "></i>FIT NLU Ho Chi Minh City</p>
-                <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Quick Links</h4>
-                <a class="btn btn-link" href="about.html">About Us</a>
-                <a class="btn btn-link" href="contact.html">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Newsletter</h4>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                           placeholder="Your email">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">HaChaMilk</a>, Copyright @GreenTea.
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a href="">GreenTea member</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
-
-
+<jsp:include page="viewDefault/footer.jsp"></jsp:include>
 <!-- Back to Top -->
 <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 

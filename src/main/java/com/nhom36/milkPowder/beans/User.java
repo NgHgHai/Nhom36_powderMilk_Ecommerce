@@ -1,52 +1,31 @@
 package com.nhom36.milkPowder.beans;
 
-import com.nhom36.milkPowder.emun.Role;
-
-import java.util.Objects;
-
 public class User {
     private String id;
-    private String lastName;
-    private String firstName;
+    private String lastname;
+    private String firstname;
     private String avatar;
     private String password;
     private String address;
     private String phone;
-    private String mail;
+    private String email;
     private int active;
-    private Role role;
+    private int role;
 
     public User() {
     }
 
-    public User(String id, String lastName, String firstName, String avatar, String password, String address, String phone, String mail, int active, Role role) {
+    public User(String id, String lastname, String firstname, String avatar, String password, String address, String phone, String mail, int active, int role) {
         this.id = id;
-        this.lastName = lastName;
-        this.firstName = firstName;
+        this.lastname = lastname;
+        this.firstname = firstname;
         this.avatar = avatar;
         this.password = password;
         this.address = address;
         this.phone = phone;
-        this.mail = mail;
+        this.email = mail;
         this.active = active;
         this.role = role;
-    }
-
-    public String getName() {
-        return firstName + " " + lastName;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return active == user.active && Objects.equals(id, user.id) && Objects.equals(lastName, user.lastName) && Objects.equals(firstName, user.firstName) && Objects.equals(avatar, user.avatar) && Objects.equals(password, user.password) && Objects.equals(address, user.address) && Objects.equals(phone, user.phone) && Objects.equals(mail, user.mail) && role == user.role;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, lastName, firstName, avatar, password, address, phone, mail, active, role);
     }
 
     public String getId() {
@@ -57,20 +36,20 @@ public class User {
         this.id = id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public String getAvatar() {
@@ -105,12 +84,12 @@ public class User {
         this.phone = phone;
     }
 
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getActive() {
@@ -121,11 +100,11 @@ public class User {
         this.active = active;
     }
 
-    public Role getRole() {
+    public int getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(int role) {
         this.role = role;
     }
 }
