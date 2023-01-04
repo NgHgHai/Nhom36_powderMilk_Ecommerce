@@ -31,7 +31,7 @@
             } else {
                 $.ajax(
                     {
-                        url: 'http://localhost:8080/MyServlet',
+                        url: 'MyServlet',
                         type: 'POST',
                         data: {name: name, email: email},
                         success: function (response) {
