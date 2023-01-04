@@ -67,22 +67,22 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#void">
+                        <a href="/BlogsController">
                             <span>Blog</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#void">
+                        <a href="/SuppliersController">
                             <span>Supplier</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#void">
+                        <a href="/DiscountsController">
                             <span>Discount</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#void">
+                        <a href="/SlidersController">
                             <span>Slider</span>
                         </a>
                     </li>

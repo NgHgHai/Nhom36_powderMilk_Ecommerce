@@ -25,7 +25,7 @@
     <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
       <ul>
         <li>Admin</li>
-        <li>Custommers</li>
+        <li>Orders</li>
       </ul>
     </div>
   </section>
@@ -33,7 +33,7 @@
   <section class="is-hero-bar">
     <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
       <h1 class="title">
-        Custommer Tables
+        Order Tables
       </h1>
       <a href="/AddProductController">
         <%--                <button  class="button red --jb-modal">Add new</button>--%>
