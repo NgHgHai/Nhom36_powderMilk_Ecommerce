@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Discount {
     private String id;
-    private String name;
+    private String discount_name;
     private String desc;
     private double discountPercent;
     private int active;
@@ -17,9 +17,9 @@ public class Discount {
 
     }
 
-    public Discount(String id, String name, String desc, double discountPercent, int active, LocalDateTime startAt, LocalDateTime finishAt, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Discount(String id, String discount_name, String desc, double discountPercent, int active, LocalDateTime startAt, LocalDateTime finishAt, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
-        this.name = name;
+        this.discount_name = discount_name;
         this.desc = desc;
         this.discountPercent = discountPercent;
         this.active = active;
@@ -37,12 +37,12 @@ public class Discount {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDiscountName() {
+        return discount_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDiscountName(String discount_name) {
+        this.discount_name = discount_name;
     }
 
     public String getDesc() {
@@ -105,7 +105,7 @@ public class Discount {
     public String toString() {
         return "Discount{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + discount_name + '\'' +
                 ", desc='" + desc + '\'' +
                 ", discountPercent=" + discountPercent +
                 ", active=" + active +
@@ -115,6 +115,7 @@ public class Discount {
                 ", updateAt=" + updateAt +
                 '}';
     }
+
 
 
 }

@@ -17,6 +17,7 @@ public class Product {
     private int inventory; // hang ton kho
     private String supplierId;
     private String CategoryId;
+    private String discountId;
     private Supplier supplier;
     private Category category;
     private Discount discount;
@@ -27,7 +28,7 @@ public class Product {
 
     }
 
-    public Product(String id, String name, double price, int minSaletime, int maxSaletime, String desc, String imgDisplay, double weightAmount, String weightUnits, int active, int inventory, String supplierId, String categoryId, Supplier supplier, Category category, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Product(String id, String name, double price, int minSaletime, int maxSaletime, String desc, String imgDisplay, double weightAmount, String weightUnits, int active, int inventory, String supplierId, String categoryId,String discountId, Supplier supplier, Category category, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
 
         this.id = id;
         this.name = name;
@@ -42,6 +43,7 @@ public class Product {
         this.inventory = inventory;
         this.supplierId = supplierId;
         this.CategoryId = categoryId;
+        this.discountId = discountId;
         this.supplier = supplier;
         this.category = category;
         this.discount = discount;
@@ -59,7 +61,7 @@ public class Product {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, minSaletime, maxSaletime, desc, imgDisplay, weightAmount, weightUnits, active, inventory, supplierId, CategoryId, supplier, category, discount, createAt, updateAt);
+        return Objects.hash(id, name, price, minSaletime, maxSaletime, desc, imgDisplay, weightAmount, weightUnits, active, inventory, supplierId, CategoryId,discountId, supplier, category, discount, createAt, updateAt);
     }
 
     public String getId() {
@@ -164,6 +166,14 @@ public class Product {
 
     public void setCategoryId(String categoryId) {
         CategoryId = categoryId;
+    }
+
+    public String getDiscountId() {
+        return discountId;
+    }
+
+    public void setDiscountId(String discountId) {
+        this.discountId = discountId;
     }
 
     public Supplier getSupplier() {
