@@ -1,6 +1,5 @@
 package com.nhom36.milkPowder.services;
 
-import com.nhom36.milkPowder.beans.NewProduct;
 import com.nhom36.milkPowder.beans.Product;
 import com.nhom36.milkPowder.dao.ProductDAO;
 import com.nhom36.milkPowder.db.JDBIConnector;
@@ -27,7 +26,7 @@ public ProductService() {}
     }
 
 
-    public void insert(NewProduct product) {
+    public void insert(Product product) {
     }
 
     public int updateProduct(Product product){

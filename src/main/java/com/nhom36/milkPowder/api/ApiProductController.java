@@ -1,7 +1,6 @@
 package com.nhom36.milkPowder.api;
 
 import com.google.gson.Gson;
-import com.nhom36.milkPowder.beans.NewProduct;
 import com.nhom36.milkPowder.beans.Product;
 import com.nhom36.milkPowder.services.ProductService;
 import org.apache.commons.beanutils.BeanUtils;
@@ -39,7 +38,7 @@ public class ApiProductController extends HttpServlet {
         String path = req.getPathInfo();
         PrintWriter out = resp.getWriter();
         if (path.equals("/add")) {
-            NewProduct product = new NewProduct();
+            Product product = new Product();
 
             try {
                 BeanUtils.populate(product, req.getParameterMap());
