@@ -1,8 +1,4 @@
-import com.nhom36.milkPowder.beans.Category;
-import com.nhom36.milkPowder.beans.NewCategory;
-import com.nhom36.milkPowder.beans.NewProduct;
 import com.nhom36.milkPowder.beans.Product;
-import com.nhom36.milkPowder.services.CategoryService;
 import com.nhom36.milkPowder.services.ProductService;
 
 import java.util.List;
