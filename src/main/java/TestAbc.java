@@ -1,6 +1,5 @@
 import com.nhom36.milkPowder.beans.Category;
-import com.nhom36.milkPowder.beans.NewCategory;
-import com.nhom36.milkPowder.beans.NewProduct;
+import com.nhom36.milkPowder.beans.Product;
 import com.nhom36.milkPowder.services.CategoryService;
 import com.nhom36.milkPowder.services.ProductService;
 
@@ -12,7 +11,7 @@ public class TestAbc {
 //        List<NewCategory> categoryList = categoryService.getAll();
 //        categoryList.stream().forEach(System.out::println);
         ProductService productService = new ProductService();
-        List<NewProduct> products = productService.getAll();
+        List<Product> products = productService.getAll();
         products.stream().forEach(System.out::println);
     }
 }

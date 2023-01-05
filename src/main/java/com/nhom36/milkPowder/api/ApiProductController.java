@@ -1,7 +1,7 @@
 package com.nhom36.milkPowder.api;
 
 import com.google.gson.Gson;
-import com.nhom36.milkPowder.beans.NewProduct;
+import com.nhom36.milkPowder.beans.Product;
 import com.nhom36.milkPowder.services.ProductService;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -27,7 +27,7 @@ public class ApiProductController extends HttpServlet {
             out.println(json);
         } else {
             String id = path.substring(1);
-            String json = new Gson().toJson(productService.getById(Integer.parseInt(id)));
+            String json = new Gson().toJson(productService.getById(id));
             out.println(json);
         }
         out.close();
@@ -38,7 +38,7 @@ public class ApiProductController extends HttpServlet {
         String path = req.getPathInfo();
         PrintWriter out = resp.getWriter();
         if (path.equals("/add")) {
-            NewProduct product = new NewProduct();
+            Product product = new Product();
 
             try {
                 BeanUtils.populate(product, req.getParameterMap());
@@ -53,10 +53,10 @@ public class ApiProductController extends HttpServlet {
 
         }
         if (path.equals("/update")) {
-            NewProduct product = new NewProduct();
+            Product product = new Product();
             try {
                 BeanUtils.populate(product, req.getParameterMap());
-                productService.update(product);
+                productService.updateProduct(product);
                 out.println("success");
 
             } catch (IllegalAccessException | InvocationTargetException e) {
@@ -74,7 +74,7 @@ public class ApiProductController extends HttpServlet {
         PrintWriter out = resp.getWriter();
         if (path.equals("/delete")) {
             String id = req.getParameter("id");
-            productService.delete(Integer.parseInt(id));
+            productService.delete(id);
             out.println("success");
         }
         out.close();

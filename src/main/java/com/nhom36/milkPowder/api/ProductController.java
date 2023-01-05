@@ -24,11 +24,11 @@ public class ProductController extends HttpServlet {
         ProductService productService = new ProductService();
 
         if (action.equalsIgnoreCase("all")) {
-            List<Product> products = productService.list();
+            List<Product> products = productService.getAll();
             printWriter.println(new JsonUtil().toJSon(products));
         }
         if (id != null) {
-            Product product = productService.findById(id);
+            Product product = productService.getById(id);
             printWriter.print(new JsonUtil().toJSon(product));
         }
 
