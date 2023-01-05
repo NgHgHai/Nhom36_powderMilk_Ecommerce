@@ -6,24 +6,41 @@ import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RegisterBeanMapper(Product.class)
 public interface ProductDAO {
-    @SqlQuery("select * from product where id = :id")
-    Product getProductById(@Bind("id") String id);
-
-    @SqlQuery("select * from product")
+    @SqlQuery("select * from Product")
     List<Product> list();
 
-    @SqlUpdate("insert into product (name, category_id) values (:name,:categoryId)")
-    void insertProduct(@BindBean Product product);
 
-    @SqlUpdate("update product set name = :name, category_id = :categoryId where id = :id")
-    void updateProduct(@BindBean Product product);
+    @SqlQuery("select * from Product where id = :id")
+    Product getProductById(@Bind("id") String id);
 
-    @SqlUpdate("delete from product where id = :id")
-    void deleteProduct(@Bind("id") String id);
-    @SqlQuery("select * from product where category_id= : categoryId")
-    List<Product> getProductByCategoryId(@Bind("categoryId") String category_id);
+
+    @SqlUpdate("delete from Product where id = :id")
+    int deleteProduct(@Bind("id") String id);
+
+
+    @SqlUpdate("INSERT INTO `Product`(`id`,`name`,`price`,`minSaletime`,`maxSaletime`,`desc`,`img_display`," +
+            "`weight_amount`,`weight_unit`,`active`,`inventory`,`supplier_id`,`category_id`,`discount_id`.`create_at`,`update_at`) " +
+            "VALUES (:id,:name,:price,:minSaletime,:maxSaletime,:desc,:img_display,:weight_amount,:weight_unit,:active,:inventory,:supplier_id,:category_id,:discount_id,now(),now())")
+    int insertProduct(@BindBean Product product);
+
+    @SqlUpdate("UPDATE `Product` SET `name`=:name,`price`=:price,`minSaletime`=:minSaletime,`maxSaletime`=:maxSaletime,`desc`=:desc,`img_display`=:img_display," +
+            "`weight_amount`=:weight_amount,`weight_unit`=:weight_unit,`active`=:active,`inventory`=:inventory,`supplier_id`=:supplier_id,`category_id`=:category_id,`discount_id`=:discount_id,`update_at`=now() WHERE id=:id")
+    int updateProduct(@BindBean Product product);
+
+    @SqlQuery("select * from Product where category_id = :categoryId")
+    List<Product> getProductByCategoryId(@Bind("categoryId") String categoryId);
+
+    @SqlQuery("select * from Product where supplier_id = :supplierId")
+    List<Product> getProductBySupplier(@Bind("supplierId") String supplierId);
+
+    @SqlQuery("select * from Product order by price asc ")
+    ArrayList<Product> allPriceUp();
+
+    @SqlUpdate("delete from Product where id = :id")
+    int delete(@Bind("id") int parseInt);
 }

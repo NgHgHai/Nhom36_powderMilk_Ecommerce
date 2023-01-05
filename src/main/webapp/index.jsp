@@ -643,7 +643,7 @@
         <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="bg-white text-center h-100 p-4 p-xl-5">
-                    <img class="img-fluid mb-4" src="img/icon-1.png" alt="">
+                    <img class="img-fluid mb-4" src="img/icon/icon-1.png" alt="">
                     <h4 class="mb-3">Natural Process</h4>
                     <!--                    <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero-->
                     <!--                        dolor duo.</p>-->
@@ -652,7 +652,7 @@
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="bg-white text-center h-100 p-4 p-xl-5">
-                    <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
+                    <img class="img-fluid mb-4" src="img/icon/icon-2.png" alt="">
                     <h4 class="mb-3">Organic Products</h4>
                     <!--                    <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero-->
                     <!--                        dolor duo.</p>-->
@@ -661,7 +661,7 @@
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="bg-white text-center h-100 p-4 p-xl-5">
-                    <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
+                    <img class="img-fluid mb-4" src="img/icon/icon-3.png" alt="">
                     <h4 class="mb-3">Biologically Safe</h4>
                     <!--                    <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero-->
                     <!--                        dolor duo.</p>-->
@@ -736,7 +736,7 @@
                     tiện đây mình sẽ nói luôn nha! Con mình đã sử dụng sản phẩm được 1 năm trở lại đây rồi, cân nặng và
                     chiều cao cứ tăng đều đều thôi. Sản phẩm tốt lắm nha!” </p>
                 <div class="d-flex align-items-center">
-                    <img class="flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" alt="">
+                    <img class="flex-shrink-0 rounded-circle" src="img/comment/testimonial-1.jpg" alt="">
                     <div class="ms-3">
                         <h5 class="mb-1">Chị Hoàng Hà</h5>
                         <span>Profession</span>
@@ -748,7 +748,7 @@
                 <p class="mb-4">"Mua nhiều lần rồi . Ensure mẹ mình uống thấy bà ăn ngon hơn và mập mạp hơn . Nên mua
                     cho người già uống hàng ngày tốt lắm."</p>
                 <div class="d-flex align-items-center">
-                    <img class="flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" alt="">
+                    <img class="flex-shrink-0 rounded-circle" src="img/comment/testimonial-2.jpg" alt="">
                     <div class="ms-3">
                         <h5 class="mb-1">Lan Anh</h5>
                         <span>Profession</span>
@@ -759,7 +759,7 @@
                 <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
                 <p class="mb-4">"đóng gói chuyên nghiệp, sản phẩm đáng tiền, nếu uống tốt sẽ ủng hộ tiếp."</p>
                 <div class="d-flex align-items-center">
-                    <img class="flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" alt="">
+                    <img class="flex-shrink-0 rounded-circle" src="img/comment/testimonial-3.jpg" alt="">
                     <div class="ms-3">
                         <h5 class="mb-1">Thế Trần</h5>
                         <span>Profession</span>
@@ -771,7 +771,7 @@
                 <p class="mb-4">"sữa chính hãng, date dài, nguyên kem, dùng cho gia đình từ trên 6 tuổi đến người già
                     đều được."</p>
                 <div class="d-flex align-items-center">
-                    <img class="flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" alt="">
+                    <img class="flex-shrink-0 rounded-circle" src="img/comment/testimonial-4.jpg" alt="">
                     <div class="ms-3">
                         <h5 class="mb-1">thành nguyễn</h5>
                         <span>Profession</span>
@@ -794,7 +794,7 @@
         </div>
         <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <img class="img-fluid" src="img/blog-1.jpg" alt="">
+                <img class="img-fluid" src="img/blogPost/blog-1.jpg" alt="">
                 <div class="bg-light p-4">
                     <a class="d-block h5 lh-base mb-4" href="">Trả lời các thắc mắc của mẹ về sữa Vinamilk</a>
                     <div class="text-muted border-top pt-4">
@@ -804,7 +804,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <img class="img-fluid" src="img/blog-2.jpg" alt="">
+                <img class="img-fluid" src="img/blogPost/blog-2.jpg" alt="">
                 <div class="bg-light p-4">
                     <a class="d-block h5 lh-base mb-4" href="">[REVIEW] TOP 10+ Dòng sữa tăng chiều cao cho bé 1 tuổi
                         tốt nhất Hiện Nay</a>
@@ -815,7 +815,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <img class="img-fluid" src="img/blog-3.jpg" alt="">
+                <img class="img-fluid" src="img/blogPost/blog-3.jpg" alt="">
                 <div class="bg-light p-4">
                     <a class="d-block h5 lh-base mb-4" href="">Review chi tiết về sữa Ensure cho người già: Ưu và nhược
                         điểm</a>

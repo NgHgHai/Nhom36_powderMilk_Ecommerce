@@ -11,17 +11,17 @@ import java.util.List;
 
 @RegisterBeanMapper(User.class)
 public interface UserDAO {
-    @SqlQuery("select * from user where mail = :mail and password = :password")
-    User login(@Bind("mail") String mail, @Bind("password") String password);
+    @SqlQuery("select * from user where email = :email and password = :password")
+    User login(@Bind("email") String mail, @Bind("password") String password);
 
-    @SqlQuery("select * from user where mail = :mail")
-    User getUserByMail(@Bind("mail") String mail);
+    @SqlQuery("select * from user where email = :email")
+    User getUserByMail(@Bind("email") String mail);
 
     @SqlQuery("select * from user where id = :id")
     User getUserById(@Bind("id") String id);
 
     @SqlQuery("select * from user where active =1")
-    User checkActive(@Bind("mail") String mail);
+    User checkActive(@Bind("email") String mail);
 
     @SqlUpdate("insert into user (id, lastname, firstname, avatar, password, phone, address, email, role, create_at, update_at , active) values (:id, :lastname, :firstname, :avatar, MD5(:password), :phone, :address, :email, :role, now(), now(),0)")
     void register(@BindBean User user);
