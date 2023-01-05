@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Nhom36_powderMilk_Ecommerce" target="1.8" />
+      <module name="Nhom36_powderMilk_Ecommerce" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
