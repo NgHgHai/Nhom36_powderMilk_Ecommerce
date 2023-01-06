@@ -34,7 +34,7 @@
             <h1 class="title">
                 Dashboard
             </h1>
-            <button class="button light">Button</button>
+<%--            <button class="button light">Button</button>--%>
         </div>
     </section>
 

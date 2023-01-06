@@ -44,21 +44,29 @@
             </p>
         </header>
         <div class="card-content">
-            <form method="get" action="#">
+            <form method="post" action="AddProductController" enctype='multipart/form-data'>
                 <div class="field">
                     <label class="label">From</label>
                     <div class="field-body">
+                        <%--                        <c:if test="${}"--%>
+                        Id
+                        <div class="field">
+                            <div class="control icons-left">
+                                <input class="input" type="text" readonly placeholder="ID" name="id" id="id">
+                                <span class="icon left"><i class="mdi mdi-account"></i></span>
+                            </div>
+                        </div>
                         <%--Name--%>
                         <div class="field">
                             <div class="control icons-left">
-                                <input class="input" type="text" placeholder="Name" id="name">
+                                <input class="input" type="text" placeholder="Name" name="name" id="name">
                                 <span class="icon left"><i class="mdi mdi-account"></i></span>
                             </div>
                         </div>
                         <%--Price--%>
                         <div class="field">
                             <div class="control icons-left icons-right">
-                                <input class="input" type="number" placeholder="Price" id="price">
+                                <input class="input" type="number" placeholder="Price" name="price" id="price">
                                 <span class="icon left"><i class="mdi mdi-mail"></i></span>
                                 <span class="icon right"><p class="">VND</p></span>
                             </div>
@@ -66,7 +74,8 @@
                         <%--WeightAmount--%>
                         <div class="field">
                             <div class="control icons-left icons-right">
-                                <input class="input" type="number" placeholder="WeightAmount" id="weightAmount">
+                                <input class="input" type="number" placeholder="WeightAmount" name="weightAmount"
+                                       id="weightAmount">
                                 <span class="icon left"><i class="mdi mdi-mail"></i></span>
                                 <span class="icon right"><p class="">g</p></span>
                             </div>
@@ -74,7 +83,8 @@
                         <%--Inventory--%>
                         <div class="field">
                             <div class="control icons-left icons-right">
-                                <input class="input" type="number" placeholder="Inventory" id="inventory">
+                                <input class="input" type="number" placeholder="Inventory" name="inventory"
+                                       id="inventory">
                                 <span class="icon left"><i class="mdi mdi-mail"></i></span>
                                 <span class="icon right"><p class="">unit</p></span>
                             </div>
@@ -88,7 +98,7 @@
                     <label class="label">Active</label>
                     <div class="control">
                         <div class="select">
-                            <select>
+                            <select name="active">
                                 <option value="1">Đang kinh doanh</option>
                                 <option value="2">Ngừng kinh doanh</option>
                                 <option value="3">Giảm giá</option>
@@ -102,7 +112,7 @@
                     <label class="label">Supplier</label>
                     <div class="control">
                         <div class="select">
-                            <select>
+                            <select name="supplierId">
                                 <option value="1">anpha gold</option>
                                 <option value="2">th true milk</option>
                                 <option value="3">vinamilk</option>
@@ -116,7 +126,7 @@
                     <label class="label">Category</label>
                     <div class="control">
                         <div class="select">
-                            <select>
+                            <select name="categoryId">
                                 <option value="1">MT</option>
                                 <option value="2">0 th-6 th</option>
                                 <option value="3">6th-2 y</option>
@@ -130,7 +140,7 @@
                     <label class="label">Discount</label>
                     <div class="control">
                         <div class="select">
-                            <select>
+                            <select name="discountId">
                                 <option value="1">--Chon CTKM--</option>
                                 <option value="2">mung khai truong</option>
                                 <option value="3">Tet thieu nhi</option>
@@ -145,14 +155,30 @@
                 <div class="field">
                     <label class="label">Decription</label>
                     <div class="control">
-                        <textarea class="textarea" placeholder="Decription"></textarea>
+                        <textarea class="textarea" placeholder="Decription" name="desc"></textarea>
                     </div>
                     <p class="help">
                         This field is required
                     </p>
                 </div>
                 <hr>
+                <div class="card-content">
 
+                    <div class="field">
+                        <label class="label">File</label>
+                        <div class="field-body">
+                            <div class="field file">
+                                <label class="upload control">
+                                    <a class="button blue">
+                                        Upload
+                                    </a>
+                                    <input type="file" name="imgDisplay">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
                 <div class="field grouped">
                     <div class="control">
                         <button type="submit" class="button green">
@@ -176,22 +202,7 @@
                 Custom elements
             </p>
         </header>
-        <div class="card-content">
 
-            <div class="field">
-                <label class="label">File</label>
-                <div class="field-body">
-                    <div class="field file">
-                        <label class="upload control">
-                            <a class="button blue">
-                                Upload
-                            </a>
-                            <input type="file">
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
