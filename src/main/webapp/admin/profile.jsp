@@ -1,3 +1,5 @@
+<%@page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
@@ -7,12 +9,12 @@
   <title>Profile - Admin One Tailwind CSS Admin Dashboard</title>
 
   <!-- Tailwind is included -->
-  <link rel="stylesheet" href="css/main.css?v=1628755089081">
+  <link rel="stylesheet" href="admin/css/main.css?v=1628755089081">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"/>
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png"/>
-  <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#00b4b6"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="admin/img/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="admin/img/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="admin/img/favicon-16x16.png"/>
+  <link rel="mask-icon" href="admin/img/safari-pinned-tab.svg" color="#00b4b6"/>
 
   <meta name="description" content="Admin One - free Tailwind dashboard">
 
@@ -71,7 +73,7 @@
           </span>
         </a>
         <div class="navbar-dropdown">
-          <a href="profile.html" class="navbar-item">
+          <a href="profile.jsp" class="navbar-item">
             <span class="icon"><i class="mdi mdi-account"></i></span>
             <span>My Profile</span>
           </a>
@@ -99,7 +101,7 @@
           <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
         </a>
         <div class="navbar-dropdown">
-          <a href="profile.html" class="navbar-item active">
+          <a href="profile.jsp" class="navbar-item active">
             <span class="icon"><i class="mdi mdi-account"></i></span>
             <span>My Profile</span>
           </a>
@@ -134,91 +136,7 @@
   </div>
 </nav>
 
-<aside class="aside is-placed-left is-expanded">
-  <div class="aside-tools">
-    <div>
-      Admin <b class="font-black">One</b>
-    </div>
-  </div>
-  <div class="menu is-menu-main">
-    <p class="menu-label">General</p>
-    <ul class="menu-list">
-      <li class="--set-active-index-html">
-        <a href="index.html">
-          <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
-          <span class="menu-item-label">Dashboard</span>
-        </a>
-      </li>
-    </ul>
-    <p class="menu-label">Examples</p>
-    <ul class="menu-list">
-      <li class="--set-active-tables-html">
-        <a href="tables.html">
-          <span class="icon"><i class="mdi mdi-table"></i></span>
-          <span class="menu-item-label">Tables</span>
-        </a>
-      </li>
-      <li class="--set-active-forms-html">
-        <a href="forms.html">
-          <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
-          <span class="menu-item-label">Forms</span>
-        </a>
-      </li>
-      <li class="active">
-        <a href="profile.html">
-          <span class="icon"><i class="mdi mdi-account-circle"></i></span>
-          <span class="menu-item-label">Profile</span>
-        </a>
-      </li>
-      <li>
-        <a href="login.html">
-          <span class="icon"><i class="mdi mdi-lock"></i></span>
-          <span class="menu-item-label">Login</span>
-        </a>
-      </li>
-      <li>
-        <a class="dropdown">
-          <span class="icon"><i class="mdi mdi-view-list"></i></span>
-          <span class="menu-item-label">Submenus</span>
-          <span class="icon"><i class="mdi mdi-plus"></i></span>
-        </a>
-        <ul>
-          <li>
-            <a href="#void">
-              <span>Sub-item One</span>
-            </a>
-          </li>
-          <li>
-            <a href="#void">
-              <span>Sub-item Two</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <p class="menu-label">About</p>
-    <ul class="menu-list">
-      <li>
-        <a href="https://justboil.me" onclick="alert('Coming soon'); return false" target="_blank" class="has-icon">
-          <span class="icon"><i class="mdi mdi-credit-card-outline"></i></span>
-          <span class="menu-item-label">Premium Demo</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://justboil.me/tailwind-admin-templates" class="has-icon">
-          <span class="icon"><i class="mdi mdi-help-circle"></i></span>
-          <span class="menu-item-label">About</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/justboil/admin-one-tailwind" class="has-icon">
-          <span class="icon"><i class="mdi mdi-github-circle"></i></span>
-          <span class="menu-item-label">GitHub</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</aside>
+  <jsp:include page="view/menu_side.jsp"></jsp:include>
 
 <section class="is-title-bar">
   <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
@@ -427,7 +345,7 @@
 </div>
 
 <!-- Scripts below are for demo only -->
-<script type="text/javascript" src="js/main.min.js?v=1628755089081"></script>
+<script type="text/javascript" src="admin/js/main.min.js?v=1628755089081"></script>
 
 
 <script>
