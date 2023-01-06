@@ -1,13 +1,9 @@
 package com.nhom36.milkPowder.services;
 
 import com.nhom36.milkPowder.beans.Category;
-import com.nhom36.milkPowder.beans.Discount;
 import com.nhom36.milkPowder.beans.Product;
-import com.nhom36.milkPowder.beans.Supplier;
 import com.nhom36.milkPowder.dao.CategoryDAO;
-import com.nhom36.milkPowder.dao.DiscountDAO;
 import com.nhom36.milkPowder.dao.ProductDAO;
-import com.nhom36.milkPowder.dao.SupplierDAO;
 import com.nhom36.milkPowder.db.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
 
@@ -15,55 +11,50 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ProductService {
-    private static ProductService instance = null;
-    Jdbi connect = JDBIConnector.get();
-
-    public ProductService() {
-    }
-
+    Jdbi jdbi = JDBIConnector.get();
+ public static ProductService instance = null;
     public static ProductService getInstance() {
-        if (instance == null)
+        if(instance==null){
             instance = new ProductService();
+        }
         return instance;
     }
 
-    public List<Product> list() {
-        List<Product> products = connect.withExtension(ProductDAO.class, handle -> handle.list());
-        return products.stream().map(product -> mapOtherBean(product)).collect(Collectors.toList());
+    public List<Product> getAll() {
+        List<Product> products = jdbi.withExtension(ProductDAO.class, dao -> dao.list());
+        return products.stream().map(Product -> fullProduct(Product)).collect(Collectors.toList());
     }
 
-    public Product findById(String id) {
-        return connect.withExtension(ProductDAO.class, handle -> handle.findById(id));
-    }
-
-
-    public List<Product> findByCategory(String CategoryId) {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductByCategory(CategoryId));
-    }
-
-    public int updateProduct(Product product) {
-        return connect.withExtension(ProductDAO.class, handle -> handle.update(product));
-    }
-
-    public int delete(int parseInt) {
-        return connect.withExtension(ProductDAO.class, handle -> handle.delete(parseInt));
-    }
-
-    private Product mapOtherBean(Product product) {
-        if (product == null) {
-            return new Product();
-        }
-        Category category = connect.withExtension(CategoryDAO.class, handle -> handle.getCategoryById(product.getCategoryId()));
-        Supplier supplier = connect.withExtension(SupplierDAO.class, handle -> handle.getSupplierById(product.getSupplierId()));
-        Discount discount = connect.withExtension(DiscountDAO.class, handle -> handle.getDiscountById(product.getDiscountId()));
-        product.setCategory(category);
-        product.setSupplier(supplier);
-        product.setDiscount(discount);
-        return product;
+    public Product getById(String id) {
+        return fullProduct(jdbi.withExtension(ProductDAO.class, dao -> dao.getProductById(id)));
     }
 
     public void insert(Product product) {
-connect.withExtension(ProductDAO.class, handle -> handle.insert(product));
-
+        jdbi.useExtension(ProductDAO.class, dao -> dao.insertProduct(product));
     }
+
+    public void updateProduct(Product product) {
+        jdbi.useExtension(ProductDAO.class, dao -> dao.updateProduct(product));
+    }
+
+    public void delete(String id) {
+        jdbi.useExtension(ProductDAO.class, dao -> dao.deleteProduct(id));
+    }
+
+    private Product fullProduct(Product product) {
+        if (product == null)
+            return null;
+       Category category = jdbi.withExtension(CategoryDAO.class, dao -> dao.getCategoryById(product.getCategoryId()));
+        product.setCategory(category);
+        return product;
+    }
+
+    public List<Product> findByCategory(String id) {
+        return jdbi.withExtension(ProductDAO.class,handle -> handle.getProductByCategoryId(id));
+    }
+    public String getImgbyProductId(String id){
+        return jdbi.withExtension(ProductDAO.class,handle -> handle.getLinkImageByProductId(id));
+    }
+
+
 }

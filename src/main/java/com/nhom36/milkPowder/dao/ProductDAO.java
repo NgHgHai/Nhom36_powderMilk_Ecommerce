@@ -1,5 +1,4 @@
 package com.nhom36.milkPowder.dao;
-
 import com.nhom36.milkPowder.beans.Product;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
@@ -17,24 +16,24 @@ public interface ProductDAO {
 
 
     @SqlQuery("select * from Product where id = :id")
-    Product findById(@Bind("id") String id);
+    Product getProductById(@Bind("id") String id);
 
 
     @SqlUpdate("delete from Product where id = :id")
     int deleteProduct(@Bind("id") String id);
 
 
-    @SqlUpdate("INSERT INTO `Product`(`id`,`name`,`price`,`minSaletime`,`maxSaletime`,`desc`,`img_display`," +
-            "`weight_amount`,`weight_unit`,`active`,`inventory`,`supplier_id`,`category_id`,`discount_id`.`create_at`,`update_at`) " +
-            "VALUES (:id,:name,:price,:minSaletime,:maxSaletime,:desc,:img_display,:weight_amount,:weight_unit,:active,:inventory,:supplier_id,:category_id,:discount_id,now(),now())")
-    int insert(@BindBean Product product);
+    @SqlUpdate("INSERT INTO `Product`(`id`,`name`,`price`,`desc`,`img_display`," +
+            "`weight_amount`,`weight_units`,`active`,`inventory`,`supplier_id`,`category_id`,`discount_id`,`create_at`,`update_at`) " +
+            "VALUES (:id,:name,:price,:desc,:imgDisplay,:weightAmount,:weightUnits,:active,:inventory,:supplierId,:categoryId,:discountId,now(),now())")
+    int insertProduct(@BindBean Product product);
 
     @SqlUpdate("UPDATE `Product` SET `name`=:name,`price`=:price,`minSaletime`=:minSaletime,`maxSaletime`=:maxSaletime,`desc`=:desc,`img_display`=:img_display," +
             "`weight_amount`=:weight_amount,`weight_unit`=:weight_unit,`active`=:active,`inventory`=:inventory,`supplier_id`=:supplier_id,`category_id`=:category_id,`discount_id`=:discount_id,`update_at`=now() WHERE id=:id")
-    int update(@BindBean Product product);
+    int updateProduct(@BindBean Product product);
 
     @SqlQuery("select * from Product where category_id = :categoryId")
-    List<Product> getProductByCategory(@Bind("categoryId") String categoryId);
+    List<Product> getProductByCategoryId(@Bind("categoryId") String categoryId);
 
     @SqlQuery("select * from Product where supplier_id = :supplierId")
     List<Product> getProductBySupplier(@Bind("supplierId") String supplierId);
@@ -44,4 +43,6 @@ public interface ProductDAO {
 
     @SqlUpdate("delete from Product where id = :id")
     int delete(@Bind("id") int parseInt);
+    @SqlQuery("select img_display from Product where id = :id")
+    String getLinkImageByProductId(@Bind("id") String id);
 }

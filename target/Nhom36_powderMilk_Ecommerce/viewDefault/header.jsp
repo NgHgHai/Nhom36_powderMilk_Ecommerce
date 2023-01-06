@@ -46,15 +46,12 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><span
                                     class="ms-1 d-none d-sm-inline">Pages</span></a>
                             <div class="dropdown-menu m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="feature.html" class="dropdown-item">Our Features</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
+                                <a href="Blog" class="dropdown-item">Blog Grid</a>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <a href="contact.html" class="nav-link text-truncate">
+                        <a href="Contact" class="nav-link text-truncate">
                             <span class="ms-1 d-none d-sm-inline">Contact US</span></a>
                     </li>
 
@@ -62,14 +59,14 @@
             </div>
         </div>
         <!--       End  left Menu Size-->
-        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+        <a href="Home" class="navbar-brand ms-4 ms-lg-0">
             <h1 class="fw-bold text-primary m-0">Ha<span class="text-secondary">Cha</span>Milk</h1>
         </a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about-us.jsp" class="nav-item nav-link">About Us</a>
-                <a href="product.html" class="nav-item nav-link">Products</a>
+                <a href="Home" class="nav-item nav-link active">Home</a>
+                <a href="about-us" class="nav-item nav-link">About Us</a>
+                <a href="Product" class="nav-item nav-link">Products</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">

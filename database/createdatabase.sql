@@ -31,8 +31,6 @@ create table if not exists product(
         `id` varchar(10) primary key not null,
         `name` varchar(255) not null,
         `price` double not null,
-        `minSaletime` int,
-        `maxSaletime` int,
         `desc` text,
         `img_display` varchar(2048),
         `weight_amount` double,
@@ -120,13 +118,6 @@ create table if not exists slider(
       `update_at` Datetime                NOT NULL
     );
 
-create table if not exists `comment`(
-      `id`        varchar(10) PRIMARY KEY NOT NULL,
-      `user_id`  varchar(10)             NOT NULL REFERENCES `user`(id),
-      `blog_id`  varchar(10)             NOT NULL REFERENCES `blog`(id),
-      `content`   text,
-      `create_at` Datetime                NOT NULL,
-      `update_at` Datetime                NOT NULL
-    );
+
 
 

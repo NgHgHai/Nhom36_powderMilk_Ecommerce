@@ -9,12 +9,12 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "product", value = "/product")
+@WebServlet(name = "product",urlPatterns = "/product")
 public class DetailProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          String productId = String.valueOf(request.getParameter("id"));
-            Product product = ProductService.getInstance().findById(productId);
+            Product product = ProductService.getInstance().getById(productId);
 
     }
 

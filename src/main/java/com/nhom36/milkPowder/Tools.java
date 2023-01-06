@@ -1,6 +1,7 @@
 package com.nhom36.milkPowder;
 
 import com.nhom36.milkPowder.beans.Cart;
+import com.nhom36.milkPowder.beans.Product;
 import com.nhom36.milkPowder.beans.Slider;
 import com.nhom36.milkPowder.beans.User;
 
@@ -9,12 +10,13 @@ import java.lang.reflect.Field;
 public class Tools {
     public static void main(String[] args) {
         Tools tools = new Tools();
-        Class clazz = Cart.class;
-        tools.select(clazz);
-        tools.selectById(clazz);
-        tools.generateInsert(clazz);
-        tools.genereteUpdate(clazz);
-        tools.delete(clazz);
+
+        Class product = Product.class;
+        tools.select(product);
+        tools.selectById(product);
+        tools.generateInsert(product);
+        tools.genereteUpdate(product);
+        tools.delete(product);
     }
 
     void generateInsert(Class theClass) {

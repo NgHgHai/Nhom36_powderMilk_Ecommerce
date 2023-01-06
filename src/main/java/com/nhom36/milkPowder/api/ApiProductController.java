@@ -23,11 +23,11 @@ public class ApiProductController extends HttpServlet {
         String path = req.getPathInfo();
         PrintWriter out = resp.getWriter();
         if (path.equals("/all")) {
-            String json = new Gson().toJson(productService.list());
+            String json = new Gson().toJson(productService.getAll());
             out.println(json);
         } else {
             String id = path.substring(1);
-            String json = new Gson().toJson(productService.findById((id)));
+            String json = new Gson().toJson(productService.getById(id));
             out.println(json);
         }
         out.close();
@@ -74,7 +74,7 @@ public class ApiProductController extends HttpServlet {
         PrintWriter out = resp.getWriter();
         if (path.equals("/delete")) {
             String id = req.getParameter("id");
-            productService.delete(Integer.parseInt(id));
+            productService.delete(id);
             out.println("success");
         }
         out.close();

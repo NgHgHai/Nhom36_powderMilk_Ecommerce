@@ -5,8 +5,8 @@ import java.util.Objects;
 
 public class Blog {
     private String id;
-    private String admin;
-    private String adminId;
+
+    private String adminName;
     private String title;
     private String image;
     private String content;
@@ -16,10 +16,9 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(String id, String admin, String adminId, String title, String image, String content, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Blog(String id,  String adminName, String title, String image, String content, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
-        this.admin = admin;
-        this.adminId = adminId;
+        this.adminName = adminName;
         this.title = title;
         this.image = image;
         this.content = content;
@@ -32,12 +31,12 @@ public class Blog {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Blog blog = (Blog) o;
-        return Objects.equals(id, blog.id) && Objects.equals(admin, blog.admin) && Objects.equals(adminId, blog.adminId) && Objects.equals(title, blog.title) && Objects.equals(image, blog.image) && Objects.equals(content, blog.content) && Objects.equals(createAt, blog.createAt) && Objects.equals(updateAt, blog.updateAt);
+        return Objects.equals(id, blog.id)  && Objects.equals(adminName, blog.adminName) && Objects.equals(title, blog.title) && Objects.equals(image, blog.image) && Objects.equals(content, blog.content) && Objects.equals(createAt, blog.createAt) && Objects.equals(updateAt, blog.updateAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, admin, adminId, title, image, content, createAt, updateAt);
+        return Objects.hash(id,  adminName, title, image, content, createAt, updateAt);
     }
 
     public String getId() {
@@ -48,20 +47,13 @@ public class Blog {
         this.id = id;
     }
 
-    public String getAdmin() {
-        return admin;
+
+    public String getAdminName() {
+        return adminName;
     }
 
-    public void setAdmin(String admin) {
-        this.admin = admin;
-    }
-
-    public String getAdminId() {
-        return adminId;
-    }
-
-    public void setAdminId(String adminId) {
-        this.adminId = adminId;
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
     }
 
     public String getTitle() {
@@ -108,8 +100,7 @@ public class Blog {
     public String toString() {
         return "Blog{" +
                 "id='" + id + '\'' +
-                ", admin='" + admin + '\'' +
-                ", adminId='" + adminId + '\'' +
+                ", adminId='" + adminName + '\'' +
                 ", title='" + title + '\'' +
                 ", image='" + image + '\'' +
                 ", content='" + content + '\'' +

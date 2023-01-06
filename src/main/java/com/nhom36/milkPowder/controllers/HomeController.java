@@ -26,6 +26,7 @@ public class HomeController extends HttpServlet {
             List<Product> products = productService.findByCategory(category.getId());
             map.put(category.getName(), products);
         }
+
         request.setAttribute("map", map);
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);

@@ -9,9 +9,9 @@ import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
 import java.util.List;
 
-@RegisterBeanMapper(BlogDAO.class)
+@RegisterBeanMapper(Blog.class)
 public interface BlogDAO {
-    @SqlQuery("select * from blog order by id desc")
+    @SqlQuery("select * from blog order by create_at desc")
     List<Blog> getLast();
 
     @SqlQuery("select * from blog")
@@ -23,12 +23,14 @@ public interface BlogDAO {
     @SqlUpdate("delete from blog where id = :id")
     int deleteById(@Bind("id") String id);
 
-    @SqlUpdate("insert into blog (id, admin_id, title, image,content, create_at, update_at) values (:id, :adminId, :title,:image, :content, now(), now())")
+    @SqlUpdate("insert into blog (id, admin_name, title, image,content, create_at, update_at) values (:id, :adminName, :title,:image, :content, now(), now())")
     int insert(@BindBean Blog blog);
 
-    @SqlUpdate("update blog set admin_id = :adminId, title = :title, image = :image, content = :content, update_at = now() where id = :id")
+    @SqlUpdate("update blog set admin_name = :adminName, title = :title, image = :image, content = :content, update_at = now() where id = :id")
     int update(@BindBean Blog blog);
 
     @SqlUpdate("update blog set image = :image where id = :id")
     int updateImage(@Bind("id") String id, @Bind("image") String image);
+
+
 }

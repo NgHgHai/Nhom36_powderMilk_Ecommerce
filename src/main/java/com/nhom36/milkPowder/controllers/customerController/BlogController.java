@@ -1,18 +1,21 @@
 package com.nhom36.milkPowder.controllers.customerController;
 
+import com.nhom36.milkPowder.beans.Blog;
 import com.nhom36.milkPowder.services.BlogService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet(name = "Blog", value = "/Blog")
+@WebServlet(name = "blog",urlPatterns = "/Blog")
 public class BlogController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-           request.setAttribute("blogs", BlogService.getInstance().getLast());
-           request.getRequestDispatcher("news.jsp").forward(request, response);
+        List<Blog> blogs = BlogService.getInstance().getLast();
+           request.setAttribute("blogs", blogs);
+           request.getRequestDispatcher("blog.jsp").forward(request, response);
     }
 
     @Override

@@ -1,4 +1,6 @@
+import com.nhom36.milkPowder.beans.Category;
 import com.nhom36.milkPowder.beans.Product;
+import com.nhom36.milkPowder.services.CategoryService;
 import com.nhom36.milkPowder.services.ProductService;
 
 import java.util.List;
@@ -9,7 +11,7 @@ public class TestAbc {
 //        List<NewCategory> categoryList = categoryService.getAll();
 //        categoryList.stream().forEach(System.out::println);
         ProductService productService = new ProductService();
-        List<Product> products = productService.list();
+        List<Product> products = productService.getAll();
         products.stream().forEach(System.out::println);
     }
 }

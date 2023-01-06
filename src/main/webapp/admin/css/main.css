@@ -1746,3 +1746,7 @@ green{
 .blue{
     background-color: rgba(59, 130, 246, var(--tw-bg-opacity))
 }
+.img-sm {
+    width: 60px;
+    height: 60px;
+}
