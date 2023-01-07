@@ -21,7 +21,7 @@ public class ProductsController extends HttpServlet {
             System.out.println("dang xoa");
             response.sendRedirect("/ProductsController?action=all");
         }
-        if (action.equals("all")) {
+        if ("all".equals(action)) {
             List<Product> products = productService.getAll();
             request.setAttribute("products",products);
             request.getRequestDispatcher("admin/products.jsp").forward(request,response);

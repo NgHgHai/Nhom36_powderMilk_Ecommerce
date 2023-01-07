@@ -61,61 +61,71 @@
                     <%-- this is name of colum    --%>
                     <tr>
                         <th></th>
-                        <th>Name</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
                         <th>Id</th>
                         <th>Email</th>
                         <th>Address</th>
                         <th>Created</th>
+                        <th>Status</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
 
                     <%-- this is colum of table     --%>
-                    <c:forEach var="user" items="${user}"></c:forEach>
-                    <% for (int i = 0; i < 50; i++) {%>
-
-
+                    <c:forEach var="u" items="${users}">
                     <tr>
                         <td class="image-cell">
                             <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg"
+                                <img src="https://avatars.dicebear.com/v2/initials/>${u.getFirstname()}-${u.getLastname()}.svg"
                                      class="rounded-full">
                             </div>
                         </td>
-                        <td data-label="Name">Rebecca Bauch</td>
-                        <td data-label="Id">#02938</td>
-                        <td data-label="Email">hhlata@gmail.com</td>
-                        <td data-label="Address">
-                            TP.HCM
-                        </td>
+                        <td data-label="First Name">${u.getFirstname()}</td>
+                        <td data-label="Last Name">${u.getLastname()}</td>
+                        <td data-label="Id">${u.getId()}</td>
+                        <td data-label="Email">${u.getEmail()}</td>
+                        <td data-label="Address">${u.getAddress()}</td>
                         <td data-label="Created">
-                            <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
+                            <small class="text-gray-500" >${u.getCreateAt()}</small>
+                        </td>
+                        <td data-label="Status">
+                            <c:if test="${u.getActive()==1}">
+                                <div class="status_order green">Kích Hoat</div>
+                            </c:if>
+                            <c:if test="${u.getActive()==0}">
+                                <div class="status_order red">Khóa</div>
+                            </c:if>
                         </td>
                         <td class="actions-cell">
                             <div class="buttons right nowrap">
+
                                 <button class="button small green --jb-modal" data-target="sample-modal-2"
                                         type="button">
                                     <span class="icon"><i class="mdi mdi-eye"></i></span>
                                 </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                                <a href="CustommersController?id=${u.getId()}&action=delete">
+                                <button class="button small red --jb-modal" type="button">
                                     <span class="icon"><i class="mdi mdi-trash-can"></i></span>
                                 </button>
+                                </a>
                             </div>
                         </td>
                     </tr>
-
-                    <%}%>
+                    </c:forEach>
 
                     </tbody>
                     <tfoot>
                     <tr>
                         <th></th>
-                        <th>Name</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
                         <th>Id</th>
                         <th>Email</th>
                         <th>Address</th>
                         <th>Created</th>
+                        <th>Status</th>
                         <th></th>
                     </tr>
                     </tfoot>
@@ -153,8 +163,12 @@
                 <p>Chỉnh sửa dữ liệu và load lên ở đây</p>
             </section>
             <footer class="modal-card-foot">
+
                 <button class="button --jb-modal-close">Cancel</button>
+
+                <a href="CustommersController?action=all">
                 <button class="button blue --jb-modal-close">Confirm</button>
+                  </a>
             </footer>
         </div>
     </div>

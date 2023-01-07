@@ -47,7 +47,7 @@
                 </a>
                 <ul>
                     <li>
-                        <a href="/CustommersController">
+                        <a href="/CustommersController?action=all">
                             <span>Custommer</span>
                         </a>
                     </li>
