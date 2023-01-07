@@ -38,6 +38,9 @@ public class UploadFileHelper {
     }
 
     private static String getFileName(Part part) {
+        if (part == null) {
+            return null;
+        }
         for (String content : part.getHeader("content-disposition").split(";")) {
             if (content.trim().startsWith("filename")) {
                 return content.substring(content.indexOf('=') + 1).trim().replace("\"", "");

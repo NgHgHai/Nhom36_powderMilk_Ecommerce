@@ -9,7 +9,7 @@ import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
 import java.util.List;
 
-@RegisterBeanMapper(BlogDAO.class)
+@RegisterBeanMapper(Blog.class)
 public interface BlogDAO {
     @SqlQuery("select * from blog order by id desc")
     List<Blog> getLast();
@@ -23,10 +23,11 @@ public interface BlogDAO {
     @SqlUpdate("delete from blog where id = :id")
     int deleteById(@Bind("id") String id);
 
-    @SqlUpdate("insert into blog (id, admin_id, title, image,content, create_at, update_at) values (:id, :adminId, :title,:image, :content, now(), now())")
+    @SqlUpdate("INSERT INTO `blog`(`id`, `admin_name`, `title`, `image`, `content`, `create_at`, `update_at`) " +
+            "VALUES (:id, :adminName, :title,:image, :content, now(), now())")
     int insert(@BindBean Blog blog);
 
-    @SqlUpdate("update blog set admin_id = :adminId, title = :title, image = :image, content = :content, update_at = now() where id = :id")
+    @SqlUpdate("UPDATE `blog` SET `id`=:id,`admin_name`=:adminName,`title`=:title,`image`=:image,`content`=:content,`update_at`=now() WHERE id = :id")
     int update(@BindBean Blog blog);
 
     @SqlUpdate("update blog set image = :image where id = :id")

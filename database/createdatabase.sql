@@ -114,13 +114,13 @@ create table if not exists cart_items
 );
 create table if not exists `blog`
 (
-    `id`        varchar(10) PRIMARY KEY NOT NULL,
-    `admin_id`  varchar(10)             NOT NULL REFERENCES `user` (id),
-    `title`     text                    NOT NULL,
-    `image`     varchar(2048)           NOT NULL,
-    `content`   text,
-    `create_at` Datetime                NOT NULL,
-    `update_at` Datetime                NOT NULL
+    `id`         varchar(10) PRIMARY KEY NOT NULL,
+    `admin_name` varchar(10)             NOT NULL REFERENCES `user` (id),
+    `title`      text                    NOT NULL,
+    `image`      varchar(2048)           NOT NULL,
+    `content`    text,
+    `create_at`  Datetime                NOT NULL,
+    `update_at`  Datetime                NOT NULL
 );
 
 create table if not exists slider

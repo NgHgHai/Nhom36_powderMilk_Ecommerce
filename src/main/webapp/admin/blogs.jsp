@@ -35,7 +35,7 @@
             <h1 class="title">
                 Blog Tables
             </h1>
-            <a href="/AddProductController">
+            <a href="/AddBlogsController">
                 <button class="button red --jb-modal">Add new</button>
             </a>
         </div>
@@ -61,7 +61,7 @@
                     <%-- this is name of colum    --%>
                     <tr>
                         <th></th>
-                        <th>Name</th>
+                        <th>Title</th>
                         <th>Id</th>
                         <th>Author</th>
                         <th>Created</th>
@@ -70,40 +70,43 @@
                     </thead>
                     <tbody>
                     <%-- this is colum of table     --%>
-                    <c:set var="data" value="${2}"></c:set>
-                    <c:forEach var="user" items="${user}"></c:forEach>
-                    <% for (int i = 0; i < 50; i++) {%>
-                    <tr>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg"
-                                     class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">sua bot tot nhu the nao</td>
-                        <td data-label="Id">&2131</td>
-                        <td data-label="Author">NHH</td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal" data-target="sample-modal-2"
-                                        type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <%}%>
+
+                    <c:forEach var="b" items="${blogs}">
+                        <tr>
+                            <td class="image-cell">
+                                <div class="img-my" style="height: 100px;width: 100px">
+                                    <img src=${b.getImage()}>
+                                </div>
+                            </td>
+                            <td data-label="Title">${b.getTitle()}</td>
+                            <td data-label="Id">${b.getId()}</td>
+                            <td data-label="Author">${b.getAdminName()}</td>
+                            <td data-label="Created">
+                                <small class="text-gray-500">${b.getCreateAt()}</small>
+                            </td>
+                            <td class="actions-cell">
+                                <div class="buttons right nowrap">
+                                    <a href="/AddBlogsController?id=${b.getId()}">
+                                        <button class="button small green --jb-modal"
+                                                type="button">
+                                            <span class="icon"><i class="mdi mdi-eye"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="/BlogsController?id=${b.getId()}&action=delete">
+                                        <button class="button small red --jb-modal" data-target="sample-modal"
+                                                type="button">
+                                            <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                     <tfoot>
                     <tr>
                         <th></th>
-                        <th>Name</th>
+                        <th>Title</th>
                         <th>Id</th>
                         <th>Author</th>
                         <th>Created</th>
@@ -118,37 +121,6 @@
     <%--footer  admin--%>
     <jsp:include page="view/footer_admin.jsp"></jsp:include>
 
-    <div id="sample-modal" class="modal">
-        <div class="modal-background --jb-modal-close"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Sample modal</p>
-            </header>
-            <section class="modal-card-body">
-                <p>Xác nhận <b>XÓA</b></p>
-            </section>
-            <footer class="modal-card-foot">
-                <button class="button --jb-modal-close">Cancel</button>
-                <button class="button red --jb-modal-close">Confirm</button>
-            </footer>
-        </div>
-    </div>
-
-    <div id="sample-modal-2" class="modal">
-        <div class="modal-background --jb-modal-close"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Sample modal</p>
-            </header>
-            <section class="modal-card-body">
-                <p>Chỉnh sửa dữ liệu và load lên ở đây</p>
-            </section>
-            <footer class="modal-card-foot">
-                <button class="button --jb-modal-close">Cancel</button>
-                <button class="button blue --jb-modal-close">Confirm</button>
-            </footer>
-        </div>
-    </div>
 
 </div>
 

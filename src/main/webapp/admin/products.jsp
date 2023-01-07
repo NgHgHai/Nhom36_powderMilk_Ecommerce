@@ -82,8 +82,8 @@
 
                         <tr>
                             <td class="image-cell">
-                                <div class="img-sm">
-                                    <img src="/img/product-2.jpg">
+                                <div class="img-my" style="height: 100px;width: 100px">
+                                    <img src=${p.getImgDisplay()} >
                                 </div>
                             </td>
                             <td data-label="Name">${p.getName()}</td>
