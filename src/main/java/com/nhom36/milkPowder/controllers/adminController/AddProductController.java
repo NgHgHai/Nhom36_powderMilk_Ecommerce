@@ -42,18 +42,14 @@ public class AddProductController extends HttpServlet {
         List<Category> categories = categoryService.getAllCategory();
         List<Discount> discounts = discountService.getAllDiscount();
         request.setAttribute("discounts", discounts);
-        request.setAttribute("categories", categories);
-        request.setAttribute("suppliers", suppliers);
+        request.setAttribute("categories", categories);request.setAttribute("suppliers", suppliers);
         request.setAttribute("product", product);
         request.getRequestDispatcher("admin/addProduct.jsp").forward(request, response);
 
 
     }
 
-    @Override
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

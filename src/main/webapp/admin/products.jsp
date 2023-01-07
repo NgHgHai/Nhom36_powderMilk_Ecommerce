@@ -124,9 +124,7 @@
                                     </a>
                                     <a href="ProductsController?id=${p.getId()}&action=delete">
                                     <button class="button small red --jb-modal" type="button">
-
                                         <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-
                                     </button>
                                     </a>
                                 </div>

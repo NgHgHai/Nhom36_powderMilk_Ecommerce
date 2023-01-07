@@ -224,6 +224,9 @@
                             Reset
                         </button>
                     </div>
+                    <p class="help">
+                        ${mess}
+                    </p>
                 </div>
             </form>
         </div>

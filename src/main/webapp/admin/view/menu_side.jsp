@@ -57,7 +57,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/CategorysController">
+                        <a href="/CategorysController?action=all">
                             <span>Category</span>
                         </a>
                     </li>
