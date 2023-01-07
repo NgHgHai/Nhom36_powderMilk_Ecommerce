@@ -18,7 +18,7 @@ create table if not exists category(
     );
 create table if not exists discount(
         `id` varchar(10) primary key not null,
-        `name` varchar(255),
+        `discount_name` varchar(255),
         `desc` text,
         `discount_percent` double,
         `active` tinyint,

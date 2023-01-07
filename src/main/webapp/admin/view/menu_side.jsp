@@ -62,7 +62,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/ProductsController">
+                        <a href="/ProductsController?action=all">
                             <span>Product</span>
                         </a>
                     </li>

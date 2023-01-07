@@ -29,14 +29,14 @@
             </ul>
         </div>
     </section>
-<%--Name and add button--%>
+    <%--Name and add button--%>
     <section class="is-hero-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <h1 class="title">
                 Product Tables
             </h1>
             <a href="/AddProductController">
-            <button  class="button red --jb-modal">Add new</button>
+                <button class="button red --jb-modal">Add new</button>
             </a>
         </div>
 
@@ -76,53 +76,64 @@
                     <tbody>
 
                     <%-- this is colum of table     --%>
-                    <c:set var="data" value="${2}"></c:set>
-                    <c:forEach var="user" items="${user}"></c:forEach>
-                    <% for (int i = 0; i < 50; i++) {%>
+
+                    <c:forEach var="p" items="${products}">
 
 
-                    <tr>
-                        <td class="image-cell">
-                            <div class="img-sm">
-                                <img src="/img/product-2.jpg">
-                            </div>
-                        </td>
-                        <td data-label="Name">Rebecca Bauch</td>
-                        <td data-label="Id">@10515</td>
-                        <td data-label="Price">154.123$</td>
-                        <td data-label="Inventory">1000</td>
-                        <td data-label="Supplier">South Cory</td>
-                        <td data-label="Category">0-6 mounth</td>
-                        <td data-label="Discount">20%</td>
-                        <td data-label="Status">
+                        <tr>
+                            <td class="image-cell">
+                                <div class="img-sm">
+                                    <img src="/img/product-2.jpg">
+                                </div>
+                            </td>
+                            <td data-label="Name">${p.getName()}</td>
+                            <td data-label="Id">${p.getId()}</td>
+                            <td data-label="Price">${p.getPrice()}</td>
+                            <td data-label="Inventory">${p.getInventory()}</td>
+                            <td data-label="Supplier">${p.getSupplier().getName()}</td>
+                            <td data-label="Category">${p.getCategory().getName()}</td>
+                            <td data-label="Discount">${p.getDiscount().getDiscountName()}</td>
+                            <td data-label="Status">
 
 
-                            <c:if test="${data==1}">
-                                <div class="status_order red">Đã hủy ${data} </div>
-                            </c:if>
-                            <c:if test="${data==2}">
-                                <div class="  status_order green ">Đã giao ${data}</div>
-                            </c:if>
+                                <c:if test="${p.getActive()==1}">
+                                    <div class="status_order green">Đang kinh doanh</div>
+                                </c:if>
+                                <c:if test="${p.getActive()==2}">
+                                    <div class="status_order red">Ngừng kinh doanh</div>
+                                </c:if>
+                                <c:if test="${p.getActive()==3}">
+                                    <div class="status_order green">Giảm giá</div>
+                                </c:if>
+                                <c:if test="${p.getActive()==4}">
+                                    <div class="status_order orange">Hàng mới</div>
+                                </c:if>
 
-                            <%--              <div class="  status_order green ">Đã hủy</div>--%>
-                        </td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal" data-target="sample-modal-2"
-                                        type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+                                    <%--              <div class="  status_order green ">Đã hủy</div>--%>
+                            </td>
+                            <td data-label="Created">
+                                <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
+                            </td>
+                            <td class="actions-cell">
+                                <div class="buttons right nowrap">
+                                    <a href="AddProductController?id=${p.getId()}">
+                                    <button class="button small green --jb-modal"
+                                            type="button">
+                                        <span class="icon"><i class="mdi mdi-eye"></i></span>
+                                    </button>
+                                    </a>
+                                    <a href="ProductsController?id=${p.getId()}&action=delete">
+                                    <button class="button small red --jb-modal" type="button">
 
-                    <%}%>
+                                        <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+
+                                    </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </c:forEach>
 
                     </tbody>
                     <tfoot>
@@ -148,37 +159,42 @@
     <%--footer  admin--%>
     <jsp:include page="view/footer_admin.jsp"></jsp:include>
 
-        <div id="sample-modal" class="modal">
-            <div class="modal-background --jb-modal-close"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Sample modal</p>
-                </header>
-                <section class="modal-card-body">
-                    <p>Xác nhận <b>XÓA</b></p>
-                </section>
-                <footer class="modal-card-foot">
-                    <button class="button --jb-modal-close">Cancel</button>
-                    <button class="button red --jb-modal-close">Confirm</button>
-                </footer>
-            </div>
-        </div>
+    <div id="sample-modal" class="modal">
+        <div class="modal-background --jb-modal-close"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Delete</p>
+            </header>
+            <section class="modal-card-body">
+                <p>Xác nhận <b>XÓA</b></p>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button --jb-modal-close">Cancel</button>
 
-        <div id="sample-modal-2" class="modal">
-            <div class="modal-background --jb-modal-close"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Sample modal</p>
-                </header>
-                <section class="modal-card-body">
-                    <p>Chỉnh sửa dữ liệu và load lên ở đây</p>
-                </section>
-                <footer class="modal-card-foot">
-                    <button class="button --jb-modal-close">Cancel</button>
-                    <button class="button blue --jb-modal-close">Confirm</button>
-                </footer>
-            </div>
+                <button class="button red --jb-modal-close">
+                    <a href="/ProductsController?id=${p.getId()}&action=delete"> </a>Confirm
+                </button>
+            </footer>
         </div>
+    </div>
+
+    <div id="sample-modal-2" class="modal">
+        <div class="modal-background --jb-modal-close"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Sample modal</p>
+            </header>
+            <section class="modal-card-body">
+                <p>Chỉnh sửa dữ liệu và load lên ở đây</p>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button --jb-modal-close">Cancel</button>
+                <a href="/ProductsController?id=${p.getId()}&action=delete">
+                <button class="button blue --jb-modal-close">Confirm</button>
+                </a>
+            </footer>
+        </div>
+    </div>
 
 </div>
 
