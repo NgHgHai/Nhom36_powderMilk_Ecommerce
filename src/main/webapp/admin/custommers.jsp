@@ -137,41 +137,6 @@
     <%--footer  admin--%>
     <jsp:include page="view/footer_admin.jsp"></jsp:include>
 
-    <div id="sample-modal" class="modal">
-        <div class="modal-background --jb-modal-close"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Sample modal</p>
-            </header>
-            <section class="modal-card-body">
-                <p>Xác nhận <b>XÓA</b></p>
-            </section>
-            <footer class="modal-card-foot">
-                <button class="button --jb-modal-close">Cancel</button>
-                <button class="button red --jb-modal-close">Confirm</button>
-            </footer>
-        </div>
-    </div>
-
-    <div id="sample-modal-2" class="modal">
-        <div class="modal-background --jb-modal-close"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Sample modal</p>
-            </header>
-            <section class="modal-card-body">
-                <p>Chỉnh sửa dữ liệu và load lên ở đây</p>
-            </section>
-            <footer class="modal-card-foot">
-
-                <button class="button --jb-modal-close">Cancel</button>
-
-                <a href="CustommersController?action=all">
-                <button class="button blue --jb-modal-close">Confirm</button>
-                  </a>
-            </footer>
-        </div>
-    </div>
 
 </div>
 

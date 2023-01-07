@@ -41,4 +41,7 @@ public class SupplierService {
     public void delete(String id) {
         jdbi.useExtension(SupplierDAO.class, dao -> dao.delete(id));
     }
+//    public int getNumProductByIdSuppier(String id){ return jdbi.withExtension(SupplierDAO.class, dao -> dao.getNumProdByIdSupp(id)); }
+
+
 }

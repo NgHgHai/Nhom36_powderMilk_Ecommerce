@@ -52,7 +52,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/OrdersController">
+                        <a href="/OrdersController?action=all">
                             <span>Order</span>
                         </a>
                     </li>
@@ -67,22 +67,22 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/BlogsController">
+                        <a href="/BlogsController?action=all">
                             <span>Blog</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/SuppliersController">
+                        <a href="/SuppliersController?action=all">
                             <span>Supplier</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/DiscountsController">
+                        <a href="/DiscountsController?action=all">
                             <span>Discount</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/SlidersController">
+                        <a href="/SlidersController?action=all">
                             <span>Slider</span>
                         </a>
                     </li>

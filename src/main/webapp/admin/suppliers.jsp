@@ -35,7 +35,7 @@
       <h1 class="title">
         Supplier Tables
       </h1>
-      <a href="/AddProductController">
+      <a href="/AddSuppliersController">
         <button class="button red --jb-modal">Add new</button>
       </a>
     </div>
@@ -65,40 +65,44 @@
             <th>Id</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Num product</th>
+            <th>Address</th>
             <th></th>
           </tr>
           </thead>
           <tbody>
           <%-- this is colum of table     --%>
-          <c:set var="data" value="${2}"></c:set>
-          <c:forEach var="user" items="${user}"></c:forEach>
-          <% for (int i = 0; i < 50; i++) {%>
+
+          <c:forEach var="s" items="${suppliers}">
+
           <tr>
             <td class="image-cell">
               <div class="image">
-                <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg"
+                <img src="https://avatars.dicebear.com/v2/initials/${s.getName()}.svg"
                      class="rounded-full">
               </div>
             </td>
-            <td data-label="Name">Rebecca Bauch</td>
-            <td data-label="Id">#02938</td>
-            <td data-label="Email">hhlata@gmail.com</td>
-            <td data-label="Phone">07095522089s</td>
-            <td data-label="Phone">20</td>
+            <td data-label="Name">${s.getName()}</td>
+            <td data-label="Id">${s.getId()}</td>
+            <td data-label="Email">${s.getEmail()}</td>
+            <td data-label="Phone">${s.getPhone()}</td>
+            <td data-label="Adrress">${s.getAddress()}</td>
             <td class="actions-cell">
               <div class="buttons right nowrap">
-                <button class="button small green --jb-modal" data-target="sample-modal-2"
-                        type="button">
-                  <span class="icon"><i class="mdi mdi-eye"></i></span>
-                </button>
-                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                  <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                </button>
+                <a href="AddSuppliersController?id=${s.getId()}">
+                  <button class="button small green --jb-modal"
+                          type="button">
+                    <span class="icon"><i class="mdi mdi-eye"></i></span>
+                  </button>
+                </a>
+                <a href="SuppliersController?id=${s.getId()}&action=delete">
+                  <button class="button small red --jb-modal" type="button">
+                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                  </button>
+                </a>
               </div>
             </td>
           </tr>
-          <%}%>
+          </c:forEach>
           </tbody>
           <tfoot>
           <tr>
@@ -107,7 +111,7 @@
             <th>Id</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Num product</th>
+            <th>Address</th>
             <th></th>
           </tr>
           </tfoot>
@@ -119,37 +123,8 @@
   <%--footer  admin--%>
   <jsp:include page="view/footer_admin.jsp"></jsp:include>
 
-  <div id="sample-modal" class="modal">
-    <div class="modal-background --jb-modal-close"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Sample modal</p>
-      </header>
-      <section class="modal-card-body">
-        <p>Xác nhận <b>XÓA</b></p>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button --jb-modal-close">Cancel</button>
-        <button class="button red --jb-modal-close">Confirm</button>
-      </footer>
-    </div>
-  </div>
 
-  <div id="sample-modal-2" class="modal">
-    <div class="modal-background --jb-modal-close"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Sample modal</p>
-      </header>
-      <section class="modal-card-body">
-        <p>Chỉnh sửa dữ liệu và load lên ở đây</p>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button --jb-modal-close">Cancel</button>
-        <button class="button blue --jb-modal-close">Confirm</button>
-      </footer>
-    </div>
-  </div>
+
 
 </div>
 
