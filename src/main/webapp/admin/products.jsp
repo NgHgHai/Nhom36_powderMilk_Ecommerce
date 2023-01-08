@@ -92,7 +92,7 @@
                             <td data-label="Inventory">${p.getInventory()}</td>
                             <td data-label="Supplier">${p.getSupplier().getName()}</td>
                             <td data-label="Category">${p.getCategory().getName()}</td>
-                            <td data-label="Discount">${p.getDiscount().getDiscountName()}</td>
+                            <td data-label="Discount">${p.getDiscount().getDiscount_name()}</td>
                             <td data-label="Status">
 
 

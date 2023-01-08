@@ -16,10 +16,13 @@ public interface DiscountDAO {
     @SqlQuery("select * from discount where id = :id")
     Discount getDiscountById(@Bind("id") String id);
 
-    @SqlUpdate("insert into discount (id, discount_name,desc, discount_percent, active, start_at, finish_at, create_at, update_at) values (:id, :discountName,:desc, :discountPercent, :active, :startAt, :finishAt, now(), now())")
+    @SqlUpdate("INSERT INTO `discount`(`id`, `discount_name`, `desc`, `discount_percent`, `active`, `start_at`, `finish_at`, `create_at`, `update_at`) " +
+            "VALUES (:id, :discount_name,:desc, :discountPercent, :active, :startAt, :finishAt, now(), now())")
     int insert(@BindBean Discount discount);
 
-    @SqlUpdate("update discount set discount_name = :discountName, desc = :desc, discount_percent = :discountPercent, active = :active, start_at = :startAt, finish_at = :finishAt, update_at = now() where id = :id")
+    @SqlUpdate("UPDATE `discount` SET `id`=:id,`discount_name`=:discount_name,`desc`=:desc,`discount_percent`=:discountPercent,`active`=:active," +
+            "`start_at`=:startAt,`finish_at`=:finishAt,`update_at`=now() WHERE id = :id")
+
     int update(@BindBean Discount discount);
 
     @SqlUpdate("delete from discount where id = :id")

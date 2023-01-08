@@ -55,6 +55,7 @@ public class AddProductController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Product product = new Product();
         String img;
+        request.setCharacterEncoding("utf-8");
 //        handleUploadFile(request, response);
         try {
             BeanUtils.populate(product, request.getParameterMap());

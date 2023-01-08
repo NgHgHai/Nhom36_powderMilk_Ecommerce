@@ -19,7 +19,6 @@ public class SuppliersController extends HttpServlet {
         String action = request.getParameter("action");
         if ("delete".equals(action)) {
             supplierService.delete(id);
-            System.out.println("dang xoa");
             response.sendRedirect("/SuppliersController?action=all");
         }
         if ("all".equals(action)) {

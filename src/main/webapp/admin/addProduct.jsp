@@ -129,7 +129,7 @@
                             <select name="supplierId">
                                 <c:forEach items="${suppliers}" var="s">
                                     <option value="${s.getId()}"
-<%--                                            <c:if test="${0==d.getActive()}"> disabled </c:if>--%>
+                                        <%--                                            <c:if test="${0==d.getActive()}"> disabled </c:if>--%>
                                             <c:if test="${d.getId() == product.getSupplierId()}"> selected</c:if>
                                     >
                                             ${s.getName()} </option>
@@ -148,7 +148,7 @@
                             <select name="categoryId">
                                 <c:forEach items="${categories}" var="c">
                                     <option value="${c.getId()}"
-<%--                                            <c:if test="${0==d.getActive()}"> disabled </c:if>--%>
+                                        <%--                                            <c:if test="${0==d.getActive()}"> disabled </c:if>--%>
                                             <c:if test="${c.getId() == product.getCategoryId()}"> selected</c:if>
                                     >
                                             ${c.getName()} </option>
@@ -169,7 +169,7 @@
                                             <c:if test="${0==d.getActive()}"> disabled </c:if>
                                             <c:if test="${d.getId() == product.getDiscountId()}"> selected</c:if>
                                     >
-                                             ${d.getDiscountName()} </option>
+                                            ${d.getDiscount_name()} </option>
                                 </c:forEach>
 
                             </select>
@@ -302,7 +302,6 @@
             this.style.height = (this.scrollHeight) + 'px';
         });
     });
-
 </script>
 
 </body>

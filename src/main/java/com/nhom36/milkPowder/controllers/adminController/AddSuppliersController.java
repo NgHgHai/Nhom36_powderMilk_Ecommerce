@@ -26,7 +26,7 @@ public class AddSuppliersController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Supplier supplier = new Supplier();
-
+        request.setCharacterEncoding("utf-8");
         try {
             BeanUtils.populate(supplier, request.getParameterMap());
 

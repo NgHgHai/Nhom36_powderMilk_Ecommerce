@@ -35,7 +35,7 @@
       <h1 class="title">
         Discount Tables
       </h1>
-      <a href="/AddProductController">
+      <a href="/AddDiscountsControler">
         <button class="button red --jb-modal">Add new</button>
       </a>
     </div>
@@ -65,44 +65,57 @@
             <th>Id</th>
             <th>Decscription</th>
             <th>Percent</th>
+            <th>Active</th>
             <th>Begin</th>
             <th>End</th>
+            <th>Create At</th>
             <th></th>
           </tr>
           </thead>
           <tbody>
           <%-- this is colum of table     --%>
-          <c:set var="data" value="${2}"></c:set>
-          <c:forEach var="user" items="${user}"></c:forEach>
-          <% for (int i = 0; i < 10; i++) {%>
+          <c:forEach var="d" items="${discounts}">
           <tr>
 
-            <td data-label="Name">giam tu thien</td>
-            <td data-label="Id">#@02938</td>
-            <td data-label="Decscription">Giảm 50% tất cả các sản phẩm ngày đầu khai trương 22.1.2022</td>
-            <td data-label="Percent">50</td>
+            <td data-label="Name">${d.getDiscount_name()}</td>
+            <td data-label="Id">${d.getId()}</td>
+            <td data-label="Decscription">${d.getDesc()}</td>
+            <td data-label="Percent">${d.getDiscountPercent()}</td>
+            <td data-label="Active">
+                  <c:if test="${d.getActive()==1}">
+                    <div class="status_order green">Kích Hoạt</div>
+                  </c:if>
+                  <c:if test="${d.getActive()==0}">
+                    <div class="status_order red">Ngừng Khuyến Mãi</div>
+                  </c:if>
 
+            </td>
             <td data-label="Begin">
-              <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
+              <small class="text-gray-500" >${d.getStartAt()}</small>
             </td>
-
             <td data-label="End">
-              <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2022</small>
+              <small class="text-gray-500" >${d.getFinishAt()}</small>
             </td>
-
+            <td data-label="Create At">
+              <small class="text-gray-500" >${d.getCreateAt()}</small>
+            </td>
             <td class="actions-cell">
               <div class="buttons right nowrap">
-                <button class="button small green --jb-modal" data-target="sample-modal-2"
-                        type="button">
-                  <span class="icon"><i class="mdi mdi-eye"></i></span>
-                </button>
-                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                  <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                </button>
+                <a href="AddDiscountsControler?id=${d.getId()}">
+                  <button class="button small green --jb-modal"
+                          type="button">
+                    <span class="icon"><i class="mdi mdi-eye"></i></span>
+                  </button>
+                </a>
+                <a href="DiscountsController?id=${d.getId()}&action=delete">
+                  <button class="button small red --jb-modal" type="button">
+                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                  </button>
+                </a>
               </div>
             </td>
           </tr>
-          <%}%>
+          </c:forEach>
           </tbody>
           <tfoot>
           <tr>
@@ -110,8 +123,10 @@
             <th>Id</th>
             <th>Decscription</th>
             <th>Percent</th>
+            <th>Active</th>
             <th>Begin</th>
             <th>End</th>
+            <th>Create At</th>
             <th></th>
           </tr>
           </tfoot>
@@ -123,37 +138,6 @@
   <%--footer  admin--%>
   <jsp:include page="view/footer_admin.jsp"></jsp:include>
 
-  <div id="sample-modal" class="modal">
-    <div class="modal-background --jb-modal-close"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Sample modal</p>
-      </header>
-      <section class="modal-card-body">
-        <p>Xác nhận <b>XÓA</b></p>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button --jb-modal-close">Cancel</button>
-        <button class="button red --jb-modal-close">Confirm</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="sample-modal-2" class="modal">
-    <div class="modal-background --jb-modal-close"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Sample modal</p>
-      </header>
-      <section class="modal-card-body">
-        <p>Chỉnh sửa dữ liệu và load lên ở đây</p>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button --jb-modal-close">Cancel</button>
-        <button class="button blue --jb-modal-close">Confirm</button>
-      </footer>
-    </div>
-  </div>
 
 </div>
 

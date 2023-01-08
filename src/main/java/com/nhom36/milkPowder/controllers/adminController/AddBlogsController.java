@@ -35,6 +35,7 @@ public class AddBlogsController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Blog  blog = new Blog();
         String img;
+        request.setCharacterEncoding("utf-8");
         try {
             BeanUtils.populate(blog, request.getParameterMap());
 

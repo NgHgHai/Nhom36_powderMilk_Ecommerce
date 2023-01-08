@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: hoanghai
-  Date: 2023-01-07
-  Time: 10:54 PM
+  Date: 2023-01-08
+  Time: 12:49 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
@@ -22,7 +22,7 @@
     <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
         <ul>
             <li>Admin</li>
-            <li>Supplier</li>
+            <li>Discount</li>
         </ul>
     </div>
 </section>
@@ -30,9 +30,9 @@
 <section class="is-hero-bar">
     <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
         <h1 class="title">
-            Supplier
+            Discount
         </h1>
-        <a href="/SuppliersController?action=all">
+        <a href="/DiscountsController?action=all">
             <button class="button red --jb-modal">Back</button>
         </a>
     </div>
@@ -43,60 +43,98 @@
         <header class="card-header">
             <p class="card-header-title">
                 <span class="icon"><i class="mdi mdi-ballot"></i></span>
-                Supplier
+                Discount
             </p>
         </header>
         <div class="card-content">
-            <form method="post" action="AddSuppliersController">
+            <form method="post" action="AddDiscountsControler" accept-charset="utf-8">
                 <div class="field">
                     <label class="label">From</label>
                     <div class="field-body">
-                        Id
+                        <%--                        Id--%>
                         <div class="field">
+                            <label class="label">Id</label>
                             <div class="control icons-left">
                                 <input class="input" type="text" readonly placeholder="ID" name="id" id="id"
-                                       value="${supplier.getId()}">
+                                       value="${discount.getId()}">
                                 <span class="icon left"><i class="mdi mdi-account"></i></span>
                             </div>
                         </div>
                         <%--Name--%>
                         <div class="field">
+                            <label class="label">Name</label>
                             <div class="control icons-left">
-                                <input class="input" type="text" placeholder="Name" name="name" id="name" required
-                                       value="${supplier.getName()}">
+                                <input class="input" type="text" placeholder="Name" required name="discount_name"
+                                       id="discount_name"
+                                       required
+                                       value="${discount.getDiscount_name()}">
                                 <span class=" icon left"><i class="mdi mdi-account"></i></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <%--Email--%>
-                <div class="field">
-                    <label class="label">Email</label>
-                    <div class="control">
-                        <input class="input" type="email" placeholder="Email"
-                               name="email" value=" ${supplier.getEmail()}">
-                    </div>
-                    <p class="help">
 
-                    </p>
-                </div>
-                <%--Phone--%>
-                <div class="field">
-                    <label class="label">Phone</label>
-                    <div class="control">
-                        <input class="input" type="tel" placeholder="Phone" name="phone" value=" ${supplier.getPhone()}">
-                    </div>
-                    <p class="help">
+                <%--discountPercent--%>
 
-                    </p>
+                <div class="field">
+                    <label class="label">DiscountPercent</label>
+                    <div class="control icons-left">
+                        <input class="input" type="number" min="0" max="99" placeholder="DiscountPercent" required name="discountPercent"
+                               id="discountPercent"
+                               required
+                               value="${discount.getDiscountPercent()}">
+<%--                        <span class=" icon left"><i class="mdi mdi-"></i></span>--%>
+                        <p class="help">Giá trị từ 0-99 %</p>
+                    </div>
                 </div>
                 <hr>
-                <%--Address--%>
+                <%--Description--%>
                 <div class="field">
-                    <label class="label">Address</label>
+                    <label class="label">Description</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Address"
-                               name="address" value="${supplier.getAddress()}">
+                        <input class="input" type="text" placeholder="Description"
+                               name="desc" value="${discount.getDesc()}">
+                    </div>
+                    <p class="help">
+<%--                        -${discount.getFinishAt().toString()}---%>
+                    </p>
+                </div>
+                <%--Active--%>
+                <div class="field">
+                    <label class="label">Active</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="active">
+                                <option value="1"  <c:if test="${1==discount.getActive()}"> selected</c:if>
+                                >kích hoạt
+                                </option>
+                                <option value="0"  <c:if test="${0==discount.getActive()}"> selected</c:if> >ngưng khuyến
+                                    mãi
+                                </option>
+
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <%--begin--%>
+                <div class="field">
+                    <label class="label">Begin</label>
+                    <div class="control">
+                        <input class="input" type="datetime-local" placeholder="Begin" required
+                               name="-startAt" value="${discount.getStartAt()}">
+                    </div>
+                    <p class="help">
+
+                    </p>
+                </div>
+                <%--                end--%>
+                <div class="field">
+                    <label class="label">End</label>
+                    <div class="control">
+                        <input class="input" type="datetime-local" placeholder="End" required
+                               name="-finishAt" value="${discount.getFinishAt()}">
                     </div>
                     <p class="help">
 

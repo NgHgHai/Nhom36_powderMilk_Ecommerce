@@ -28,6 +28,7 @@ public class AddCategorysController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Category category = new Category();
+        request.setCharacterEncoding("utf-8");
         try {
             BeanUtils.populate(category,request.getParameterMap());
 
