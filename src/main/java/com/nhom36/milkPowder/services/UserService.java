@@ -23,6 +23,8 @@ public class UserService {
         return jdbi.withExtension(UserDAO.class, dao -> dao.getUserById(id));
     }
 
+    public int countUser(){ return jdbi.withExtension(UserDAO.class,dao -> dao.countUser()); }
+
     public void insert(User user) {
         jdbi.useExtension(UserDAO.class, dao -> dao.register(user));
     }

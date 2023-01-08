@@ -38,4 +38,7 @@ public interface UserDAO {
     List<User> getAllAdmin();
     @SqlUpdate("delete from user where id = :id")
     int deleteUser(@Bind("id") String id);
+
+    @SqlQuery("SELECT count(id) FROM `user` where role = 0 ")
+    int countUser();
 }

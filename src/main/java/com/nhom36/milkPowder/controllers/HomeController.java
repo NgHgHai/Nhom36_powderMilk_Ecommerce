@@ -27,7 +27,7 @@ public class HomeController extends HttpServlet {
             map.put(category.getName(), products);
         }
         request.setAttribute("map", map);
-        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("dashBoard.jsp");
         rd.forward(request, response);
 
     }
