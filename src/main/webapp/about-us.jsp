@@ -77,7 +77,7 @@
                                 <span class="ms-1 d-none d-sm-inline">About Us</span> </a>
                         </li>
                         <li>
-                            <a href="product/product.html" class="nav-link text-truncate">
+                            <a href="product/product.jsp" class="nav-link text-truncate">
                                 <span class="ms-1 d-none d-sm-inline">Products</span></a>
                         </li>
                         <li>
@@ -107,7 +107,7 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="index.jsp" class="nav-item nav-link active">Home</a>
                     <a href="about-us.jsp" class="nav-item nav-link">About Us</a>
-                    <a href="product/product.html" class="nav-item nav-link">Products</a>
+                    <a href="product/product.jsp" class="nav-item nav-link">Products</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">

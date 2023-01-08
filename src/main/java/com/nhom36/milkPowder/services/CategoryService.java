@@ -33,4 +33,12 @@ public class CategoryService {
     public List<Category> getAllCategory() {
         return jdbi.withExtension(CategoryDAO.class, dao -> dao.getAllCategory());
     }
+
+    public static void main(String[] args) {
+        CategoryService categoryService = new CategoryService();
+        List<Category> categories = categoryService.getAllCategory();
+        for (Category category : categories) {
+            System.out.println(category.getName());
+        }
+    }
 }

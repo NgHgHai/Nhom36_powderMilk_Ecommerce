@@ -14,7 +14,7 @@ public class FakeData {
     public static void main(String[] args) {
         FakeData fakeData = new FakeData();
 //
-        fakeData.insertBlog();
+        fakeData.crashUser();
 
         ;
 
@@ -117,10 +117,8 @@ public class FakeData {
                 user.setAddress(fakerUser.address().fullAddress());
                 user.setPhone(fakerUser.phoneNumber().phoneNumber());
                 user.setEmail(fakerUser.internet().emailAddress());
-                user.setPassword("123456");
+                user.setPassword("12345678");
                 user.setRole(fakerUser.number().numberBetween(0, 2));
-
-
                 dao.register(user);
             }
         });

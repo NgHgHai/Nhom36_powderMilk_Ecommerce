@@ -204,4 +204,27 @@ public class Product {
         }
         return price;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", desc='" + desc + '\'' +
+                ", imgDisplay='" + imgDisplay + '\'' +
+                ", weightAmount=" + weightAmount +
+                ", weightUnits='" + weightUnits + '\'' +
+                ", active=" + active +
+                ", inventory=" + inventory +
+                ", supplierId='" + supplierId + '\'' +
+                ", categoryId='" + categoryId + '\'' +
+                ", discountId='" + discountId + '\'' +
+                ", supplier=" + supplier +
+                ", category=" + category +
+                ", discount=" + discount +
+                ", createAt=" + createAt +
+                ", updateAt=" + updateAt +
+                '}';
+    }
 }
