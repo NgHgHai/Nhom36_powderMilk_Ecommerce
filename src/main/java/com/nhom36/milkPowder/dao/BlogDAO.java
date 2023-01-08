@@ -32,5 +32,7 @@ public interface BlogDAO {
     @SqlUpdate("update blog set image = :image where id = :id")
     int updateImage(@Bind("id") String id, @Bind("image") String image);
 
+    @SqlQuery("select* from blog where admin_name = :adminName")
+    List<Blog> getBlogByAdminName(@Bind("adminName") String adminName);
 
 }

@@ -18,7 +18,7 @@ create table if not exists category(
     );
 create table if not exists discount(
         `id` varchar(10) primary key not null,
-        `name` varchar(255),
+        `discount_name` varchar(255),
         `desc` text,
         `discount_percent` double,
         `active` tinyint,
@@ -54,13 +54,8 @@ create table if not exists user(
     `email` varchar(255),
     role int,
         `create_at` datetime not null,
-        `update_at` datetime not null
-    );
-create table if not exists role(
-        `id` tinyint primary key not null,
-        `name` varchar(255),
-        `create_at` datetime not null,
-        `update_at` datetime not null
+        `update_at` datetime not null,
+    active tinyint;
     );
 
 create table if not exists `order`(
@@ -81,7 +76,8 @@ create table if not exists `order_items`(
         `product_id` varchar(10) not null references `product`(id),
         `quantity` int,
         `price` double,
-        primary key(order_id, product_id)
+          `create_at` datetime not null,
+        `update_at` datetime not null
     );
 create table if not exists cart(
        `id` varchar(10) primary key not null,
@@ -90,18 +86,17 @@ create table if not exists cart(
         `create_at` datetime not null,
         `update_at` datetime not null
     );
-create table if not exists cart_items(
+create table if not exists cart_item(
         `cart_id` varchar(10) not null,
         `product_id` varchar(10) not null references `product`(id),
         `quantity` int,
         `price` double,
         `create_at` datetime not null,
-        `update_at` datetime not null,
-        primary key(cart_id, product_id)
+        `update_at` datetime not null
     );
   create table if not exists `blog`(
       `id`        varchar(10) PRIMARY KEY NOT NULL,
-      `admin_id`  varchar(10)             NOT NULL REFERENCES `user`(id),
+      `admin_name`  varchar(10)             NOT NULL REFERENCES `user`(id),
       `title`     text                    NOT NULL,
       `image`     varchar(2048)                   NOT NULL,
       `content`   text,
@@ -111,8 +106,7 @@ create table if not exists cart_items(
 
 create table if not exists slider(
       `id`        varchar(10) PRIMARY KEY NOT NULL,
-      name varchar(255),
-      url varchar(255),
+      `name` varchar(255),
       `image`     varchar(2048) NOT NULL,
       `create_at` Datetime                NOT NULL,
       `update_at` Datetime                NOT NULL

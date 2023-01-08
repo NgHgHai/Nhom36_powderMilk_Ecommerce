@@ -14,7 +14,7 @@ public interface CategoryDAO {
     @SqlQuery("select * from category where id = :id")
     Category getCategoryById(@Bind("id") String id);
 
-    @SqlQuery("select * from category")
+    @SqlQuery("select * from category order by `desc` asc ")
     List<Category> getAllCategory();
 
     @SqlUpdate("insert into category (name) values (:name)")
