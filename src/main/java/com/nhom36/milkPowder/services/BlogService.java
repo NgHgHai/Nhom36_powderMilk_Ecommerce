@@ -37,4 +37,8 @@ public class BlogService {
     public Object getLast() {
         return jdbi.withExtension(BlogDAO.class, handle -> handle.getLast());
     }
+    public static void main(String[] args) {
+        System.out.println( new BlogService().getById("")  );
+    }
+
 }

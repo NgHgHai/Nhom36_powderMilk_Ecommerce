@@ -93,7 +93,7 @@
                                         </button>
                                     </a>
                                     <a href="/BlogsController?id=${b.getId()}&action=delete">
-                                        <button class="button small red --jb-modal" data-target="sample-modal"
+                                        <button class="button small red --jb-modal"
                                                 type="button">
                                             <span class="icon"><i class="mdi mdi-trash-can"></i></span>
                                         </button>

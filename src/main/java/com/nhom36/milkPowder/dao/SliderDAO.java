@@ -14,14 +14,16 @@ public interface SliderDAO {
 
         @SqlQuery("select * from slider")
         List<Slider> getAllSlider();
+        @SqlQuery("SELECT * FROM `slider` WHERE  id =:id")
+        Slider findById(@Bind("id") String id);
 
-        @SqlUpdate("insert into slider (id,name, url,image, create_at, update_at) values (:id,:name,:url, :image, now(), now())")
+        @SqlUpdate("INSERT INTO `slider`(`id`, `name`, `url`, `image`, `create_at`, `update_at`) VALUES (:id,:name,:url, :image, now(), now())")
         void insertSlider(@BindBean Slider slider);
 
-        @SqlUpdate("update slider  name = :name, image = :image, link = :link, update_at = now() where id = :id")
+        @SqlUpdate("UPDATE `slider` SET `id`=:id,`name`=:name,`url`=:url,`image`=:image,`update_at`= now() WHERE id = :id")
         void updateSlider(@BindBean Slider slider);
 
-        @SqlUpdate("delete from slider where id = :id")
+        @SqlUpdate("delete from slider where id =:id")
         void deleteSlider(@Bind("id") String id);
 
 
