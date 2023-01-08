@@ -36,7 +36,7 @@
                 Custommer Tables
             </h1>
             <a href="/AddProductController">
-<%--                <button  class="button red --jb-modal">Add new</button>--%>
+                <%--                <button  class="button red --jb-modal">Add new</button>--%>
             </a>
         </div>
 
@@ -75,44 +75,44 @@
 
                     <%-- this is colum of table     --%>
                     <c:forEach var="u" items="${users}">
-                    <tr>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/>${u.getFirstname()}-${u.getLastname()}.svg"
-                                     class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="First Name">${u.getFirstname()}</td>
-                        <td data-label="Last Name">${u.getLastname()}</td>
-                        <td data-label="Id">${u.getId()}</td>
-                        <td data-label="Email">${u.getEmail()}</td>
-                        <td data-label="Address">${u.getAddress()}</td>
-                        <td data-label="Created">
-                            <small class="text-gray-500" >${u.getCreateAt()}</small>
-                        </td>
-                        <td data-label="Status">
-                            <c:if test="${u.getActive()==1}">
-                                <div class="status_order green">Kích Hoat</div>
-                            </c:if>
-                            <c:if test="${u.getActive()==0}">
-                                <div class="status_order red">Khóa</div>
-                            </c:if>
-                        </td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
+                        <tr>
+                            <td class="image-cell">
+                                <div class="image">
+                                    <img src="https://avatars.dicebear.com/v2/initials/>${u.getFirstname()}-${u.getLastname()}.svg"
+                                         class="rounded-full">
+                                </div>
+                            </td>
+                            <td data-label="First Name">${u.getFirstname()}</td>
+                            <td data-label="Last Name">${u.getLastname()}</td>
+                            <td data-label="Id">${u.getId()}</td>
+                            <td data-label="Email">${u.getEmail()}</td>
+                            <td data-label="Address">${u.getAddress()}</td>
+                            <td data-label="Created">
+                                <small class="text-gray-500">${u.getCreateAt()}</small>
+                            </td>
+                            <td data-label="Status">
+                                <c:if test="${u.getActive()==1}">
+                                    <div class="status_order green">Kích Hoat</div>
+                                </c:if>
+                                <c:if test="${u.getActive()==0}">
+                                    <div class="status_order red">Khóa</div>
+                                </c:if>
+                            </td>
+                            <td class="actions-cell">
+                                <div class="buttons right nowrap">
 
-                                <button class="button small green --jb-modal" data-target="sample-modal-2"
-                                        type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <a href="CustommersController?id=${u.getId()}&action=delete">
-                                <button class="button small red --jb-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
+                                    <button class="button small green --jb-modal" data-target="sample-modal-2"
+                                            type="button">
+                                        <span class="icon"><i class="mdi mdi-eye"></i></span>
+                                    </button>
+                                    <a href="CustommersController?id=${u.getId()}&action=delete">
+                                        <button class="button small red --jb-modal" type="button">
+                                            <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
                     </c:forEach>
 
                     </tbody>
@@ -134,6 +134,110 @@
         </div>
 
     </section>
+<%--admin table--%>
+        <section class="is-hero-bar">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+                <h1 class="title">
+                   Admin Tables
+                </h1>
+                <a href="#">
+                    <button  class="button red --jb-modal">Add new</button>
+                </a>
+            </div>
+
+        </section>
+
+
+        <section class="is-hero-bar">
+        <%--this is admin table--%>
+        <div class="card has-table">
+            <header class="card-header">
+                <p class="card-header-title">
+                    <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+                    Admins
+                </p>
+                <a href="#" class="card-header-icon">
+                    <span class="icon"><i class="mdi mdi-reload"></i></span>
+                </a>
+            </header>
+            <div class="card-content">
+                <table id="table-admin" class="">
+                    <thead>
+                    <%-- this is name of colum    --%>
+                    <tr>
+                        <th></th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Created</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <%-- this is colum of table     --%>
+                    <c:forEach var="u" items="${Admins}">
+                        <tr>
+                            <td class="image-cell">
+                                <div class="image">
+                                    <img src="https://avatars.dicebear.com/v2/initials/>${u.getFirstname()}-${u.getLastname()}.svg"
+                                         class="rounded-full">
+                                </div>
+                            </td>
+                            <td data-label="First Name">${u.getFirstname()}</td>
+                            <td data-label="Last Name">${u.getLastname()}</td>
+                            <td data-label="Id">${u.getId()}</td>
+                            <td data-label="Email">${u.getEmail()}</td>
+                            <td data-label="Address">${u.getAddress()}</td>
+                            <td data-label="Created">
+                                <small class="text-gray-500">${u.getCreateAt()}</small>
+                            </td>
+                            <td data-label="Status">
+                                <c:if test="${u.getActive()==1}">
+                                    <div class="status_order green">Kích Hoat</div>
+                                </c:if>
+                                <c:if test="${u.getActive()==0}">
+                                    <div class="status_order red">Khóa</div>
+                                </c:if>
+                            </td>
+                            <td class="actions-cell">
+                                <div class="buttons right nowrap">
+
+                                    <button class="button small green --jb-modal" data-target="sample-modal-2"
+                                            type="button">
+                                        <span class="icon"><i class="mdi mdi-eye"></i></span>
+                                    </button>
+                                    <a href="CustommersController?id=${u.getId()}&action=delete">
+                                        <button class="button small red --jb-modal" type="button">
+                                            <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </c:forEach>
+
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th></th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Created</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        </section>
     <%--footer  admin--%>
     <jsp:include page="view/footer_admin.jsp"></jsp:include>
 

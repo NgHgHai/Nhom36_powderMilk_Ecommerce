@@ -15,7 +15,10 @@ public class UserService {
         return jdbi.withExtension(UserDAO.class, dao -> dao.getAllUser());
 
     }
+    public List<User> getAllAdmin() {
+        return jdbi.withExtension(UserDAO.class, dao -> dao.getAllAdmin());
 
+    }
     public User getById(String id) {
         return jdbi.withExtension(UserDAO.class, dao -> dao.getUserById(id));
     }

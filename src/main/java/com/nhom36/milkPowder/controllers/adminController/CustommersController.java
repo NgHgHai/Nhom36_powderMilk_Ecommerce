@@ -27,6 +27,8 @@ public class CustommersController extends HttpServlet {
         }
         if ("all".equals(action)) {
             List<User> users = userService.getAllUser();
+            List<User> Admins = userService.getAllAdmin();
+            request.setAttribute("Admins",Admins);
             request.setAttribute("users",users);
             request.getRequestDispatcher("admin/custommers.jsp").forward(request,response);
         }
