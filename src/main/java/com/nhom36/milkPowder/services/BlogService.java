@@ -18,27 +18,35 @@ public class BlogService {
         return instance;
     }
 
-    public List<Blog> getAll(){
-        return jdbi.withExtension(BlogDAO.class, dao-> dao.list());
+    public List<Blog> getAll() {
+        return jdbi.withExtension(BlogDAO.class, dao -> dao.list());
     }
+
     public Blog getById(String id) {
-        return jdbi.withExtension(BlogDAO.class,dao-> dao.findById(id));
+        return jdbi.withExtension(BlogDAO.class, dao -> dao.findById(id));
     }
-    public void insert(Blog blog){
-        jdbi.useExtension(BlogDAO.class,dao-> dao.insert(blog));
+
+    public void insert(Blog blog) {
+        jdbi.useExtension(BlogDAO.class, dao -> dao.insert(blog));
     }
-    public void update(Blog blog){
-        jdbi.useExtension(BlogDAO.class,dao-> dao.update(blog));
+
+    public void update(Blog blog) {
+        jdbi.useExtension(BlogDAO.class, dao -> dao.update(blog));
     }
-    public void delete(String id){
-        jdbi.useExtension(BlogDAO.class,dao-> dao.deleteById(id));
+
+    public void delete(String id) {
+        jdbi.useExtension(BlogDAO.class, dao -> dao.deleteById(id));
     }
 
     public List<Blog> getLast() {
         return jdbi.withExtension(BlogDAO.class, handle -> handle.getLast());
     }
+
     public static void main(String[] args) {
-        System.out.println( new BlogService().getById("")  );
+        System.out.println(new BlogService().getById(""));
     }
 
+    public List<Blog> getTop3() {
+        return jdbi.withExtension(BlogDAO.class, handle -> handle.getTop3());
+    }
 }
