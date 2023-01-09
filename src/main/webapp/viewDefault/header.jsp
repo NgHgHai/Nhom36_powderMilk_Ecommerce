@@ -15,50 +15,7 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <!--       Start  left Menu Size-->
-        <button class="btn float-start" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-start" role="button">
-            <i class="bi bi-list fs-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-start"></i>
-        </button>
-        <div class="offcanvas offcanvas-start w-25" tabindex="-1" id="offcanvas-start" data-bs-keyboard="false"
-             data-bs-backdrop="false">
-            <div class="offcanvas-header">
-                <h6 class="offcanvas-title d-none d-sm-block">Menu</h6>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body px-0">
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-truncate">
-                            <span class="ms-1 d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="about-us.jsp" class="nav-link text-truncate">
-                            <span class="ms-1 d-none d-sm-inline">About Us</span> </a>
-                    </li>
-                    <li>
-                        <a href="product/product.html" class="nav-link text-truncate">
-                            <span class="ms-1 d-none d-sm-inline">Products</span></a>
-                    </li>
-                    <li>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><span
-                                    class="ms-1 d-none d-sm-inline">Pages</span></a>
-                            <div class="dropdown-menu m-0">
-                                <a href="Blog" class="dropdown-item">Blog Grid</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="Contact" class="nav-link text-truncate">
-                            <span class="ms-1 d-none d-sm-inline">Contact US</span></a>
-                    </li>
 
-                </ul>
-            </div>
-        </div>
-        <!--       End  left Menu Size-->
         <a href="Home" class="navbar-brand ms-4 ms-lg-0">
             <h1 class="fw-bold text-primary m-0">Ha<span class="text-secondary">Cha</span>Milk</h1>
         </a>

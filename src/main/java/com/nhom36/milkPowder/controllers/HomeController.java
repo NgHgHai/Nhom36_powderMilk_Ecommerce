@@ -1,7 +1,9 @@
 package com.nhom36.milkPowder.controllers;
 
+import com.nhom36.milkPowder.beans.Blog;
 import com.nhom36.milkPowder.beans.Category;
 import com.nhom36.milkPowder.beans.Product;
+import com.nhom36.milkPowder.services.BlogService;
 import com.nhom36.milkPowder.services.CategoryService;
 import com.nhom36.milkPowder.services.ProductService;
 
@@ -27,7 +29,8 @@ public class HomeController extends HttpServlet {
             List<Product> products = productService.findByCategory(category.getId());
             map.put(category.getName(), products);
         }
-
+        List<Blog> blogs =  new BlogService().getTop3();
+        request.setAttribute("blogs", blogs);
         request.setAttribute("map", map);
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);

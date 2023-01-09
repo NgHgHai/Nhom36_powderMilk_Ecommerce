@@ -36,5 +36,6 @@ public interface BlogDAO {
 
     @SqlQuery("select* from blog where admin_name = :adminName")
     List<Blog> getBlogByAdminName(@Bind("adminName") String adminName);
-
+    @SqlQuery("select * from blog order by create_at desc limit 3 ")
+    List<Blog> getTop3();
 }
