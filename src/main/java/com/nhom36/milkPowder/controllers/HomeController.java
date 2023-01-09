@@ -29,7 +29,7 @@ public class HomeController extends HttpServlet {
         }
 
         request.setAttribute("map", map);
-        RequestDispatcher rd = request.getRequestDispatcher("dashBoard.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
 
     }

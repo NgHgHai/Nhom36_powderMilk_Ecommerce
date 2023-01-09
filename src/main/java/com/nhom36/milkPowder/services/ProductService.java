@@ -76,33 +76,6 @@ public class ProductService {
         return jdbi.withExtension(ProductDAO.class,handle -> handle.sortByPrice());
     }
 
-    public static void main(String[] args) {
-        System.out.println( new ProductService().find5productByCategory("ujkcoouidh"));
-    }
 
-    public static void main(String[] args) {
-//        Product product = new Product();
-//        product.setId("1");
-//        product.setName("Sữa tắm");
-//        product.setPrice(10000.00);
-//        product.setDesc("Sữa tắm");
-//        product.setImgDisplay("img1");
-//        product.setWeightAmount(100.0);
-//        product.setWeightUnits("ml");
-//        product.setActive(1);
-//        product.setInventory(100);
-//        product.setSupplierId("1");
-//        product.setCategoryId("1");
-//        product.setDiscountId("1");
-//        Supplier s = new Supplier();
-//        s.setName("anpha gold");
-//        product.setSupplier(s);
 
-//        System.out.println(product);
-//        new ProductService().insert(product);
-//        System.out.println(new ProductService().getById("1"));
-        System.out.println(new ProductService().getAll());
-//        new ProductService().delete("1");
-//
-    }
 }
