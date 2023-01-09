@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.nhom36.milkPowder.beans.Product" %><%--
   Created by IntelliJ IDEA.
   User: hoanghai
   Date: 2023-01-05
@@ -17,6 +17,7 @@
 <%--Menu-side of admin--%>
 <jsp:include page="view/menu_side.jsp"></jsp:include>
 
+
 <section class="is-title-bar">
     <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
         <ul>
@@ -31,7 +32,10 @@
         <h1 class="title">
             Product
         </h1>
-        <%--    <button class="button light">Button</button>--%>
+        <a href="/ProductsController?action=all">
+            <button class="button red --jb-modal">Back</button>
+
+        </a>
     </div>
 </section>
 
@@ -52,30 +56,33 @@
                         Id
                         <div class="field">
                             <div class="control icons-left">
-                                <input class="input" type="text" readonly placeholder="ID" name="id" id="id">
+                                <input class="input" type="text" readonly placeholder="ID" name="id" id="id"
+                                       value="${product.getId()}">
                                 <span class="icon left"><i class="mdi mdi-account"></i></span>
                             </div>
                         </div>
                         <%--Name--%>
                         <div class="field">
                             <div class="control icons-left">
-                                <input class="input" type="text" placeholder="Name" name="name" id="name">
-                                <span class="icon left"><i class="mdi mdi-account"></i></span>
+                                <input class="input" type="text" placeholder="Name" name="name" id="name"  required
+                                       value="${product.getName()}">
+                                <span class=" icon left"><i class="mdi mdi-account"></i></span>
                             </div>
                         </div>
                         <%--Price--%>
                         <div class="field">
                             <div class="control icons-left icons-right">
-                                <input class="input" type="number" placeholder="Price" name="price" id="price">
-                                <span class="icon left"><i class="mdi mdi-mail"></i></span>
+                                <input class="input" type="number" placeholder="Price" name="price" id="price" required
+                                       value="${product.getPrice()}">
+                                <span class=" icon left"><i class="mdi mdi-mail"></i></span>
                                 <span class="icon right"><p class="">VND</p></span>
                             </div>
                         </div>
                         <%--WeightAmount--%>
                         <div class="field">
                             <div class="control icons-left icons-right">
-                                <input class="input" type="number" placeholder="WeightAmount" name="weightAmount"
-                                       id="weightAmount">
+                                <input class="input" type="number" placeholder="WeightAmount" name="weightAmount" required
+                                       id="weightAmount" value="${product.getWeightAmount()}">
                                 <span class="icon left"><i class="mdi mdi-mail"></i></span>
                                 <span class="icon right"><p class="">g</p></span>
                             </div>
@@ -83,8 +90,8 @@
                         <%--Inventory--%>
                         <div class="field">
                             <div class="control icons-left icons-right">
-                                <input class="input" type="number" placeholder="Inventory" name="inventory"
-                                       id="inventory">
+                                <input class="input" type="number" placeholder="Inventory" name="inventory" required
+                                       id="inventory" value="${product.getInventory()}">
                                 <span class="icon left"><i class="mdi mdi-mail"></i></span>
                                 <span class="icon right"><p class="">unit</p></span>
                             </div>
@@ -99,10 +106,16 @@
                     <div class="control">
                         <div class="select">
                             <select name="active">
-                                <option value="1">Đang kinh doanh</option>
-                                <option value="2">Ngừng kinh doanh</option>
-                                <option value="3">Giảm giá</option>
-                                <option value="4">Hàng mới</option>
+                                <option value="1"  <c:if test="${1==product.getActive()}"> selected</c:if> >Đang kinh
+                                    doanh
+                                </option>
+                                <option value="2"  <c:if test="${2==product.getActive()}"> selected</c:if> >Ngừng kinh
+                                    doanh
+                                </option>
+                                <option value="3"  <c:if test="${3==product.getActive()}"> selected</c:if> >Giảm giá
+                                </option>
+                                <option value="4"  <c:if test="${4==product.getActive()}"> selected</c:if> >Hàng mới
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -111,14 +124,20 @@
                 <div class="field">
                     <label class="label">Supplier</label>
                     <div class="control">
+
                         <div class="select">
                             <select name="supplierId">
-                                <option value="1">anpha gold</option>
-                                <option value="2">th true milk</option>
-                                <option value="3">vinamilk</option>
-                                <option value="4">cô gái hà lan</option>
+                                <c:forEach items="${suppliers}" var="s">
+                                    <option value="${s.getId()}"
+                                        <%--                                            <c:if test="${0==d.getActive()}"> disabled </c:if>--%>
+                                            <c:if test="${d.getId() == product.getSupplierId()}"> selected</c:if>
+                                    >
+                                            ${s.getName()} </option>
+                                </c:forEach>
+
                             </select>
                         </div>
+
                     </div>
                 </div>
                 <%--Category--%>
@@ -127,10 +146,14 @@
                     <div class="control">
                         <div class="select">
                             <select name="categoryId">
-                                <option value="1">MT</option>
-                                <option value="2">0 th-6 th</option>
-                                <option value="3">6th-2 y</option>
-                                <option value="4">2y-6y</option>
+                                <c:forEach items="${categories}" var="c">
+                                    <option value="${c.getId()}"
+                                        <%--                                            <c:if test="${0==d.getActive()}"> disabled </c:if>--%>
+                                            <c:if test="${c.getId() == product.getCategoryId()}"> selected</c:if>
+                                    >
+                                            ${c.getName()} </option>
+                                </c:forEach>
+
                             </select>
                         </div>
                     </div>
@@ -141,10 +164,14 @@
                     <div class="control">
                         <div class="select">
                             <select name="discountId">
-                                <option value="1">--Chon CTKM--</option>
-                                <option value="2">mung khai truong</option>
-                                <option value="3">Tet thieu nhi</option>
-                                <option value="4">tet trung thu</option>
+                                <c:forEach items="${discounts}" var="d">
+                                    <option value="${d.getId()}"
+                                            <c:if test="${0==d.getActive()}"> disabled </c:if>
+                                            <c:if test="${d.getId() == product.getDiscountId()}"> selected</c:if>
+                                    >
+                                            ${d.getDiscount_name()} </option>
+                                </c:forEach>
+
                             </select>
                         </div>
                     </div>
@@ -155,10 +182,10 @@
                 <div class="field">
                     <label class="label">Decription</label>
                     <div class="control">
-                        <textarea class="textarea" placeholder="Decription" name="desc"></textarea>
+                        <textarea class="textarea" placeholder="Decription" name="desc"> ${product.getDesc()}</textarea>
                     </div>
                     <p class="help">
-                        This field is required
+
                     </p>
                 </div>
                 <hr>
@@ -178,6 +205,13 @@
                         </div>
                     </div>
                 </div>
+                <%--url--%>
+                <div class="field">
+                    <div class="control icons-left">
+                        <input class="input" type="text" placeholder="url-img" name="url" id="url" readonly
+                               value="${product.getImgDisplay()}">
+                    </div>
+                </div>
                 <hr>
                 <div class="field grouped">
                     <div class="control">
@@ -190,6 +224,9 @@
                             Reset
                         </button>
                     </div>
+                    <p class="help">
+                        ${mess}
+                    </p>
                 </div>
             </form>
         </div>
@@ -265,7 +302,6 @@
             this.style.height = (this.scrollHeight) + 'px';
         });
     });
-
 </script>
 
 </body>

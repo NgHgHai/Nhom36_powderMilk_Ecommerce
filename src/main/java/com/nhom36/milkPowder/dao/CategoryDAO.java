@@ -17,10 +17,10 @@ public interface CategoryDAO {
     @SqlQuery("select * from category")
     List<Category> getAllCategory();
 
-    @SqlUpdate("insert into category (name) values (:name)")
+    @SqlUpdate("INSERT INTO `category`(`id`, `name`, `desc`, `create_at`, `update_at`) VALUES (:id,:name,:desc,now(),now())")
     void insertCategory(@BindBean Category category);
 
-    @SqlUpdate("update category set name = :name where id = :id")
+    @SqlUpdate("UPDATE `category` SET `name`=:name,`desc`=:desc,`update_at`=now() WHERE id = :id")
     void updateCategory(@BindBean  Category category);
 
     @SqlUpdate("delete from category where id = :id")
