@@ -42,19 +42,19 @@ public class UserService {
 
 
     public User login(String email, String password) {
-        return connector.withExtension(UserDAO.class, handle -> handle.login(email, password));
+        return jdbi.withExtension(UserDAO.class, handle -> handle.login(email, password));
     }
 
     public boolean checkEmail(String email) {
-        return connector.withExtension(UserDAO.class, handle -> {
+        return jdbi.withExtension(UserDAO.class, handle -> {
             String id;
-            return ((id = handle.getUserIDWithMail(email)) != null);
+            return ((id = handle.getUserByMail(email).getId()) != null);
         });
 
     
     }
 
     public User findUserEmail(String email) {
-        return connector.withExtension(UserDAO.class, handle -> handle.getUserByMail(email));
+        return jdbi.withExtension(UserDAO.class, handle -> handle.getUserByMail(email));
     }
 }

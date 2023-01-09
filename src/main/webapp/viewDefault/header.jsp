@@ -88,20 +88,20 @@
                        data-bs-toggle="dropdown">
                         <c:if test="${userSession== null}">
                         <small class="fa fa-user text-body" class="rounded-circle" width="30" height="30"></small>
-                    <div class="dropdown-menu m-0">
-                        <a href="Login" class="dropdown-item">Log in</a>
-                        <a href="Register" class="dropdown-item">Register</a>
-                    </div>
-                    </c:if>
+                        <div class="dropdown-menu m-0">
+                            <a href="Login" class="dropdown-item">Log in</a>
+                            <a href="Register" class="dropdown-item">Register</a>
+                        </div>
+                        </c:if>
                         <c:if test="${userSession!= null}">
-                            <img src="${userSession.getAvatar()}" class="rounded-circle" width="30" height="30">
-                    <div class="dropdown-menu m-0">
-                        <a href="Register" class="dropdown-item">Account</a>
-                        <a href="customer.html" class="dropdown-item">Order Management</a>
-                        <a href="receiveAddress.html" class="dropdown-item">Your Address</a>
-                        <a href="#" class="dropdown-item">Log out</a>
-                    </div>
-                    </c:if>
+                        <img src="${userSession.getAvatar()}" class="rounded-circle" width="30" height="30">
+                        <div class="dropdown-menu m-0">
+                            <a href="Login" class="dropdown-item">Account</a>
+                            <a href="customer.html" class="dropdown-item">Order Management</a>
+                            <a href="receiveAddress.html" class="dropdown-item">Your Address</a>
+                            <a href="#" class="dropdown-item">Log out</a>
+                        </div>
+                        </c:if>
                 </div>
                 <!--                start   right size-->
                 <button class="btn-sm-square bg-white rounded-circle ms-3" data-bs-toggle="offcanvas"

@@ -34,7 +34,7 @@ public class BlogService {
         jdbi.useExtension(BlogDAO.class,dao-> dao.deleteById(id));
     }
 
-    public Object getLast() {
+    public List<Blog> getLast() {
         return jdbi.withExtension(BlogDAO.class, handle -> handle.getLast());
     }
     public static void main(String[] args) {

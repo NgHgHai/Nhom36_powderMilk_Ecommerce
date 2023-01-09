@@ -13,7 +13,7 @@ import java.util.List;
 public class BlogController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Blog> blogs = BlogService.getInstance().getLast();
+        List<Blog> blogs =  new BlogService().getLast();
            request.setAttribute("blogs", blogs);
            request.getRequestDispatcher("blog.jsp").forward(request, response);
     }
