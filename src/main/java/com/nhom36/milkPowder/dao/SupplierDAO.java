@@ -25,4 +25,6 @@ public interface SupplierDAO {
 
     @SqlUpdate("UPDATE `supplier` SET `name`=:name,`address`=:address,`email`=:email,`phone`=:phone,`update_at`=now() WHERE `id`=:id")
     int update(@BindBean Supplier supplier);
+
+//    Integer getNumProdByIdSupp(String id);
 }

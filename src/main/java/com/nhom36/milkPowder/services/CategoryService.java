@@ -10,9 +10,6 @@ import java.util.List;
 public class CategoryService {
     Jdbi jdbi = JDBIConnector.get();
 
-    public List<Category> getAll() {
-        return jdbi.withExtension(CategoryDAO.class, dao -> dao.getAllCategory());
-    }
 
     public Category getById(String id) {
         return jdbi.withExtension(CategoryDAO.class, dao -> dao.getCategoryById(id));
@@ -30,6 +27,7 @@ public class CategoryService {
         jdbi.useExtension(CategoryDAO.class, dao -> dao.deleteCategory(id));
     }
 
+
     public List<Category> getAllCategory() {
         return jdbi.withExtension(CategoryDAO.class, dao -> dao.getAllCategory());
     }
@@ -41,4 +39,6 @@ public class CategoryService {
             System.out.println(category.getName());
         }
     }
+
+
 }

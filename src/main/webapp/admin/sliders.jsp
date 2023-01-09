@@ -35,7 +35,7 @@
             <h1 class="title">
                 Slider Tables
             </h1>
-            <a href="/AddProductController">
+            <a href="/AddSliderController">
                 <button class="button red --jb-modal">Add new</button>
             </a>
         </div>
@@ -70,32 +70,36 @@
                     </thead>
                     <tbody>
                     <%-- this is colum of table     --%>
-                    <c:set var="data" value="${2}"></c:set>
-                    <c:forEach var="user" items="${user}"></c:forEach>
-                    <% for (int i = 0; i < 3; i++) {%>
-                    <tr>
+                    <c:forEach var="s" items="${sliders}">
 
-                        <td data-label="Name">gioi thieu sua moi</td>
-                        <td data-label="Id">@023</td>
-                        <td class="image-cell">
-                            <div class="img-sm">
-                                <img src="/img/product-2.jpg)">
-                            </div>
-                        </td>
-                        <td data-label="URL">https://avatars.dicebear.com/v2</td>
-                        <td class="actions-cell">
-                            <div class="buttons right nowrap">
-                                <button class="button small green --jb-modal" data-target="sample-modal-2"
-                                        type="button">
-                                    <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <%}%>
+                        <tr>
+
+                            <td data-label="Name">${s.getName()}</td>
+                            <td data-label="Id">${s.getId()}</td>
+                            <td class="image-cell">
+                                <div class="img-my" style="height: 50px;width: 100px">
+                                    <img src=${s.getImage()}>
+                                </div>
+                            </td>
+                            <td data-label="URL"><a href="${s.getUrl()}">${s.getUrl()} </a></td>
+                            <td class="actions-cell">
+                                <div class="buttons right nowrap">
+                                    <a href="/AddSliderController?id=${s.getId()}">
+                                        <button class="button small green --jb-modal"
+                                                type="button">
+                                            <span class="icon"><i class="mdi mdi-eye"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="/SlidersController?id=${s.getId()}&action=delete">
+                                        <button class="button small red --jb-modal"
+                                                type="button">
+                                            <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                     <tfoot>
                     <tr>

@@ -44,26 +44,6 @@ public class Category {
                 '}';
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public LocalDateTime getCreateAt() {
-        return createAt;
-    }
-
-    public LocalDateTime getUpdateAt() {
-        return updateAt;
-    }
-
-    public String getName() {
-        return name;
-    }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -82,5 +62,25 @@ public class Category {
 
     public void setUpdateAt(LocalDateTime updateAt) {
         this.updateAt = updateAt;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public LocalDateTime getCreateAt() {
+        return createAt;
+    }
+
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
     }
 }

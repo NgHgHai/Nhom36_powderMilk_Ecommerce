@@ -28,8 +28,9 @@ public interface ProductDAO {
             "VALUES (:id,:name,:price,:desc,:imgDisplay,:weightAmount,:weightUnits,:active,:inventory,:supplierId,:categoryId,:discountId,now(),now())")
     int insertProduct(@BindBean Product product);
 
-    @SqlUpdate("UPDATE `Product` SET `name`=:name,`price`=:price,`minSaletime`=:minSaletime,`maxSaletime`=:maxSaletime,`desc`=:desc,`img_display`=:img_display," +
-            "`weight_amount`=:weight_amount,`weight_unit`=:weight_unit,`active`=:active,`inventory`=:inventory,`supplier_id`=:supplier_id,`category_id`=:category_id,`discount_id`=:discount_id,`update_at`=now() WHERE id=:id")
+
+    @SqlUpdate("UPDATE `Product` SET `name`=:name,`price`=:price,`desc`=:desc,`img_display`=:imgDisplay," +
+            "`weight_amount`=:weightAmount,`active`=:active,`inventory`=:inventory,`supplier_id`=:supplierId,`category_id`=:categoryId,`discount_id`=:discountId,`update_at`=now() WHERE id=:id")
     int updateProduct(@BindBean Product product);
 
     @SqlQuery("select * from Product where category_id = :categoryId")

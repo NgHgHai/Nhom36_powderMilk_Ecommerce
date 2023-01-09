@@ -52,7 +52,7 @@ public class FakeData {
         for (Discount discount: discounts) {
             discount.setId(StringUtil.getIDWithLength(10));
             discount.setDiscountPercent(fakerUser.number().numberBetween(1, 100)*0.01);
-            discount.setDiscountName(fakerUser.name().fullName());
+            discount.setDiscount_name(fakerUser.name().fullName());
             discount.setActive(fakerUser.number().numberBetween(0, 2));
             jdbi.useExtension(DiscountDAO.class, dao -> dao.insert(discount));
         }

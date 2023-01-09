@@ -35,7 +35,7 @@
             <h1 class="title">
                 Category Tables
             </h1>
-            <a href="/AddProductController">
+            <a href="/AddCategorysController">
                 <button class="button red --jb-modal">Add new</button>
             </a>
         </div>
@@ -60,33 +60,24 @@
                     <thead>
                     <%-- this is name of colum    --%>
                     <tr>
-                        <th></th>
                         <th>Name</th>
                         <th>Id</th>
                         <th>Description</th>
-                        <th>Num of product</th>
+
                         <th>Created</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     <%-- this is colum of table     --%>
-                    <c:set var="data" value="${2}"></c:set>
-                    <c:forEach var="user" items="${user}"></c:forEach>
-                    <% for (int i = 0; i < 50; i++) {%>
+                    <c:forEach var="c" items="${categories}">
                     <tr>
-                        <td class="image-cell">
-                            <div class="image">
-                                <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg"
-                                     class="rounded-full">
-                            </div>
-                        </td>
-                        <td data-label="Name">2y-6y</td>
-                        <td data-label="Id">&2131</td>
-                        <td data-label="Description">South Cory dogy</td>
-                        <td data-label="Num of product">23</td>
+                        <td data-label="Name">${c.getName()}</td>
+                        <td data-label="Id">${c.getId()}</td>
+                        <td data-label="Description">${c.getDesc()}</td>
+
                         <td data-label="Created">
-                            <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
+                            <small class="text-gray-500" >${c.getCreateAt()}</small>
                         </td>
                         <td class="actions-cell">
                             <div class="buttons right nowrap">
@@ -94,21 +85,23 @@
                                         type="button">
                                     <span class="icon"><i class="mdi mdi-eye"></i></span>
                                 </button>
-                                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                    <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                </button>
+                                <a href="CategorysController?id=${c.getId()}&action=delete">
+                                    <button class="button small red --jb-modal" type="button">
+                                        <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                    </button>
+                                </a>
                             </div>
                         </td>
                     </tr>
-                    <%}%>
+                    </c:forEach>
+
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th></th>
                         <th>Name</th>
                         <th>Id</th>
                         <th>Description</th>
-                        <th>Num of product</th>
+
                         <th>Created</th>
                         <th></th>
                     </tfoot>
