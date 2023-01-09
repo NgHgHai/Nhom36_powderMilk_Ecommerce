@@ -17,15 +17,17 @@ import java.util.Map;
 public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      String cate = request.getParameter("cat");
         CategoryService categoryService = new CategoryService();
         ProductService productService = new ProductService();
         List<Category> categories = categoryService.getAllCategory();
-
+        request.setAttribute("categories", categories);
         Map<String, List<Product>> map = new HashMap<>();
         for(Category category: categories){
             List<Product> products = productService.findByCategory(category.getId());
             map.put(category.getName(), products);
         }
+
         request.setAttribute("map", map);
         RequestDispatcher rd = request.getRequestDispatcher("dashBoard.jsp");
         rd.forward(request, response);

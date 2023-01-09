@@ -26,12 +26,14 @@ public class Blog {
     }
 
 
+
     public String getId() {
         return id;
     }
 
     public String getAdminName() {
         return adminName;
+
     }
 
     public String getTitle() {
@@ -41,6 +43,8 @@ public class Blog {
     public String getImage() {
         return image;
     }
+
+
 
     public String getContent() {
         return content;
@@ -56,6 +60,7 @@ public class Blog {
 
     public void setId(String id) {
         this.id = id;
+
     }
 
     public void setAdminName(String adminName) {

@@ -5,11 +5,11 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "about_us", value = "/about_us")
+@WebServlet(name = "about-us",urlPatterns = "/about-us")
 public class AboutUsController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-           request.getRequestDispatcher("about_us.jsp").forward(request, response);
+           request.getRequestDispatcher("about-us.jsp").forward(request, response);
     }
 
     @Override

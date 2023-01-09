@@ -4,8 +4,6 @@ import com.github.javafaker.Faker;
 import com.nhom36.milkPowder.beans.*;
 import com.nhom36.milkPowder.dao.*;
 import com.nhom36.milkPowder.db.JDBIConnector;
-import com.nhom36.milkPowder.services.CartService;
-import com.nhom36.milkPowder.services.DiscountService;
 import com.nhom36.milkPowder.util.StringUtil;
 import org.jdbi.v3.core.Jdbi;
 
@@ -16,8 +14,9 @@ public class FakeData {
     public static void main(String[] args) {
         FakeData fakeData = new FakeData();
 //
-//        fakeData.insertItem();
-        fakeData.insertDiscount();
+        fakeData.crashUser();
+
+        ;
 
         Jdbi connector = JDBIConnector.get();
 //        Cart cart = new CartService().getCartByUserId("nnwwfoebyd");
@@ -26,6 +25,26 @@ public class FakeData {
 
 
     }
+
+    private void insertBlog() {
+        Faker faker = new Faker(new Locale("vi"));
+        Jdbi connector = JDBIConnector.get();
+        for (int i = 0; i < 15; i++) {
+            String fullName = faker.name().fullName();
+            String firstName = fullName.split(" ")[0];
+            String lastName = fullName.split(" ")[1];
+            Blog blog = new Blog();
+
+            blog.setId(StringUtil.getIDWithLength(10));
+            blog.setAdminName(fullName);
+            blog.setImage("https://picsum.photos/200/300");
+            blog.setTitle(faker.book().title());
+            blog.setContent(faker.book().genre());
+            connector.useExtension(BlogDAO.class, handle -> handle.insert(blog));
+        }
+    }
+
+
     void insertDiscount(){
         Faker fakerUser = new Faker(new Locale("vi"));
         Jdbi jdbi = JDBIConnector.get();
@@ -98,10 +117,8 @@ public class FakeData {
                 user.setAddress(fakerUser.address().fullAddress());
                 user.setPhone(fakerUser.phoneNumber().phoneNumber());
                 user.setEmail(fakerUser.internet().emailAddress());
-                user.setPassword("123456");
+                user.setPassword("12345678");
                 user.setRole(fakerUser.number().numberBetween(0, 2));
-
-
                 dao.register(user);
             }
         });

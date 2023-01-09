@@ -16,4 +16,8 @@ public class StringUtil {
             return generatedString;
 
     }
+
+    public static void main(String[] args) {
+        System.out.println(getIDWithLength(10));
+    }
 }

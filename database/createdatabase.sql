@@ -1,5 +1,7 @@
 create database if not exists Nhom36_powderMilk_Ecommerce;
 use Nhom36_powderMilk_Ecommerce;
+
+
 create table if not exists supplier
 (
     `id`        varchar(10) primary key not null,
@@ -72,6 +74,7 @@ create table if not exists role
     `update_at` datetime            not null
 );
 
+
 create table if not exists `order`
 (
     id                 varchar(10) primary key not null,
@@ -132,6 +135,7 @@ create table if not exists slider
     `create_at` Datetime                NOT NULL,
     `update_at` Datetime                NOT NULL
 );
+
 
 
 

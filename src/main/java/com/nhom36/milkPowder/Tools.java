@@ -10,6 +10,7 @@ import java.lang.reflect.Field;
 public class Tools {
     public static void main(String[] args) {
         Tools tools = new Tools();
+
         Class product = Product.class;
         tools.select(product);
         tools.selectById(product);

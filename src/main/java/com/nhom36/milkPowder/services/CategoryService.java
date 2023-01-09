@@ -27,5 +27,18 @@ public class CategoryService {
         jdbi.useExtension(CategoryDAO.class, dao -> dao.deleteCategory(id));
     }
 
-    public List<Category> getAllCategory() {return jdbi.withExtension(CategoryDAO.class, dao -> dao.getAllCategory());}
+
+    public List<Category> getAllCategory() {
+        return jdbi.withExtension(CategoryDAO.class, dao -> dao.getAllCategory());
+    }
+
+    public static void main(String[] args) {
+        CategoryService categoryService = new CategoryService();
+        List<Category> categories = categoryService.getAllCategory();
+        for (Category category : categories) {
+            System.out.println(category.getName());
+        }
+    }
+
+
 }

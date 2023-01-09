@@ -10,10 +10,11 @@ public class Define {
     public final static String productImageDisplayFolder = "upload\\productImageDisplay";
     public final static String productFolder = "upload\\product";
 
+
     public final static String sliderFolder = "upload\\slider";
 
-//    public static final String domain = "http://localhost:8080/BroadStore/";
-//    public static final String domain = "https://boardgame1.azurewebsites.net/";
+    public static final String domain = "http://localhost:8081/Home";
+
     public static String userSession = "userSession";
 
 }

@@ -11,8 +11,10 @@ import com.nhom36.milkPowder.dao.SupplierDAO;
 import com.nhom36.milkPowder.db.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 
 public class ProductService {
     Jdbi jdbi = JDBIConnector.get();
@@ -58,7 +60,24 @@ public class ProductService {
     }
 
     public List<Product> findByCategory(String id) {
-        return jdbi.withExtension(ProductDAO.class,handle -> handle.getProductByCategoryId(id));
+        return jdbi.withExtension(ProductDAO.class,handle -> handle.getProductByCategoryId(id)).stream().map(Product -> fullProduct(Product)).collect(Collectors.toList());
+    }
+
+    public List<Product> find5productByCategory(String id) {
+        return jdbi.withExtension(ProductDAO.class,handle -> handle.get5ProductByCategoryId(id)).stream().map(Product -> fullProduct(Product)).collect(Collectors.toList());
+    }
+
+    public String getImgbyProductId(String id){
+        return jdbi.withExtension(ProductDAO.class,handle -> handle.getLinkImageByProductId(id));
+    }
+
+
+    public List<Product> sortByPrice() {
+        return jdbi.withExtension(ProductDAO.class,handle -> handle.sortByPrice());
+    }
+
+    public static void main(String[] args) {
+        System.out.println( new ProductService().find5productByCategory("ujkcoouidh"));
     }
 
     public static void main(String[] args) {

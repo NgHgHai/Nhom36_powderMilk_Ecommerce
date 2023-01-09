@@ -11,7 +11,7 @@ import java.util.List;
 
 @RegisterBeanMapper(Blog.class)
 public interface BlogDAO {
-    @SqlQuery("select * from blog order by id desc")
+    @SqlQuery("select * from blog order by create_at desc")
     List<Blog> getLast();
 
     @SqlQuery("select * from blog")
@@ -28,8 +28,13 @@ public interface BlogDAO {
     int insert(@BindBean Blog blog);
 
     @SqlUpdate("UPDATE `blog` SET `id`=:id,`admin_name`=:adminName,`title`=:title,`image`=:image,`content`=:content,`update_at`=now() WHERE id = :id")
+
     int update(@BindBean Blog blog);
 
     @SqlUpdate("update blog set image = :image where id = :id")
     int updateImage(@Bind("id") String id, @Bind("image") String image);
+
+    @SqlQuery("select* from blog where admin_name = :adminName")
+    List<Blog> getBlogByAdminName(@Bind("adminName") String adminName);
+
 }

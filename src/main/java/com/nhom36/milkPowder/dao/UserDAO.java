@@ -11,7 +11,7 @@ import java.util.List;
 
 @RegisterBeanMapper(User.class)
 public interface UserDAO {
-    @SqlQuery("select * from user where email = :email and password = :password")
+    @SqlQuery("select * from user where email = :email and password = MD5(:password)")
     User login(@Bind("email") String mail, @Bind("password") String password);
 
     @SqlQuery("select * from user where email = :email")
@@ -32,7 +32,8 @@ public interface UserDAO {
     @SqlUpdate("UPDATE `user` SET `id`=:id,`lastname`=:lastName,`firstname`=:firstName,`avatar`=:avatar," +
             "`password`=:password,`phone`=:phone,`address`=:address,`email`=:mail,`role`=:role,`update_at`=now(),`active`=:active  where id = :id ")
     void update(@BindBean User user);
-    @SqlQuery("select * from user where role = 0")
+
+    @SqlQuery("select * from user where role = 1")
     List<User> getAllUser();
     @SqlQuery("select * from user where role = 1")
     List<User> getAllAdmin();
@@ -41,4 +42,7 @@ public interface UserDAO {
 
     @SqlQuery("SELECT count(id) FROM `user` where role = 0 ")
     int countUser();
+
 }
+
+

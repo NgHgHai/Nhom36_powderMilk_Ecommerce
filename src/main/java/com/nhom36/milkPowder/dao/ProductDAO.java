@@ -35,13 +35,19 @@ public interface ProductDAO {
 
     @SqlQuery("select * from Product where category_id = :categoryId")
     List<Product> getProductByCategoryId(@Bind("categoryId") String categoryId);
+    @SqlQuery("select  * from Product where category_id = :categoryId order by price desc limit 5")
+    List<Product> get5ProductByCategoryId(@Bind("categoryId") String categoryId);
+
 
     @SqlQuery("select * from Product where supplier_id = :supplierId")
     List<Product> getProductBySupplier(@Bind("supplierId") String supplierId);
 
-    @SqlQuery("select * from Product order by price asc ")
-    ArrayList<Product> allPriceUp();
+    @SqlQuery("select * from Product order by price desc ")
+   List<Product> sortByPrice();
 
     @SqlUpdate("delete from Product where id = :id")
     int delete(@Bind("id") int parseInt);
+    @SqlQuery("select img_display from Product where id = :id")
+    String getLinkImageByProductId(@Bind("id") String id);
+
 }
