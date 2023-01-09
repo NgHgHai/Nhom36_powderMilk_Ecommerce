@@ -23,8 +23,8 @@ public interface UserDAO {
     @SqlQuery("select * from user where active =1")
     User checkActive(@Bind("email") String mail);
 
-    @SqlUpdate("insert into 'user' (id, lastname, firstname, avatar, password, phone, address, email, role, create_at, update_at, active) " +
-            "values (:id, :lastname, :firstname, :avatar, MD5(:password), :phone, :address, :email, :role, now(), now(),0)")
+    @SqlUpdate("insert into `user` (id, lastname, firstname, avatar, password, phone, address, email, role, create_at, update_at, active) " +
+            "values (:id, :lastname, :firstname, :avatar, MD5(:password), :phone, :address, :email, :role, now(), now(),:active)")
     void register(@BindBean User user);
 
     @SqlUpdate("update user set active = 1 where id = :id")

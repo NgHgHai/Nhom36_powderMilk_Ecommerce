@@ -88,8 +88,19 @@
                             <div class="product-item">
                                 <div class="position-relative bg-light overflow-hidden">
                                     <img class="img-fluid w-100" src="${p.getImgDisplay()}" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New
+                                    <div class=" bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                        <c:if test="${p.getActive()==1}">
+                                            New
+                                        </c:if>
+                                        <c:if test="${p.getActive()==2}">
+                                            selling
+                                        </c:if>
+                                        <c:if test="${p.getActive()==3}">
+                                           Sale off
+                                        </c:if>
+                                        <c:if test="${p.getActive()==4}">
+                                            out of stock
+                                        </c:if>
                                     </div>
                                 </div>
                                 <div class="text-center p-4">
@@ -100,13 +111,31 @@
                                 </div>
                                 <div class="d-flex border-top">
                                     <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href="product?id=${p.getId()}"><i class="fa fa-eye text-primary me-2"></i>View
+                                        <a class="text-body" href="product?id=${p.getId()}"><i
+                                                class="fa fa-eye text-primary me-2"></i>View
                                             detail</a>
                                     </small>
                                     <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                            to cart</a>
+                                        <c:if test="${p.getActive()==1}">
+                                            <a class="text-body" href="">
+                                                <i class="fa fa-shopping-bag text-primary me-2 "></i>Add
+                                                to cart</a>
+                                        </c:if>
+                                        <c:if test="${p.getActive()==2}">
+                                            <a class="text-body disabled " >
+                                                <i class="fa fa-shopping-bag text-primary  disabled "></i>Add
+                                                to cart</a>
+                                        </c:if>
+                                        <c:if test="${p.getActive()==3}">
+                                            <a class="text-body" href="">
+                                                <i class="fa fa-shopping-bag text-primary me-2 "></i>Add
+                                                to cart</a>
+                                        </c:if>
+                                        <c:if test="${p.getActive()==4}">
+                                            <a class="text-body" href="">
+                                                <i class="fa fa-shopping-bag text-primary me-2 "></i>Add
+                                                to cart</a>
+                                        </c:if>
                                     </small>
                                 </div>
                             </div>

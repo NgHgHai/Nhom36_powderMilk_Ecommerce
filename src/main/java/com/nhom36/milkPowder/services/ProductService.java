@@ -77,5 +77,7 @@ public class ProductService {
     }
 
 
-
+    public void updateProductInventory(String id, int i) {
+        jdbi.useExtension(ProductDAO.class, dao -> dao.updateProductInventory(id,i));
+    }
 }

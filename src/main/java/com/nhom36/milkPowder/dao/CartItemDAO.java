@@ -14,12 +14,12 @@ public interface CartItemDAO {
 
 
     @SqlQuery("select * from cart_item where cart_id = :cartId")
-    List<CartItem> findByCartId(@Bind("id") String cartId);
+    List<CartItem> findByCartId(@Bind("cartId") String cartId);
 
     @SqlQuery("select product_id from cart_item where cart_id = :cartId")
     List<String> getProductId(@Bind("cartId") String cartId);
 
-    @SqlQuery("select * from cart_item where cart_id = :cartId and product_id = :productId")
+    @SqlQuery("select quantity from `cart_item` where `cart_id` = :cartId and `product_id` = :productId")
     int getQuantity(@Bind("cartId") String cartId, @Bind("productId") String productId);
 
     @SqlUpdate("insert into cart_item (cart_id, product_id, quantity,price,create_at, update_at) values (:cartId, :productId, :quantity,:price,now(),now())")
@@ -32,4 +32,9 @@ public interface CartItemDAO {
     int delete(@Bind("cartId") String cartId, @Bind("productId") String productId);
 
 
+    @SqlQuery("select * from cart_item where cart_id = :cartId and product_id = :productId")
+    CartItem findByCartIdAndProductId(@Bind("cartId") String cartId, @Bind("productId") String productId);
+
+    @SqlUpdate("update cart_item set quantity = :quantity, price = :price, update_at = now() where cart_id = :cartId and product_id = :productId")
+    void update(@BindBean CartItem cartItem);
 }

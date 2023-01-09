@@ -61,6 +61,8 @@
                         </c:if>
                 </div>
                 <!--                start   right size-->
+
+                <%--                cart start--%>
                 <button class="btn-sm-square bg-white rounded-circle ms-3" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvas-end" role="button">
                     <small class="fa fa-shopping-bag text-body"></small>
@@ -74,28 +76,8 @@
                                 aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body px-0 ">
-                        <ul class="list-group flex-column mb-sm-auto mb-0 align-items-start">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <img src="img/prenant/product-1.jpg" alt="">
-                                    <p class="fw-bold mb-1 p-3">Sữa Mom </p>
-                                    <p class="text-secondary mb-1 p-3 "> 560000 </p>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="img/prenant/product-1.jpg" alt="">
-                                    <p class="fw-bold mb-1 p-3">Sữa Mom </p>
-                                    <p class="text-secondary mb-1 p-3 "> 560000 </p>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="img/prenant/product-1.jpg" alt="">
-                                    <p class="fw-bold mb-1 p-3">Sữa Mom </p>
-                                    <p class="text-secondary mb-1 p-3 "> 560000 </p>
-                                </div>
-                            </li>
+                        <ul id="cart" class="list-group flex-column mb-sm-auto mb-0 align-items-start">
+                            Không có sản phẩm nào trong giỏ hàng
                         </ul>
                         <a class="btn btn-primary rounded-3 " href="shoppingcart.html" role="button">view my shopping
                             cart</a>
