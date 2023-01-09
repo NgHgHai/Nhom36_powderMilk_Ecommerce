@@ -1,0 +1,55 @@
+body {
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eff4fa, #add3ee);
+}
+a{
+    color: black;
+}
+.card-img-left {
+    width: 45%;
+    /* Link to your background image using in the property below! */
+    background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
+    background-size: cover;
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
+.btn-google {
+    color: white !important;
+    background-color: #ea4335;
+}
+
+.btn-facebook {
+    color: white !important;
+    background-color: #3b5998;
+}
+.form-control{
+    width: 100%;
+}
+.btn-primary{
+    background-color:#0D6EFD;
+}
+.form-select:focus {
+    border-color: #8abadc;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(21, 67, 184, 0.25)
+}
+i.text-secondary{
+    color: #0D6EFD;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-style:unset;
+}
+.fs-5 p{
+    margin: 10px;
+}
+i.bi.bi-arrow-left{
+    position: absolute;
+    left: 25px;
+    width: 30px;
+    height: 30px;
+}
