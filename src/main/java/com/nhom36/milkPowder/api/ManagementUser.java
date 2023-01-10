@@ -40,9 +40,10 @@ public class ManagementUser extends HttpServlet {
 
         } else {
             String action = request.getParameter("action");
-            request.setAttribute("user", user);
+
             List<Order> orders = orderService.getListOrderByUserId(user.getId());
             request.setAttribute("orders", orders);
+            request.setAttribute("user", user);
             request.setAttribute("mess",request.getParameter("mess"));
             if ("show".equals(action)) {
                 rd = request.getRequestDispatcher("/customer_page/customerManagement.jsp");
@@ -72,6 +73,8 @@ public class ManagementUser extends HttpServlet {
         user = (User) session.getAttribute(Define.userSession);
         String img = null;
         request.setCharacterEncoding("utf-8");
+
+
 
         try {
             BeanUtils.populate(user, request.getParameterMap());

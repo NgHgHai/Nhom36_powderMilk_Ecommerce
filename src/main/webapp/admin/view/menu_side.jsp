@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li>
-                <a href="/signIn_signUp_page/login.jsp">
+                <a href="Login">
                     <span class="icon"><i class="mdi mdi-lock"></i></span>
                     <span class="menu-item-label">Login</span>
                 </a>

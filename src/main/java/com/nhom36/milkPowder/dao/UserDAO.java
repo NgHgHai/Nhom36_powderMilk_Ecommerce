@@ -23,14 +23,14 @@ public interface UserDAO {
     @SqlQuery("select * from user where active =1")
     User checkActive(@Bind("email") String mail);
 
-    @SqlUpdate("insert into 'user' (id, lastname, firstname, avatar, password, phone, address, email, `role`, create_at, update_at, active) " +
+    @SqlUpdate("INSERT INTO `user`(`id`, `lastname`, `firstname`, `avatar`, `password`, `phone`, `address`, `email`, `role`, `create_at`, `update_at`, `active`) " +
             "values (:id, :lastname, :firstname, :avatar, MD5(:password), :phone, :address, :email, :role, now(), now(),0)")
     void register(@BindBean User user);
 
     @SqlUpdate("update user set active = 1 where id = :id")
     void active(@Bind("id") String id);
     @SqlUpdate("UPDATE `user` SET `id`=:id,`lastname`=:lastname,`firstname`=:firstname,`avatar`=:avatar," +
-            "`password`=:MD5(:password),`phone`=:phone,`address`=:address,`email`=:email,`role`=:role,`update_at`=now(),`active`=:active  where id = :id ")
+            "`password`=MD5(:password),`phone`=:phone,`address`=:address,`email`=:email,`role`=:role,`update_at`=now(),`active`=:active  where id = :id ")
     void update(@BindBean User user);
 
     @SqlQuery("select * from user where role = 1")

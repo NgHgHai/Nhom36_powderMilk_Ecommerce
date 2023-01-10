@@ -58,27 +58,27 @@
             <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
                 <div class="card-body p-4 p-sm-5">
                     <h5 class="card-title text-center mb-5 fw-light fs-5"><i class="text-secondary">Register</i></h5>
-                    <form>
+                    <form action="RegisterController" method="post" >
 
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
+                            <input name="name" type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
                             <label for="floatingInputUsername">Username</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                            <input name="email"  type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
                             <label for="floatingInputEmail">Email address</label>
                         </div>
 
                         <hr>
 
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input name="Password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
+                            <input name="ConfirmPassword" type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
                             <label for="floatingPasswordConfirm">Confirm Password</label>
                         </div>
 
@@ -86,21 +86,21 @@
                             <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Register</button>
                         </div>
 
-                        <a class="d-block text-center mt-2 small" href="login.jsp">Have an account? Sign In</a>
-
+                        <a class="d-block text-center mt-2 small" href="Login">Have an account? Sign In</a>
+                        <div> <p style="color: red"> ${mess} </p> </div>
                         <hr class="my-4">
 
-                        <div class="d-grid mb-2">
-                            <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
-                                <i class="fab fa-google me-2"></i> Sign up with Google
-                            </button>
-                        </div>
+<%--                        <div class="d-grid mb-2">--%>
+<%--                            <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">--%>
+<%--                                <i class="fab fa-google me-2"></i> Sign up with Google--%>
+<%--                            </button>--%>
+<%--                        </div>--%>
 
-                        <div class="d-grid">
-                            <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
-                                <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
-                            </button>
-                        </div>
+<%--                        <div class="d-grid">--%>
+<%--                            <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">--%>
+<%--                                <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook--%>
+<%--                            </button>--%>
+<%--                        </div>--%>
 
                     </form>
                 </div>
