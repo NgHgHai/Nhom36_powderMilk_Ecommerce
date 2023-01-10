@@ -70,7 +70,7 @@
                     <div id="input_info_account" class="width_common space_bottom_20">
                         <form class="form form-edit-account" action="/ChangePass" method="post" id="form-account"
                               autocomplete="off" novalidate="novalidate">
-                            <input type="hidden" class="tokenKey"
+                            <input type="hidden" class=""
                                    name="id" value="${user.getId()}">
                             <div class="title_profile_page">Change your password</div>
                             <br>
