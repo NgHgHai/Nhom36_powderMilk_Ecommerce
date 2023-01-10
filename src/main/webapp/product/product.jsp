@@ -59,7 +59,6 @@
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
-                <li class="breadcrumb-item"><a class="text-body" href="#">Pages</a></li>
                 <li class="breadcrumb-item text-dark active" aria-current="page">Products</li>
             </ol>
         </nav>
@@ -75,7 +74,9 @@
             <div class="col-lg-6">
                 <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s"
                      style="max-width: 500px;">
+                    <c:forEach items="${categories}" var="cate">
                     <h1 class="display-5 mb-3">Our Products</h1>
+                    </c:forEach>
                 </div>
             </div>
         </div>

@@ -3,7 +3,6 @@ package com.nhom36.milkPowder.api;
 import com.google.gson.Gson;
 import com.nhom36.milkPowder.beans.Product;
 import com.nhom36.milkPowder.services.ProductService;
-import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
