@@ -227,4 +227,5 @@ public class Product {
                 ", updateAt=" + updateAt +
                 '}';
     }
+
 }

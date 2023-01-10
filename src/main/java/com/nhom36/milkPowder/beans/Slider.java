@@ -5,8 +5,7 @@ import java.util.Objects;
 
 public class Slider {
     private String id;
-    private String name;
-    private String url;
+    private String link;
     private String image;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
@@ -14,10 +13,9 @@ public class Slider {
     public Slider() {
     }
 
-    public Slider(String id, String name, String url, String image, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Slider(String id, String link, String image, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
-        this.name = name;
-        this.url = url;
+        this.link = link;
         this.image = image;
         this.createAt = createAt;
         this.updateAt = updateAt;
@@ -27,8 +25,7 @@ public class Slider {
     public String toString() {
         return "Slider{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", url='" + url + '\'' +
+                ", link='" + link + '\'' +
                 ", image='" + image + '\'' +
                 ", createAt=" + createAt +
                 ", updateAt=" + updateAt +
@@ -39,13 +36,10 @@ public class Slider {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getLink() {
+        return link;
     }
 
-    public String getUrl() {
-        return url;
-    }
 
     public String getImage() {
         return image;
@@ -63,13 +57,10 @@ public class Slider {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLink(String link) {
+        this.link = link;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
 
     public void setImage(String image) {
         this.image = image;
@@ -88,11 +79,11 @@ public class Slider {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Slider slider = (Slider) o;
-        return Objects.equals(id, slider.id) && Objects.equals(name, slider.name) && Objects.equals(url, slider.url) && Objects.equals(image, slider.image) && Objects.equals(createAt, slider.createAt) && Objects.equals(updateAt, slider.updateAt);
+        return Objects.equals(id, slider.id) && Objects.equals(link, slider.link)  && Objects.equals(image, slider.image) && Objects.equals(createAt, slider.createAt) && Objects.equals(updateAt, slider.updateAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, url, image, createAt, updateAt);
+        return Objects.hash(id, link, image, createAt, updateAt);
     }
 }

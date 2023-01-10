@@ -13,7 +13,9 @@ import java.util.List;
 
 public class CartService {
     Jdbi jdbi = JDBIConnector.get();
-    public CartService(){}
+
+    public CartService() {
+    }
 
     public Cart getCartByUserId(String id) {
         Cart cart = jdbi.withExtension(CartDAO.class, dao -> dao.getCartByUserId(id));
@@ -37,4 +39,26 @@ public class CartService {
         jdbi.withExtension(CartDAO.class, dao -> dao.insert(cart));
     }
 
+    public void updateOrderItem(String cartId, String productId, int quantity) {
+        jdbi.useExtension(CartItemDAO.class, dao -> {
+            CartItem cartItem = dao.findByCartIdAndProductId(cartId, productId);
+            if (cartItem == null) {
+                cartItem = new CartItem();
+                cartItem.setCartId(cartId);
+                cartItem.setProductId(productId);
+                cartItem.setQuantity(quantity);
+                dao.insert(cartItem);
+            } else {
+                cartItem.setQuantity(quantity);
+                dao.update(cartItem);
+            }
+        });
+    }
+
+    public void removeProduct(String userId, String productId) {
+        jdbi.useExtension(CartItemDAO.class, dao -> {
+            Cart cart = getCartByUserId(userId);
+            dao.delete(cart.getId(), productId);
+        });
+    }
 }

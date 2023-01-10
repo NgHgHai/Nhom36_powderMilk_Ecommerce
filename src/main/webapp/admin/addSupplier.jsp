@@ -51,7 +51,7 @@
                 <div class="field">
                     <label class="label">From</label>
                     <div class="field-body">
-                        Id
+<%--                        Id--%>
                         <div class="field">
                             <div class="control icons-left">
                                 <input class="input" type="text" readonly placeholder="ID" name="id" id="id"

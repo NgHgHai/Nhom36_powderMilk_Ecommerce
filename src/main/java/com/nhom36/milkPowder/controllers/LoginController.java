@@ -16,6 +16,13 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("signIn_signUp_page/login.jsp");
+        String logout = request.getParameter("logout");
+        if ("true".equals(logout)) {
+            HttpSession session = request.getSession(true);
+            session.setAttribute(Define.userSession, null);
+        }
+
+
         rd.forward(request, response);
     }
 
@@ -24,7 +31,6 @@ public class LoginController extends HttpServlet {
         User user = new User();
         try {
             BeanUtils.populate(user, request.getParameterMap());
-
 
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);

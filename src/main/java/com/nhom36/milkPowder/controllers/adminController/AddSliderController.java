@@ -46,7 +46,7 @@ public class AddSliderController extends HttpServlet {
                 response.sendRedirect("/AddSliderController?id=" + id);
             } else {
                 img = UploadFileHelper.uploadFile(Define.sliderFolder, request, "image", slider.getId());
-                if (img != null || !img.equals("")) {
+                if (img != null && !img.equals("")) {
                     slider.setImage(img);
                 }
                 sliderService.update(slider);
