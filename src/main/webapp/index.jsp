@@ -288,7 +288,6 @@
             <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
         </div>
         <div class="row g-4">
-            <c:forEach items = "${blogs}" var="blog">
             <c:forEach items="${blogs}" var="blog">
                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <img class="img-fluid" src="${blog.getImage()}" alt="">
