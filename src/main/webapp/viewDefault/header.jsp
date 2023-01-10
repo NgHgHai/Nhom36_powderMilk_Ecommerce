@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
         <div class="col-lg-6 px-5 text-start">
@@ -39,27 +39,66 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn " type="submit"><small class="fa fa-search text-body"></small></button>
                 </form>
-
+                <%----%>
+                <img src="${userSession.getAvatar()}" class="rounded-circle" width="30" height="30">
                 <div class="nav-item dropdown">
-                    <a class="btn-sm-square bg-white rounded-circle ms-3 nav-link " href="customer.html"
-                       data-bs-toggle="dropdown">
-                        <c:if test="${userSession== null}">
-                        <small class="fa fa-user text-body" class="rounded-circle" width="30" height="30"></small>
-                        <div class="dropdown-menu m-0">
-                            <a href="Login" class="dropdown-item">Log in</a>
-                            <a href="Register" class="dropdown-item">Register</a>
-                        </div>
+                    <a href="#" class="nav-link dropdown-toggle" style="color: #0a0a0a " data-bs-toggle="dropdown">Hi, ${user.getFirstname()} !</a>
+                    <c:if test="${userSession!=null}">
+                    <div class="dropdown-menu m-0">
+                            <a href="ManagementUser?action=show" class="dropdown-item" >Account</a>
+                            <a href="ManagementUser?action=order" class="dropdown-item">Order Management</a>
+                            <a href="Login?logout=true" class="dropdown-item">Log out</a>
+                    </div>
                         </c:if>
-                        <c:if test="${userSession!= null}">
-                        <img src="${userSession.getAvatar()}" class="rounded-circle" width="30" height="30">
+                    <c:if test="${userSession==null}">
                         <div class="dropdown-menu m-0">
-                            <a href="Login" class="dropdown-item">Account</a>
-                            <a href="customer.html" class="dropdown-item">Order Management</a>
-                            <a href="receiveAddress.html" class="dropdown-item">Your Address</a>
-                            <a href="#" class="dropdown-item">Log out</a>
+                            <a href="Login" class="dropdown-item"  >Log in</a>
+                            <a href="Register" class="dropdown-item" >Register</a>
                         </div>
-                        </c:if>
+                    </c:if>
+
                 </div>
+                <%--                --%>
+
+                <%--                <div class="nav-item dropdown">--%>
+                <%--                    <a class="btn-sm-square bg-white rounded-circle nav-link " href="#">--%>
+
+                <%--                        <img src="${userSession.getAvatar()}" class="rounded-circle" width="30" height="30">--%>
+
+                <%--                        <ul class="dropdown-menu" role="menu" >--%>
+                <%--                            <c:if test="${true}">--%>
+                <%--                            <li role="presentation"><a role="menuitem" href="#">Log in</a></li>--%>
+                <%--                            <li role="presentation"><a role="menuitem" href="#">Register</a></li>--%>
+                <%--                            </c:if>--%>
+
+                <%--                            <c:if test="${false}">--%>
+                <%--                            <li role="presentation"><a role="menuitem" href="#">Account</a></li>--%>
+                <%--                            <li role="presentation"><a role="menuitem" href="#">Order Management</a></li>--%>
+                <%--                            <li role="presentation"><a role="menuitem" href="#">Log out</a></li>--%>
+
+                <%--                            <li role="presentation" class="divider"></li>--%>
+                <%--                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>--%>
+                <%--                            </c:if>--%>
+                <%--                        </ul>--%>
+
+
+                <%--&lt;%&ndash;                        <c:if test="${userSession== null}">&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                        <small class="fa fa-user text-body" class="rounded-circle" width="30" height="30"></small>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                        <div class="dropdown-menu m-0">&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                            <a href="Login" class="dropdown-item">Log in</a>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                            <a href="Register" class="dropdown-item">Register</a>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                        </div>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                        </c:if>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                        <c:if test="${userSession!= null}">&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                        <img src="${userSession.getAvatar()}" class="rounded-circle" width="30" height="30">&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                        <div class="dropdown-menu m-0">&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                            <a href="Login" class="dropdown-item">Account</a>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                            <a href="customer.html" class="dropdown-item">Order Management</a>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                            <a href="receiveAddress.html" class="dropdown-item">Your Address</a>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                            <a href="#" class="dropdown-item">Log out</a>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                        </div>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;                        </c:if>&ndash;%&gt;--%>
+                <%--                </div>--%>
                 <!--                start   right size-->
                 <button class="btn-sm-square bg-white rounded-circle ms-3" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvas-end" role="button">

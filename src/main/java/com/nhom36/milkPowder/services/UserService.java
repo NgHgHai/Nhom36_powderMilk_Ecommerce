@@ -57,4 +57,8 @@ public class UserService {
     public User findUserEmail(String email) {
         return jdbi.withExtension(UserDAO.class, handle -> handle.getUserByMail(email));
     }
+
+    public User getByIdAndPass(String id, String oldPass) {
+        return  jdbi.withExtension(UserDAO.class, dao -> dao.getByIdAndPass( id, oldPass));
+    }
 }

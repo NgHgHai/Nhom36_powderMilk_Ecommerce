@@ -48,7 +48,7 @@ public class AddBlogsController extends HttpServlet {
                 response.sendRedirect("/AddBlogsController?id=" + id);
             } else {
                 img = UploadFileHelper.uploadFile(Define.blogImageFolder, request, "image", blog.getId());
-                if (img != null || !img.equals("")) {
+                if (img != null && !img.equals("")) {
                     blog.setImage(img);
                 }
                 blogService.update(blog);

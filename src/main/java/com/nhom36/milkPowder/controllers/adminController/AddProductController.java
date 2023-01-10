@@ -70,7 +70,7 @@ public class AddProductController extends HttpServlet {
                 response.sendRedirect("/AddProductController?id=" + id);
             } else {
                 img = UploadFileHelper.uploadFile(Define.productFolder, request, "imgDisplay", product.getId());
-                if (img != null || !img.equals("")) {
+                if (img != null && !img.equals("")) {
                     product.setImgDisplay(img);
                 }
                 productService.updateProduct(product);
