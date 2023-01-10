@@ -4,7 +4,9 @@ import com.nhom36.milkPowder.beans.Blog;
 import com.nhom36.milkPowder.beans.Category;
 import com.nhom36.milkPowder.beans.Product;
 
+
 import com.nhom36.milkPowder.beans.Slider;
+
 import com.nhom36.milkPowder.services.BlogService;
 import com.nhom36.milkPowder.services.CategoryService;
 import com.nhom36.milkPowder.services.ProductService;
@@ -36,6 +38,7 @@ public class HomeController extends HttpServlet {
 
         List<Slider> sliders = new SliderService().getAll();
         request.setAttribute("sliders", sliders);
+
         request.setAttribute("blogs", blogs);
         request.setAttribute("map", map);
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");

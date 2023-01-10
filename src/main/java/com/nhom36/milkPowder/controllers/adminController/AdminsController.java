@@ -19,12 +19,20 @@ public class AdminsController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(true);
-        User user = (User) session.getAttribute(Define.userSession);
+        User user = (User) session.getAttribute(Define.userSession); // lấy ra user
+        // Nếu(user == null){
+            req.getRequestDispatcher("admin/view/login.jsp").forward(req,resp);
+            return;
+        // }
 //        if(user==null || user.getRole()== Role.CUSTOMER){
 //            resp.sendRedirect("Login");
 //            return;
 //        }
-        RequestDispatcher rd = req.getRequestDispatcher("admin/admins.jsp");
-        rd.forward(req, resp);
+//        req.getRequestDispatcher("admin/view/login.jsp").forward(req,resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doPost(req, resp);
     }
 }

@@ -3,7 +3,7 @@ package com.nhom36.milkPowder.beans;
 import java.time.LocalDateTime;
 
 public class User {
-    private String id;
+    public static String id;
     private String lastname;
     private String firstname;
     private String avatar;
