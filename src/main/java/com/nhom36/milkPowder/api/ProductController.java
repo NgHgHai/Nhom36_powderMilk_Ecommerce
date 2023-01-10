@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-@WebServlet(name = "ProductController", value = "/ProductController")
+@WebServlet(urlPatterns = "/Product")
 public class ProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

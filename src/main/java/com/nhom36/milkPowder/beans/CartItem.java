@@ -1,11 +1,16 @@
 package com.nhom36.milkPowder.beans;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CartItem {
   private Product product;
     private int quantity;
     private double price;
     private String productId;
     private String cartId;
+
+
     public CartItem(){}
 
     public CartItem(String cartId, String productId, int quantity, double price){
@@ -59,6 +64,7 @@ public class CartItem {
     public void setCartId(String cartId) {
         this.cartId = cartId;
     }
+
 
     @Override
     public String toString() {

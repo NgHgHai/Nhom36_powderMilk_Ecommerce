@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li>
-                <a href="/signIn_signUp_page/signin.html">
+                <a href="/signIn_signUp_page/login.jsp">
                     <span class="icon"><i class="mdi mdi-lock"></i></span>
                     <span class="menu-item-label">Login</span>
                 </a>
@@ -47,42 +47,42 @@
                 </a>
                 <ul>
                     <li>
-                        <a href="/CustommersController">
+                        <a href="/CustommersController?action=all">
                             <span>Custommer</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/OrdersController">
+                        <a href="/OrdersController?action=all">
                             <span>Order</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/CategorysController">
+                        <a href="/CategorysController?action=all">
                             <span>Category</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/ProductsController">
+                        <a href="/ProductsController?action=all">
                             <span>Product</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/BlogsController">
+                        <a href="/BlogsController?action=all">
                             <span>Blog</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/SuppliersController">
+                        <a href="/SuppliersController?action=all">
                             <span>Supplier</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/DiscountsController">
+                        <a href="/DiscountsController?action=all">
                             <span>Discount</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/SlidersController">
+                        <a href="/SlidersController?action=all">
                             <span>Slider</span>
                         </a>
                     </li>

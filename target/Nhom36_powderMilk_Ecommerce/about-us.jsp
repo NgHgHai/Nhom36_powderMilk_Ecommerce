@@ -77,14 +77,14 @@
                                 <span class="ms-1 d-none d-sm-inline">About Us</span> </a>
                         </li>
                         <li>
-                            <a href="product/product.html" class="nav-link text-truncate">
+                            <a href="product/product.jsp" class="nav-link text-truncate">
                                 <span class="ms-1 d-none d-sm-inline">Products</span></a>
                         </li>
                         <li>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><span class="ms-1 d-none d-sm-inline">Pages</span></a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                    <a href="blog.jsp" class="dropdown-item">Blog Grid</a>
                                     <a href="feature.html" class="dropdown-item">Our Features</a>
                                     <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                                     <a href="404.html" class="dropdown-item">404 Page</a>
@@ -107,11 +107,11 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="index.jsp" class="nav-item nav-link active">Home</a>
                     <a href="about-us.jsp" class="nav-item nav-link">About Us</a>
-                    <a href="product/product.html" class="nav-item nav-link">Products</a>
+                    <a href="product/product.jsp" class="nav-item nav-link">Products</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                            <a href="blog.jsp" class="dropdown-item">Blog Grid</a>
                             <a href="feature.html" class="dropdown-item">Our Features</a>
                             <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             <a href="404.html" class="dropdown-item">404 Page</a>
@@ -216,7 +216,7 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <img class="img-fluid w-100" src="img/about.jpg">
+                        <img class="img-fluid w-100" src="img/blogPost/about.jpg">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -243,7 +243,7 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-1.png" alt="">
+                        <img class="img-fluid mb-4" src="img/icon/icon-1.png" alt="">
                         <h4 class="mb-3">Natural Process</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
                         <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
@@ -251,7 +251,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
+                        <img class="img-fluid mb-4" src="img/icon/icon-2.png" alt="">
                         <h4 class="mb-3">Organic Products</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
                         <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
@@ -259,7 +259,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
+                        <img class="img-fluid mb-4" src="img/icon/icon-3.png" alt="">
                         <h4 class="mb-3">Biologically Safe</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
                         <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>

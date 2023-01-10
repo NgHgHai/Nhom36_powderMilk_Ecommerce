@@ -30,7 +30,7 @@ body {
 }
 
 .bg-icon {
-    background: url(../img/bg-icon.png) center center repeat;
+    background: url(../img/blogPost/bg-icon.png) center center repeat;
     background-size: contain;
 }
 
@@ -196,7 +196,6 @@ body {
 .page-header {
     padding-top: 12rem;
     padding-bottom: 6rem;
-    background: url(../img/carousel-1.jpg) top right no-repeat;
     background-size: cover;
 }
 
@@ -612,6 +611,10 @@ p{
     min-height: 1px;
     padding-left: 10px;
     padding-right: 10px;
+}
+.sidebar-categories .col-lg-9{
+    padding-left:60px;
+    padding-right: 0;
 }
 .bg-primary{
     background-color: #81a5b6 !important;

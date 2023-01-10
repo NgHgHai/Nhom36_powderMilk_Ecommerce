@@ -7,8 +7,6 @@ public class Product {
     private String id;
     private String name;
     private double price;
-    private int minSaletime;
-    private int maxSaletime;
     private String desc;
     private String imgDisplay;
     private double weightAmount;
@@ -33,8 +31,6 @@ public class Product {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.minSaletime = minSaletime;
-        this.maxSaletime = maxSaletime;
         this.desc = desc;
         this.imgDisplay = imgDisplay;
         this.weightAmount = weightAmount;
@@ -56,12 +52,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Double.compare(product.price, price) == 0 && minSaletime == product.minSaletime && maxSaletime == product.maxSaletime && Double.compare(product.weightAmount, weightAmount) == 0 && active == product.active && inventory == product.inventory && Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(desc, product.desc) && Objects.equals(imgDisplay, product.imgDisplay) && Objects.equals(weightUnits, product.weightUnits) && Objects.equals(supplierId, product.supplierId) && Objects.equals(categoryId, product.categoryId) && Objects.equals(supplier, product.supplier) && Objects.equals(category, product.category) && Objects.equals(discount, product.discount) && Objects.equals(createAt, product.createAt) && Objects.equals(updateAt, product.updateAt);
+        return Double.compare(product.price, price) == 0 && Double.compare(product.weightAmount, weightAmount) == 0 && active == product.active && inventory == product.inventory && Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(desc, product.desc) && Objects.equals(imgDisplay, product.imgDisplay) && Objects.equals(weightUnits, product.weightUnits) && Objects.equals(supplierId, product.supplierId) && Objects.equals(categoryId, product.categoryId) && Objects.equals(supplier, product.supplier) && Objects.equals(category, product.category) && Objects.equals(discount, product.discount) && Objects.equals(createAt, product.createAt) && Objects.equals(updateAt, product.updateAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, minSaletime, maxSaletime, desc, imgDisplay, weightAmount, weightUnits, active, inventory, supplierId, categoryId,discountId, supplier, category, discount, createAt, updateAt);
+        return Objects.hash(id, name, price, desc, imgDisplay, weightAmount, weightUnits, active, inventory, supplierId, categoryId,discountId, supplier, category, discount, createAt, updateAt);
     }
 
     public String getId() {
@@ -88,21 +84,6 @@ public class Product {
         this.price = price;
     }
 
-    public int getMinSaletime() {
-        return minSaletime;
-    }
-
-    public void setMinSaletime(int minSaletime) {
-        this.minSaletime = minSaletime;
-    }
-
-    public int getMaxSaletime() {
-        return maxSaletime;
-    }
-
-    public void setMaxSaletime(int maxSaletime) {
-        this.maxSaletime = maxSaletime;
-    }
 
     public String getDesc() {
         return desc;
@@ -230,8 +211,6 @@ public class Product {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", price=" + price +
-                ", minSaletime=" + minSaletime +
-                ", maxSaletime=" + maxSaletime +
                 ", desc='" + desc + '\'' +
                 ", imgDisplay='" + imgDisplay + '\'' +
                 ", weightAmount=" + weightAmount +

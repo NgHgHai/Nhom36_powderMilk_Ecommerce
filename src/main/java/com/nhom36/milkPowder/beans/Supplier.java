@@ -12,7 +12,8 @@ public class Supplier {
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Supplier(){}
+    public Supplier() {
+    }
 
     public Supplier(String id, String name, String address, String email, String phone, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
@@ -91,5 +92,18 @@ public class Supplier {
 
     public void setUpdateAt(LocalDateTime updateAt) {
         this.updateAt = updateAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Supplier{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", createAt=" + createAt +
+                ", updateAt=" + updateAt +
+                '}';
     }
 }

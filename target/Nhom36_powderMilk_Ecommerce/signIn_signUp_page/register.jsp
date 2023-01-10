@@ -86,7 +86,7 @@
                             <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Register</button>
                         </div>
 
-                        <a class="d-block text-center mt-2 small" href="signin.html">Have an account? Sign In</a>
+                        <a class="d-block text-center mt-2 small" href="login.jsp">Have an account? Sign In</a>
 
                         <hr class="my-4">
 

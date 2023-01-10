@@ -4,14 +4,36 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 <!--    <filter>-->
+<!--        <filter-name>FilterAdmin</filter-name>-->
+<!--        <filter-class>com.nhom36.milkPowder.filters.FilterAdmin</filter-class>-->
 
-<!--        <filter-name>EncodingFilter</filter-name>-->
+<!--        <init-param>-->
+<!--            <param-name>test-param</param-name>-->
+<!--            <param-value>UTF-8</param-value>-->
+<!--        </init-param>-->
+<!--    </filter>-->
+
+<!--    <filter>-->
+<!--        <filter-name>Home</filter-name>-->
+<!--        <filter-class>com.nhom36.milkPowder.controllers.HomeController</filter-class>-->
+
+<!--    </filter>-->
+
+<!--    <filter-mapping>-->
+<!--        <filter-name>Home</filter-name>-->
+<!--        <url-pattern></url-pattern>-->
+<!--    </filter-mapping>-->
+
+
+<!--    <filter>-->
+
+<!--        <filter-name>FilterAdmin</filter-name>-->
 <!--        <filter-class>-->
-<!--            com.nhom10.broadstore.fillters.EncodingFilter-->
+<!--            com.nhom36.milkPowder.filters.FilterAdmin-->
 <!--        </filter-class>-->
 
 <!--        <init-param>-->
-<!--            <param-name>encoding</param-name>-->
+<!--            <param-name>filter</param-name>-->
 <!--            <param-value>UTF-8</param-value>-->
 
 <!--        </init-param>-->
@@ -19,7 +41,7 @@
 <!--    </filter>-->
 
 <!--    <filter-mapping>-->
-<!--        <filter-name>EncodingFilter</filter-name>-->
+<!--        <filter-name>FilterAdmin</filter-name>-->
 <!--        <url-pattern>/*</url-pattern>-->
 <!--    </filter-mapping>-->
 <!--    <welcome-file-list>-->
@@ -28,54 +50,10 @@
 <!--    </welcome-file-list>-->
 <!--    <servlet>-->
 <!--        <servlet-name>Home</servlet-name>-->
-<!--        <servlet-class>com.nhom10.broadstore.controllers.HomeController</servlet-class>-->
+<!--        <servlet-class>com.nhom36.milkPowder.controllers.HomeController</servlet-class>-->
 <!--    </servlet>-->
 <!--    <servlet-mapping>-->
 <!--        <servlet-name>Home</servlet-name>-->
 <!--        <url-pattern></url-pattern>-->
 <!--    </servlet-mapping>-->
-    <!-- servlet definition -->
-<!--    <servlet>-->
-<!--        <servlet-name>ErrorHandler</servlet-name>-->
-<!--        <servlet-class>com.nhom10.broadstore.controllers.ErrorHandler</servlet-class>-->
-<!--    </servlet>-->
-<!--    &lt;!&ndash; servlet mappings &ndash;&gt;-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>ErrorHandler</servlet-name>-->
-<!--        <url-pattern>/ErrorHandler</url-pattern>-->
-<!--    </servlet-mapping>-->
-
-<!--    &lt;!&ndash; error-code related error pages &ndash;&gt;-->
-<!--    <error-page>-->
-<!--        <error-code>404</error-code>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
-<!--    <error-page>-->
-<!--        <error-code>403</error-code>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
-<!--    <error-page>-->
-<!--        <error-code>405</error-code>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
-<!--    <error-page>-->
-<!--        <error-code>500</error-code>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
-
-<!--    &lt;!&ndash; exception-type related error pages &ndash;&gt;-->
-<!--    <error-page>-->
-<!--        <exception-type>-->
-<!--            javax.servlet.ServletException-->
-<!--        </exception-type>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
-<!--    <error-page>-->
-<!--        <exception-type>java.lang.NullPointerException</exception-type>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
-<!--    <error-page>-->
-<!--        <exception-type>java.io.IOException</exception-type>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
 </web-app>
