@@ -10,3 +10,9 @@ margin-left: 40%;
     width: 100%;
     color: #0a0a0a!important;
 }
+.text-body.disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #c0c0c0;
+    background-color: #ffffff;
+}

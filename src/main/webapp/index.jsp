@@ -70,66 +70,21 @@
     <div class="row mx-auto my-auto justify-content-center">
         <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="img/product-2.jpg" class="img-fluid">
+                <c:forEach items="${sliders}" var="slider">
+                    <div class="carousel-item ">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="${slider.getLink()}">
+                                        <img href="" src="${slider.getImage()}" class="img-fluid"
+                                             style="width: 300px;height: auto;object-fit: cover">
+                                    </a>
+                                </div>
                             </div>
-                            <div class="card-img-overlay">Slide 1</div>
+
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400/e66?text=2" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 2</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400/7d2?text=3" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 3</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400?text=4" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 4</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400/aba?text=5" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 5</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400/fc0?text=6" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 6</div>
-                        </div>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
             <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
                data-bs-slide="prev">
@@ -182,24 +137,41 @@
                                     <div class="position-relative bg-light overflow-hidden">
                                         <img class="img-fluid w-100" src="${p.getImgDisplay()}" alt="">
                                         <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                            New
+                                            <c:if test="${p.getActive()==1}">
+                                                New
+                                            </c:if>
+                                            <c:if test="${p.getActive()==2}">
+                                                selling
+                                            </c:if>
+                                            <c:if test="${p.getActive()==3}">
+                                                Sale off
+                                            </c:if>
+                                            <c:if test="${p.getActive()==4}">
+                                                out of stock
+                                            </c:if>
                                         </div>
                                     </div>
                                     <div class="text-center p-4">
-                                        <a class="d-block h5 mb-2" href="product">${p.getName()}</a>
+                                        <a class="d-block h5 mb-2" href="product?id=${p.getId()}">${p.getName()}</a>
                                         <span class="text-primary me-1">${p.getPrice()}</span>
                                         <span class="text-body text-decoration-line-through">${p.getPrice()}</span><br>
                                         <span class="text-primary me-1">${p.getWeightAmount()}</span>
                                     </div>
                                     <div class="d-flex border-top">
                                         <small class="w-50 text-center border-end py-2">
-                                            <a class="text-body" href="product?id=${p.getId()}"><i class="fa fa-eye text-primary me-2"></i>View
+                                            <a class="text-body" href="product?id=${p.getId()}"><i
+                                                    class="fa fa-eye text-primary me-2"></i>View
                                                 detail</a>
                                         </small>
                                         <small class="w-50 text-center py-2">
-                                            <a class="text-body" href=""><i
+                                            <c:if test="${p.getActive()==1}">
+                                            <button class="text-body" href=""
+                                                    onclick="addToCart('${userSession.getId()}','${p.getId()}',1)"><i
                                                     class="fa fa-shopping-bag text-primary me-2"></i>Add
-                                                to cart</a>
+                                                to cart
+                                            </button>
+                                            </c:if>
+
                                         </small>
                                     </div>
                                 </div>
@@ -307,9 +279,6 @@
 </div>
 <!-- Firm Visit End -->
 
-
-
-
 <!-- Blog Start -->
 <div class="container-xxl py-6">
     <div class="container">
@@ -318,7 +287,8 @@
             <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
         </div>
         <div class="row g-4">
-            <c:forEach items = "${blogs}" var="blog">
+
+            <c:forEach items="${blogs}" var="blog">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <img class="img-fluid" src="${blog.getImage()}" alt="">
                     <div class="bg-light p-4">
@@ -361,5 +331,11 @@
 <!--<script src="lib/owlcarousel/owl.carousel.min.js"></script>-->
 <script src="js/carouselCustom.js"></script>
 <script src="js/jquery.slicknav.js"></script>
+<script src="js/cart.js"></script>
+<script>
+    $(document).ready(function () {
+        getCart(${userSession.getId()});
+    });
+</script>
 </body>
 </html>

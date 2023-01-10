@@ -53,16 +53,11 @@ public class UserService {
             User user;
             return ((user = handle.getUserByMail(email)) != null);
         });
-
-    
     }
 
     public User findUserEmail(String email) {
         return jdbi.withExtension(UserDAO.class, handle -> handle.getUserByMail(email));
-    }
 
-    public User getByIdAndPass(String id, String oldPass) {
-        return  jdbi.withExtension(UserDAO.class, dao -> dao.getByIdAndPass( id, oldPass));
     }
 
     public static void main(String[] args) throws MessagingException, IOException {

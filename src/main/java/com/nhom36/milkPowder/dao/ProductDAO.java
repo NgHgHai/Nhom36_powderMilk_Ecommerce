@@ -1,4 +1,5 @@
 package com.nhom36.milkPowder.dao;
+
 import com.nhom36.milkPowder.beans.Product;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
@@ -35,6 +36,7 @@ public interface ProductDAO {
 
     @SqlQuery("select * from Product where category_id = :categoryId")
     List<Product> getProductByCategoryId(@Bind("categoryId") String categoryId);
+
     @SqlQuery("select  * from Product where category_id = :categoryId order by price desc limit 5")
     List<Product> get5ProductByCategoryId(@Bind("categoryId") String categoryId);
 
@@ -43,11 +45,14 @@ public interface ProductDAO {
     List<Product> getProductBySupplier(@Bind("supplierId") String supplierId);
 
     @SqlQuery("select * from Product order by price desc ")
-   List<Product> sortByPrice();
+    List<Product> sortByPrice();
 
     @SqlUpdate("delete from Product where id = :id")
     int delete(@Bind("id") int parseInt);
+
     @SqlQuery("select img_display from Product where id = :id")
     String getLinkImageByProductId(@Bind("id") String id);
 
+    @SqlUpdate("UPDATE Product SET inventory=:inventory WHERE id=:id")
+    void updateProductInventory(@Bind("id") String id, @Bind("inventory") int i);
 }

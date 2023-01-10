@@ -4,6 +4,8 @@ import com.github.javafaker.Faker;
 import com.nhom36.milkPowder.beans.*;
 import com.nhom36.milkPowder.dao.*;
 import com.nhom36.milkPowder.db.JDBIConnector;
+import com.nhom36.milkPowder.services.ProductService;
+import com.nhom36.milkPowder.services.UserService;
 import com.nhom36.milkPowder.util.StringUtil;
 import org.jdbi.v3.core.Jdbi;
 
@@ -14,9 +16,9 @@ public class FakeData {
     public static void main(String[] args) {
         FakeData fakeData = new FakeData();
 //
-        fakeData.crashUser();
+        fakeData.insertSlider();
 
-        ;
+
 
         Jdbi connector = JDBIConnector.get();
 //        Cart cart = new CartService().getCartByUserId("nnwwfoebyd");
@@ -25,7 +27,18 @@ public class FakeData {
 
 
     }
-
+   private void insertSlider(){
+       Faker faker = new Faker(new Locale("vi"));
+       Jdbi connector = JDBIConnector.get();
+      List<Product> product = new ProductService().getAll();
+       for (int i = 0; i < 15; i++) {
+           Slider slider = new Slider();
+           slider.setId(StringUtil.getIDWithLength(10));
+           slider.setLink("localhost:8081/product?id="+product.get(i).getId());
+           slider.setImage(product.get(i).getImgDisplay());
+           connector.withExtension(SliderDAO.class, handle -> handle.insertSlider(slider));
+       }
+   }
     private void insertBlog() {
         Faker faker = new Faker(new Locale("vi"));
         Jdbi connector = JDBIConnector.get();
@@ -45,13 +58,13 @@ public class FakeData {
     }
 
 
-    void insertDiscount(){
+    void insertDiscount() {
         Faker fakerUser = new Faker(new Locale("vi"));
         Jdbi jdbi = JDBIConnector.get();
         List<Discount> discounts = jdbi.withExtension(DiscountDAO.class, dao -> dao.list());
-        for (Discount discount: discounts) {
+        for (Discount discount : discounts) {
             discount.setId(StringUtil.getIDWithLength(10));
-            discount.setDiscountPercent(fakerUser.number().numberBetween(1, 100)*0.01);
+            discount.setDiscountPercent(fakerUser.number().numberBetween(1, 100) * 0.01);
             discount.setDiscount_name(fakerUser.name().fullName());
             discount.setActive(fakerUser.number().numberBetween(0, 2));
             jdbi.useExtension(DiscountDAO.class, dao -> dao.insert(discount));
@@ -105,7 +118,7 @@ public class FakeData {
         Jdbi jdbi = JDBIConnector.get();
         String avatarLink = "https://randomuser.me/api/portraits/women/:ran.jpg";
         jdbi.useExtension(UserDAO.class, dao -> {
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 50; i++) {
                 User user = new User();
                 user.setId(StringUtil.getIDWithLength(10));
                 String fullName = fakerUser.name().fullName();
@@ -119,9 +132,21 @@ public class FakeData {
                 user.setEmail(fakerUser.internet().emailAddress());
                 user.setPassword("12345678");
                 user.setRole(fakerUser.number().numberBetween(0, 2));
+                user.setActive(fakerUser.number().numberBetween(0, 2));
                 dao.register(user);
             }
         });
     }
+        public void updateProduct () {
+            Faker faker = new Faker(new Locale("vi"));
+            Jdbi jdbi = JDBIConnector.get();
+            List<Product> products = jdbi.withExtension(ProductDAO.class, handle -> handle.list());
+            jdbi.useExtension(ProductDAO.class, dao -> {
+                for (int i = 0; i < products.size(); i++) {
+                    products.get(i).setActive(faker.number().numberBetween(1, 5));
+                    dao.updateProduct(products.get(i));
+                }
+            });
+        }
 }
 

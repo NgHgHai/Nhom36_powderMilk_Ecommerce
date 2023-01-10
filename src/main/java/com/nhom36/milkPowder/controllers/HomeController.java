@@ -3,9 +3,12 @@ package com.nhom36.milkPowder.controllers;
 import com.nhom36.milkPowder.beans.Blog;
 import com.nhom36.milkPowder.beans.Category;
 import com.nhom36.milkPowder.beans.Product;
+
+import com.nhom36.milkPowder.beans.Slider;
 import com.nhom36.milkPowder.services.BlogService;
 import com.nhom36.milkPowder.services.CategoryService;
 import com.nhom36.milkPowder.services.ProductService;
+import com.nhom36.milkPowder.services.SliderService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -30,6 +33,9 @@ public class HomeController extends HttpServlet {
             map.put(category.getName(), products);
         }
         List<Blog> blogs =  new BlogService().getTop3();
+
+        List<Slider> sliders = new SliderService().getAll();
+        request.setAttribute("sliders", sliders);
         request.setAttribute("blogs", blogs);
         request.setAttribute("map", map);
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
