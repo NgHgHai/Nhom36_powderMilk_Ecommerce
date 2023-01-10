@@ -279,26 +279,23 @@
 </div>
 <!-- Firm Visit End -->
 
-
 <!-- Blog Start -->
 <div class="container-xxl py-6">
     <div class="container">
-        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
-             style="max-width: 500px;">
+        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <h1 class="display-5 mb-3">Latest Blog</h1>
             <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
         </div>
         <div class="row g-4">
+
             <c:forEach items="${blogs}" var="blog">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <img class="img-fluid" src="${blog.getImage()}" alt="">
                     <div class="bg-light p-4">
                         <a class="d-block h5 lh-base mb-4" href="">${blog.getTitle()}</a>
                         <div class="text-muted border-top pt-4">
-                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>${blog.getAdminName()}
-                            </small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>${blog.getCreateAt()}
-                            </small>
+                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>${blog.getAdminName()}</small>
+                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>${blog.getCreateAt()}</small>
                         </div>
                     </div>
                 </div>
