@@ -66,9 +66,9 @@
                             <label for="floatingInput">Email address</label>
                         </div>
                         <hr class="my-4">
-                        <div class="d-grid mb-2">
+                        <div class="col-sm-12 d-grid mb-2">
 
-                            <button class="btn btn-google btn-login text-uppercase fw-bold" type="submit">
+                            <button class="btn btn-google btn-login text-uppercase fw-bold" type="submit" style="width: 290px ; font-size: 16px; padding: 6px">
                                 <i class=" me-2"></i> Send Password reset link
                             </button>
 

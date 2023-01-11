@@ -43,10 +43,16 @@ public class BlogService {
     }
 
     public static void main(String[] args) {
-        System.out.println(new BlogService().getById(""));
+        System.out.println(new BlogService().getByName("The Art of Healthy Living"));
     }
 
     public List<Blog> getTop3() {
         return jdbi.withExtension(BlogDAO.class, handle -> handle.getTop3());
     }
+
+    public Blog getByName(String title) {
+        return jdbi.withExtension(BlogDAO.class, handle -> handle.getByName(title));
+    }
 }
+
+

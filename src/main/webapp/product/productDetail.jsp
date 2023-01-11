@@ -53,7 +53,7 @@
     <div class="row no-gutters">
         <div class="col-md-5 pr-2">
             <div class="card">
-               <img src="${product.getImgDisplay()}">
+                <img src="${product.getImgDisplay()}" style=" width: 350px;margin: auto;">
             </div>
             <div class="card mt-2">
                 <div class="slogan_footer row">
@@ -120,12 +120,9 @@
                 <hr>
                 <div class="product-description">
                     <div class="d-flex flex-row align-items-center"><i class="fa fa-calendar-check-o"></i> <span
-                            class="ml-1">Delivery from sweden, 15-45 days</span></div>
+                            class="ml-1">Delivery from sweden, 3-7 days</span></div>
                     <div class="mt-2"><span class="font-weight-bold">Description</span>
-                        <p>The minimalist collaboration features chairs, lightening, Shelves, Sofas, Desks and various
-                            home accessories, all offering form and function at the same point.We use high-strength
-                            clamps and joinery techniques specially designed for engineered wood beds. Ergo, no irksome
-                            creaks - and you can sleep like a baby, well into adulthood!</p>
+                        <p>${product.getDesc()}</p>
                         <div class="bullets">
                             <div class="d-flex align-items-center"><span class="dot"></span> <span class="bullet-text">Best in Quality</span>
                             </div>
@@ -155,10 +152,10 @@
 
                 <div class="similar-products mt-2 d-flex flex-row">
                     <c:forEach var="pro" items="${listRelative}">
-                    <div class="card border p-1" style="width: 9rem;margin-right: 3px;"><img
-                            src="${pro.getImgDisplay()}" class="card-img-top" alt="...">
-                        <div class="card-body"><h6 class="card-title">${p.getPrice()}</h6></div>
-                    </div>
+                        <div class="card border p-1" style="width: 9rem;margin-right: 3px;"><img
+                                src="${pro.getImgDisplay()}" class="card-img-top" alt="...">
+                            <div class="card-body"><h6 class="card-title">${p.getPrice()}</h6></div>
+                        </div>
                     </c:forEach>
                 </div>
 
@@ -167,67 +164,7 @@
     </div>
 </div>
 <!--product detail end-->
-
-<!--section scoll start-->
-<div id="main_info_detail" class="width_common relative">
-    <div id="section_scroll" class="relative">
-        <div id="tab_sub_info" class="width_common">
-            <div class="content_scroll_tab width_common">
-                <a href="" rel="#product_info"> </a>
-                <a href=""></a>
-            </div>
-        </div>
-        <div id="product_info" class="width_common item_section_scroll">
-            <div class="tt_box_detail width_common">Thông số sản phẩm</div>
-            <div class="ct_box_detail width_common">
-                <div class="table_info_sp width_common">
-                    <div class="scroll_horizontal_xs">
-                        <table class="tb_info_sanpham" cellspacing="0" cellpadding="0" border="0">
-                            <tbody>
-                            <tr>
-                                <td class="col_tb_info_sp bg_info_sp">Barcode</td>
-                                <td class="barcode-content">8935274632232</td>
-                            </tr>
-                            <tr>
-                                <td class="col_tb_info_sp bg_info_sp">Thương Hiệu</td>
-                                <td>LA ROCHE-POSAY</td>
-                            </tr>
-                            <tr>
-                                <td class="col_tb_info_sp bg_info_sp">Xuất xứ thương hiệu</td>
-                                <td>Pháp</td>
-                            </tr>
-                            <tr>
-                                <td class="col_tb_info_sp bg_info_sp">Nơi sản xuất</td>
-                                <td>France</td>
-                            </tr>
-                            <tr>
-                                <td class="col_tb_info_sp bg_info_sp">Loại da</td>
-                                <td>Da dầu</td>
-                            </tr>
-                            <tr>
-                                <td class="col_tb_info_sp bg_info_sp">Đặc Tính</td>
-                                <td>Ban Ngày</td>
-                            </tr>
-                            <tr>
-                                <td class="col_tb_info_sp bg_info_sp">Giới tính</td>
-                                <td>Nam &amp; nữ</td>
-                            </tr>
-                            <tr>
-                                <td class="col_tb_info_sp bg_info_sp">Vấn đề về da</td>
-                                <td>Da dầu, lỗ chân lông to</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="customer_review" class="width_common item_section_scroll"></div>
-    </div>
 </div>
-<!--section scoll end-->
-
-
 <%@ include file="/viewDefault/footer.jsp" %>
 
 <!-- Back to Top -->

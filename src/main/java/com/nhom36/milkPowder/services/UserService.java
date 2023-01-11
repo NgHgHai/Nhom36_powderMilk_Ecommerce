@@ -75,6 +75,8 @@ return jdbi.withExtension(UserDAO.class,dao-> dao.getByIdAndPass(id, oldPass));
         System.out.println(user.getPassword());
 
     }
-
+    public User getByIdAndPass(String id, String oldPass) {
+        return jdbi.withExtension(UserDAO.class, dao -> dao.getByIdAndPass(id, oldPass));
+    }
 
 }

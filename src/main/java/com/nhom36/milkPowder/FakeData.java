@@ -85,7 +85,6 @@ public class FakeData {
                 Product product = products.get(index);
                 CartItem cartItem = new CartItem();
 
-                cartItem.setCartId(cart.getId());
                 cartItem.setProductId(product.getId());
 
                 cartItem.setQuantity(fakerUser.number().numberBetween(1, 10));
@@ -106,8 +105,6 @@ public class FakeData {
         List<User> listUser = jdbi.withExtension(UserDAO.class, handle -> handle.getAllUser());
         for (User user : listUser) {
             Cart cart = new Cart();
-            cart.setId(StringUtil.getIDWithLength(10));
-            cart.setCustomerId(user.getId());
             cart.setTotalPrice(0);
             jdbi.useExtension(CartDAO.class, handle -> handle.insert(cart));
         }

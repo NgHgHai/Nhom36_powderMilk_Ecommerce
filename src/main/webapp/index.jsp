@@ -112,20 +112,6 @@
                     <p>All my new products.</p>
                 </div>
             </div>
-            <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
-                <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
-                    <li class="nav-item me-2">
-                        <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill"
-                           href="#tab-1">New</a>
-                    </li>
-                    <li class="nav-item me-2">
-                        <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-2">Hot</a>
-                    </li>
-                    <li class="nav-item me-0">
-                        <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-3">Sale</a>
-                    </li>
-                </ul>
-            </div>
         </div>
         <div class="tab-content">
             <c:forEach var="item" items="${map}">
@@ -165,12 +151,17 @@
                                                 detail</a>
                                         </small>
                                         <small class="w-50 text-center py-2">
-                                            <c:if test="${p.getActive()==1}">
+                                            <c:if test="${p.getActive()==1||p.getActive()==2||p.getActive()==3}">
                                             <button class="text-body" href=""
-                                                    onclick="addToCart('${userSession.getId()}','${p.getId()}',1)"><i
-                                                    class="fa fa-shopping-bag text-primary me-2"></i>Add
+                                                    onclick="addToCart(${userSession.getId() and p.getId()and 1})">
+                                                    <i   class="fa fa-shopping-bag text-primary me-2"></i>Add
                                                 to cart
                                             </button>
+                                            </c:if>
+                                            <c:if test="${p.getActive()==4}">
+                                                <button class="text-body disabled " >
+                                                    <i class="fa fa-shopping-bag text-primary  disabled "></i>Add
+                                                    to cart</button>
                                             </c:if>
 
                                         </small>

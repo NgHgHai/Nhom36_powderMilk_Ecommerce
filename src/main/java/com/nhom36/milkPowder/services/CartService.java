@@ -2,9 +2,11 @@ package com.nhom36.milkPowder.services;
 
 import com.nhom36.milkPowder.beans.Cart;
 import com.nhom36.milkPowder.beans.CartItem;
+import com.nhom36.milkPowder.beans.ProductCart;
 import com.nhom36.milkPowder.beans.User;
 import com.nhom36.milkPowder.dao.CartDAO;
 import com.nhom36.milkPowder.dao.CartItemDAO;
+import com.nhom36.milkPowder.dao.ProductDAO;
 import com.nhom36.milkPowder.db.JDBIConnector;
 import com.nhom36.milkPowder.util.StringUtil;
 import org.jdbi.v3.core.Jdbi;
@@ -21,8 +23,6 @@ public class CartService {
         Cart cart = jdbi.withExtension(CartDAO.class, dao -> dao.getCartByUserId(id));
         if (cart == null) {
             cart = new Cart();
-            cart.setId(StringUtil.getIDWithLength(10));
-            cart.setCustomerId(id);
             cart.setTotalPrice(0);
             createCart(cart);
         }
@@ -30,8 +30,8 @@ public class CartService {
     }
 
     private Cart mapCart(Cart cart) {
-        List<CartItem> cartItems = jdbi.withExtension(CartItemDAO.class, dao -> dao.findByCartId(cart.getId()));
-        cart.setCartItemList(cartItems);
+        Object cartItems = jdbi.withExtension(ProductDAO.class, dao -> dao.list());
+        cart.setCartItemList((List<CartItem>) cartItems);
         return cart;
     }
 
@@ -58,7 +58,6 @@ public class CartService {
     public void removeProduct(String userId, String productId) {
         jdbi.useExtension(CartItemDAO.class, dao -> {
             Cart cart = getCartByUserId(userId);
-            dao.delete(cart.getId(), productId);
         });
     }
 }
