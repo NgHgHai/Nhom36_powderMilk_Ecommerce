@@ -1,84 +1,56 @@
 package com.nhom36.milkPowder.beans;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Cart {
-private String id;
-private String customerId;
-private Double totalPrice;
-private LocalDateTime createAt;
-private LocalDateTime updateAt;
-private List<CartItem> cartItemList = new ArrayList<CartItem>();
 
-public Cart() {}
+    private Map<String, Integer> carts = new HashMap<>();
+    private Double totalPrice;
+    private LocalDateTime createAt;
+    private LocalDateTime updateAt;
 
-public Cart(String id, String customerId, double totalPrice, LocalDateTime createAt, LocalDateTime updateAt, List<CartItem> cartItemList) {
-    this.id = id;
-    this.customerId = customerId;
-    this.totalPrice = totalPrice;
-    this.createAt = createAt;
-    this.updateAt = updateAt;
-    this.cartItemList = cartItemList;
 
-}
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cart cart = (Cart) o;
-        return Double.compare(cart.totalPrice, totalPrice) == 0 && Objects.equals(id, cart.id) && Objects.equals(customerId, cart.customerId) && Objects.equals(createAt, cart.createAt) && Objects.equals(updateAt, cart.updateAt) && Objects.equals(cartItemList, cart.cartItemList);
+    public Cart() {
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, customerId, totalPrice, createAt, updateAt, cartItemList);
+
+    public Cart(Map<String, Integer> carts, Double totalPrice, LocalDateTime createAt, LocalDateTime updateAt) {
+        this.carts = carts;
+        this.totalPrice = totalPrice;
+        this.createAt = createAt;
+        this.updateAt = updateAt;
     }
 
-    @Override
-    public String toString() {
-        return "Cart{" +
-                "id='" + id + '\'' +
-                ", customerId='" + customerId + '\'' +
-                ", totalPrice=" + totalPrice +
-                ", createAt=" + createAt +
-                ", updateAt=" + updateAt +
-                ", cartItemList=" + cartItemList +
-                '}';
+    public void addProd(String idProd, int quantity) {
+        int v = carts.get(idProd) + quantity;
+        if (carts.containsKey(idProd)) {
+            carts.replace(idProd,v);
+        }else {
+            carts.put(idProd,v);
+        }
+    }
+    public void add1Prod(String idProd){
+        addProd(idProd,1);
+    }
+    public void deleteProd(String idProd, int quantity){
+        int v = carts.get(idProd) - quantity;
+        if (carts.containsKey(idProd)) {
+            carts.replace(idProd,v);
+        }else {
+            carts.put(idProd,v);
+        }
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
 
     public double getTotalPrice() {
-    double total = 0.0;
-    for (CartItem cartItem : cartItemList) {
-        total += cartItem.getProduct().getPriceWasDiscount() * cartItem.getQuantity();
-    }
+        double total = 0.0;
         return total;
     }
+
     public int getTotalQuantity() {
-        int total = 0;
-        for (CartItem cartItem : cartItemList) {
-            total += cartItem.getQuantity();
-        }
-        return total;
+//        int total = 0;
+        return carts.size();
     }
 
     public void setTotalPrice(double totalPrice) {
@@ -101,11 +73,12 @@ public Cart(String id, String customerId, double totalPrice, LocalDateTime creat
         this.updateAt = updateAt;
     }
 
-    public List<CartItem> getCartItemList() {
-        return cartItemList;
+
+    public void setCartItemList(List<CartItem> cartItems) {
+
     }
 
-    public void setCartItemList(List<CartItem> cartItemList) {
-        this.cartItemList = cartItemList;
+    public Map<String, Integer> getCarts() {
+        return carts;
     }
 }

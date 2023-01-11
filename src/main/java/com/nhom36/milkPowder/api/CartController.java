@@ -27,14 +27,14 @@ public class CartController extends HttpServlet {
                 "                                </div>\n" +
                 "                            </li>";
         StringBuilder html = new StringBuilder();
-        for (int i = 0; i < cart.getCartItemList().size(); i++) {
-            String pImage = cart.getCartItemList().get(i).getProduct().getImgDisplay();
-            String pName = cart.getCartItemList().get(i).getProduct().getName();
-            double pPrice = cart.getCartItemList().get(i).getProduct().getPrice();
-            html.append(template.replace(":pImage", pImage)
-                    .replace(":pName", pName)
-                    .replace(":pPrice", pPrice + ""));
-        }
+//        for (int i = 0; i < cart.getCartItemList().size(); i++) {
+//            String pImage = cart.getCartItemList().get(i).getProduct().getImgDisplay();
+//            String pName = cart.getCartItemList().get(i).getProduct().getName();
+//            double pPrice = cart.getCartItemList().get(i).getProduct().getPrice();
+//            html.append(template.replace(":pImage", pImage)
+//                    .replace(":pName", pName)
+//                    .replace(":pPrice", pPrice + ""));
+//        }
         out.print(html);
         out.close();
     }

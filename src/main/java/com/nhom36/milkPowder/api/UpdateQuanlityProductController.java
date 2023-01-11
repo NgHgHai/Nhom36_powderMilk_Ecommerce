@@ -31,7 +31,7 @@ public class UpdateQuanlityProductController extends HttpServlet {
         if (quantity > product.getInventory()) {
             resp.getWriter().print("Số lượng sản phẩm trong kho không đủ");
         } else {
-            cartService.updateOrderItem(cart.getId(), productId, quantity);
+//            cartService.updateOrderItem(cart.getId(), productId, quantity);
 //            productService.updateProductInventory(product.getId(), product.getInventory() - quanlity);
             resp.getWriter().print("Cập nhật thành công");
         }

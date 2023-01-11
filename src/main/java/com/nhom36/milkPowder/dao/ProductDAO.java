@@ -1,6 +1,7 @@
 package com.nhom36.milkPowder.dao;
 
 import com.nhom36.milkPowder.beans.Product;
+import com.nhom36.milkPowder.beans.ProductCart;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
@@ -55,4 +56,9 @@ public interface ProductDAO {
 
     @SqlUpdate("UPDATE Product SET inventory=:inventory WHERE id=:id")
     void updateProductInventory(@Bind("id") String id, @Bind("inventory") int i);
+
+    @SqlQuery("select * from product where name like :txtSearch ")
+    List<Product> getProduct(@Bind("txtSearch") String txtSearch);
+    @SqlQuery("select * from Product where id = :id")
+    ProductCart getProductCartById(@Bind("id") String id);
 }

@@ -1,8 +1,7 @@
+
 <%@page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="utf-8">
     <title>HaChaMilk - Website mua sữa bột hàng đầu Việt Nam</title>
@@ -50,7 +49,7 @@
 <%--header end--%>
 
 <%--sidebar start--%>
-<%@ include file="/viewDefault/sidebar.jsp" %>
+<%@ include file="viewDefault/sidebar.jsp" %>
 <%--sidebar end--%>
 
 <!-- Page Header Start -->
@@ -74,28 +73,16 @@
             <div class="col-lg-6">
                 <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s"
                      style="max-width: 500px;">
-                    <h1 class="display-5 mb-3">Our Products</h1>
+                    <h1 class="display-5 mb-3">Our Products</h1><br>
+                    <h4>Find out : ${total} Results </h4>
                 </div>
             </div>
-            <form id="form" action="ProductStore" method="get">
-                    <div class="col-lg-4 store-sort text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
-                        <div class="col-6 justify-content-between "><select id="sort" class="form-select" name="sort">
-                            <option value="priceUp" class="nav-item me-2"
-                                    <c:if test="${param['sort']=='priceUp'}">selected</c:if>>
-                                Price Up
-                            </option>
-                            <option value="priceDown" class="nav-item me-2"
-                                    <c:if test="${param['sort']=='priceDown'}">selected</c:if> >
-                                Price Down
-                            </option>
-                        </select></div>
-                    </div>
-            </form>
         </div>
         <div class="tab-content">
-            <div class="tab-pane fade show p-0 active">
+
+            <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
-                    <c:forEach var="p" items="${listPro}">
+                    <c:forEach var="p" items="${findList}">
                         <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="product-item">
                                 <div class="position-relative bg-light overflow-hidden">
@@ -134,7 +121,7 @@
                                                 to cart</a>
                                         </c:if>
                                         <c:if test="${p.getActive()==4}">
-                                            <a class="text-body disabled ">
+                                            <a class="text-body disabled " >
                                                 <i class="fa fa-shopping-bag text-primary  disabled "></i>Add
                                                 to cart</a>
                                         </c:if>
@@ -180,5 +167,4 @@
 <!-- Template Javascript -->
 <script src="../js/main.js"></script>
 </body>
-
 </html>

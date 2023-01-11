@@ -1,9 +1,6 @@
 package com.nhom36.milkPowder.services;
 
-import com.nhom36.milkPowder.beans.Category;
-import com.nhom36.milkPowder.beans.Discount;
-import com.nhom36.milkPowder.beans.Product;
-import com.nhom36.milkPowder.beans.Supplier;
+import com.nhom36.milkPowder.beans.*;
 import com.nhom36.milkPowder.dao.CategoryDAO;
 import com.nhom36.milkPowder.dao.DiscountDAO;
 import com.nhom36.milkPowder.dao.ProductDAO;
@@ -71,6 +68,9 @@ public class ProductService {
         return jdbi.withExtension(ProductDAO.class,handle -> handle.getLinkImageByProductId(id));
     }
 
+    public List<Product> getProduct(String txtSearch){
+        return jdbi.withExtension(ProductDAO.class,handle -> handle.getProduct(txtSearch));
+    }
 
     public List<Product> sortByPrice() {
         return jdbi.withExtension(ProductDAO.class,handle -> handle.sortByPrice());
@@ -79,5 +79,19 @@ public class ProductService {
 
     public void updateProductInventory(String id, int i) {
         jdbi.useExtension(ProductDAO.class, dao -> dao.updateProductInventory(id,i));
+    }
+   public List<Product> getProductbyText(String txtSearch) {
+       return jdbi.withExtension(ProductDAO.class, dao -> dao.getProduct("%"+txtSearch+"%"));
+   }
+   public static void main(String[] args) {
+
+        for(Product product: new ProductService().getProductbyText("ăn kiêng")){
+            System.out.println(product);
+        }
+    }
+
+    public ProductCart getproductCartById(String id) {
+
+            return jdbi.withExtension(ProductDAO.class, dao -> dao.getProductCartById(id));
     }
 }

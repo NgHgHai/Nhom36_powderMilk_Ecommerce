@@ -14,7 +14,7 @@ import java.lang.reflect.InvocationTargetException;
 public class ForgotPassword extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("signIn_signUp_page/forgot_password.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("signIn_signUp_page/forgotPassword.jsp");
         rd.forward(request, response);
     }
 

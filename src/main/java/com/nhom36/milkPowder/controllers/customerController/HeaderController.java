@@ -15,7 +15,7 @@ public class HeaderController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
                 HttpSession session = request.getSession(true);
         User user = (User) session.getAttribute(Define.userSession);
-        String cartId = new CartService().getCartByUserId(user.getId()).getId();
+//        String cartId = new CartService().getCartByUserId(user.getId()).getId();
         System.out.println(user.getAvatar());
 
 

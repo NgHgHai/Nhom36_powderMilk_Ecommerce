@@ -220,26 +220,25 @@
 <!--information receiver end-->
 
 <!--products in shopping cart start-->
-<div id="v3_wrapper_container" class="width_common">
+<div id="v3_wrapper_container" class="width_common" style="margin-top: 200px">
     <div class="container-xl account-orders">
         <div id="wrapper_container" class="row">
-            <div id="profile_page" class="row" >
-                <div class="col-lg-4 col-md-4 col-xs-4">
+            <div id="profile_page" class="row" style="background-color: azure;margin-bottom: 20px" >
+                <div class="col-lg-4 col-md-4 col-xs-4" >
                     <div class="block_info_account width_common relative">
                         <div class="name_account space_bottom_5">
-                            <strong>Ngoan Hoàng</strong>
+                            <c:if test="${userSession!=null}">
+                            <strong>'${userSession.getFirstname() + userSession.getLastname()}}</strong>
                         </div>
-                        <div class="email_account space_bottom_5">0326497648</div>
+                        <div class="email_account space_bottom_5">${userSession.getPhone()}</div>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-xs-8">
-                    <p class=" customer-address text-primary"> Cư xá D Đại Học Nông Lâm, đường số 6, Phường Linh Trung,
-                        Thành
-                        Phố Thủ Đức, TP Hồ Chí Minh </p>
+                    <p class=" customer-address text-primary"> ${userSession.getAddress()} </p>
                     <a class="txt_color_1 txt_xemthem" href="customer_page/receiveAddress.jsp">Edit</a>
                 </div>
             </div>
-            <div id="product_list" class="row">
+            <div id="product_list" class="row" style="background-color: azure">
                 <div class="col-lg-9 col-md-9 col-sm-9">
 
                     <div id="block_donhang_cart" class="width_common  space_bottom_20">

@@ -3,6 +3,7 @@ package com.nhom36.milkPowder.beans;
 import java.time.LocalDateTime;
 
 public class User {
+    private int quantity;
     private String id;
     private String lastname;
     private String firstname;
@@ -19,7 +20,8 @@ public class User {
     public User() {
     }
 
-    public User(String id, String lastname, String firstname, String avatar, String password, String address, String phone, String email, int active, int role, LocalDateTime createAt, LocalDateTime updateAt) {
+    public User(int quantity, String id, String lastname, String firstname, String avatar, String password, String address, String phone, String email, int active, int role, LocalDateTime createAt, LocalDateTime updateAt) {
+        this.quantity = quantity;
         this.id = id;
         this.lastname = lastname;
         this.firstname = firstname;
@@ -32,6 +34,14 @@ public class User {
         this.role = role;
         this.createAt = createAt;
         this.updateAt = updateAt;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public void setId(String id) {

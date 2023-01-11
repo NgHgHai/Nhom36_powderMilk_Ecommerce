@@ -123,8 +123,8 @@ table{
     background-color: #f7f7f7;
     font-weight: 700;
 }
-a:visited{
-    color: #222831;
+a{
+    color: #0a0a0a!important;
     text-decoration: none;
     outline: 0;
 }

@@ -14,27 +14,31 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @WebServlet(name = "Home", urlPatterns = "/Home")
 public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       String cate = request.getParameter("cat");
+
         CategoryService categoryService = new CategoryService();
         ProductService productService = new ProductService();
         List<Category> categories = categoryService.getAllCategory();
+        List<Product> products = new ArrayList<>();
         request.setAttribute("categories", categories);
         Map<String, List<Product>> map = new HashMap<>();
-        for(Category category: categories){
-            List<Product> products = productService.findByCategory(category.getId());
+        for(Category category: categories) {
+            products = productService.findByCategory(category.getId());
             map.put(category.getName(), products);
         }
         List<Blog> blogs =  new BlogService().getTop3();
-
         List<Slider> sliders = new SliderService().getAll();
+        request.setAttribute("products", products);
         request.setAttribute("sliders", sliders);
         request.setAttribute("blogs", blogs);
         request.setAttribute("map", map);

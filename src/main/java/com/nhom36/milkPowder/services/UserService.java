@@ -70,4 +70,8 @@ public class UserService {
 //        System.out.println(sendMail(to, "12345678"));
 
     }
+
+    public User getByIdAndPass(String id, String oldPass) {
+        return jdbi.withExtension(UserDAO.class, dao -> dao.getByIdAndPass(id, oldPass));
+    }
 }
