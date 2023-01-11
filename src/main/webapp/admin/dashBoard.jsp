@@ -339,7 +339,7 @@
         <div class="modal-background --jb-modal-close"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Sample modal</p>
+                <p class="modal-card-title">Trạng Thái</p>
             </header>
             <section class="modal-card-body">
                 <p>Chỉnh sửa dữ liệu và load lên ở đây</p>

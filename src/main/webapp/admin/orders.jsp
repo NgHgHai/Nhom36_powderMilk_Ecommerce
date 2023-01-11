@@ -124,7 +124,7 @@
                                     <div class="navbar-item dropdown has-divider">
                                         <a class="navbar-link">
                                                 <%--                                            <span class="icon"><i class="mdi mdi-menu"></i></span>--%>
-                                            <span>Sample Menu</span>
+                                            <span>Trạng Thái</span>
                                                 <%--                                            <span class="icon">--%>
                                                 <%--            <i class="mdi mdi-chevron-down"></i>--%>
                                                 <%--          </span>--%>
@@ -175,6 +175,10 @@
                 </table>
             </div>
         </div>
+
+
+
+
 
     </section>
     <%--footer  admin--%>
