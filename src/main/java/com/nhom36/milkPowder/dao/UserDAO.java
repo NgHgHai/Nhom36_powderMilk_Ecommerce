@@ -31,6 +31,12 @@ public interface UserDAO {
 
     @SqlUpdate("update user set active = 1 where id = :id")
     void active(@Bind("id") String id);
+    @SqlUpdate("update user set active = 0 where id = :id")
+    void deActive(@Bind("id") String id);
+    @SqlUpdate("update user set role = 0 where id = :id")
+    void setAdmin(@Bind("id") String id);
+    @SqlUpdate("update user set role = 1 where id = :id")
+    void setUser(@Bind("id") String id);
     @SqlUpdate("UPDATE `user` SET `id`=:id,`lastname`=:lastname,`firstname`=:firstname,`avatar`=:avatar," +
             "`password`=MD5(:password),`phone`=:phone,`address`=:address,`email`=:email,`role`=:role,`update_at`=now(),`active`=:active  where id = :id ")
     void update(@BindBean User user);

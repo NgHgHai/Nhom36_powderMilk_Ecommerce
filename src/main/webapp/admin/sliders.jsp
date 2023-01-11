@@ -74,7 +74,7 @@
 
                         <tr>
 
-                            <td data-label="Name">${s.getName()}</td>
+<%--                            <td data-label="Name">${s.getName()}</td>--%>
                             <td data-label="Id">${s.getId()}</td>
                             <td class="image-cell">
                                 <div class="img-my" style="height: 50px;width: 100px">

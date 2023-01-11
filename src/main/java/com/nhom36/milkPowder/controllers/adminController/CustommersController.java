@@ -20,6 +20,19 @@ public class CustommersController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         String action = request.getParameter("action");
+        System.out.println(id);
+//        if ("setAdmin".equals(action)) {
+//            userService.setAdmin(id);
+//            response.sendRedirect("/CustommersController?action=all");
+//        }
+//        if ("khoa".equals(action)) {
+//            userService.deActive(id);
+//            response.sendRedirect("/CustommersController?action=all");
+//        }
+//        if ("mokhoa".equals(action)) {
+//            userService.active(id);
+//            response.sendRedirect("/CustommersController?action=all");
+//        }
         if ("delete".equals(action)) {
             userService.delete(id);
             System.out.println("dang xoa");
@@ -28,6 +41,7 @@ public class CustommersController extends HttpServlet {
         if ("all".equals(action)) {
             List<User> users = userService.getAllUser();
             List<User> Admins = userService.getAllAdmin();
+
             request.setAttribute("Admins",Admins);
             request.setAttribute("users",users);
             request.getRequestDispatcher("admin/custommers.jsp").forward(request,response);

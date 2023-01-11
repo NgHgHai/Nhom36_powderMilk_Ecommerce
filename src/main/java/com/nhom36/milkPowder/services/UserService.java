@@ -23,6 +23,18 @@ public class UserService {
         return jdbi.withExtension(UserDAO.class, dao -> dao.getAllAdmin());
 
     }
+    public void active(String id){
+        jdbi.useExtension(UserDAO.class, dao -> dao.active(id));
+    }
+    public void deActive(String id){
+        jdbi.useExtension(UserDAO.class, dao -> dao.deActive(id));
+    }
+    public void setAdmin(String id) {
+        jdbi.useExtension(UserDAO.class, dao -> dao.setAdmin(id));
+    }
+    public void setUser(String id) {
+        jdbi.useExtension(UserDAO.class, dao -> dao.setUser(id));
+    }
     public User getById(String id) {
         return jdbi.withExtension(UserDAO.class, dao -> dao.getUserById(id));
     }
@@ -75,6 +87,7 @@ return jdbi.withExtension(UserDAO.class,dao-> dao.getByIdAndPass(id, oldPass));
         System.out.println(user.getPassword());
 
     }
+
 
 
 }
