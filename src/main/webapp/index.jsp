@@ -145,6 +145,7 @@
                                     </div>
                                     <div class="d-flex border-top">
                                         <small class="w-50 text-center border-end py-2">
+
                                             <a class="text-body" href="product?id=${p.getId()}"><i
                                                     class="fa fa-eye text-primary me-2"></i>View
                                                 detail</a>
@@ -278,9 +279,8 @@
             <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
         </div>
         <div class="row g-4">
-
             <c:forEach items="${blogs}" var="blog">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+               <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <img class="img-fluid" src="${blog.getImage()}" alt="">
                     <div class="bg-light p-4">
                         <a class="d-block h5 lh-base mb-4" href="">${blog.getTitle()}</a>

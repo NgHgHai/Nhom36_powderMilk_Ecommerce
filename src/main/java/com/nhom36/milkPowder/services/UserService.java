@@ -59,19 +59,24 @@ public class UserService {
         return jdbi.withExtension(UserDAO.class, handle -> handle.getUserByMail(email));
 
     }
-
-    public static void main(String[] args) throws MessagingException, IOException {
-        System.out.println(new UserService().checkEmail("hoanghailata@gmail.com"));
-        System.out.println(new UserService().checkEmail(" hhh@gmail.com  "));
-
-            String to = "20130166@st.hcmuaf.edu.vn";
-        MailHelper.sendResetPassword(to,"123456");
-
-//        System.out.println(sendMail(to, "12345678"));
-
+    public User getByIdAndPass(String id, String oldPass) {
+return jdbi.withExtension(UserDAO.class,dao-> dao.getByIdAndPass(id, oldPass));
     }
 
+    public static void main(String[] args) throws MessagingException, IOException {
+//        System.out.println(new UserService().checkEmail("hoanghailata@gmail.com"));
+//        System.out.println(new UserService().checkEmail(" hhh@gmail.com  "));
+//
+//            String to = "20130166@st.hcmuaf.edu.vn";
+//        MailHelper.sendResetPassword(to,"123456");
+
+//        System.out.println(sendMail(to, "12345678"));
+        User user = new UserService().getByIdAndPass("001","12345678");
+        System.out.println(user.getPassword());
+
+    }
     public User getByIdAndPass(String id, String oldPass) {
         return jdbi.withExtension(UserDAO.class, dao -> dao.getByIdAndPass(id, oldPass));
     }
+
 }

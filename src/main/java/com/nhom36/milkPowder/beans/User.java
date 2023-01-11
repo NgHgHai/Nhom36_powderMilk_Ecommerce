@@ -3,8 +3,8 @@ package com.nhom36.milkPowder.beans;
 import java.time.LocalDateTime;
 
 public class User {
-    private int quantity;
-    private String id;
+
+    public static String id;
     private String lastname;
     private String firstname;
     private String avatar;
@@ -34,14 +34,6 @@ public class User {
         this.role = role;
         this.createAt = createAt;
         this.updateAt = updateAt;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public void setId(String id) {

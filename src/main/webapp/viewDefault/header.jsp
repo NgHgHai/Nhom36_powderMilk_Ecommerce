@@ -52,6 +52,7 @@
                         <div class="dropdown-menu m-0">
                             <a href="Login" class="dropdown-item">Log in</a>
                             <a href="Register" class="dropdown-item">Register</a>
+
                         </div>
                         </c:if>
 
