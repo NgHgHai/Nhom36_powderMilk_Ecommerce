@@ -10,173 +10,176 @@
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
-  <jsp:include page="setup/head.jsp"></jsp:include>
+    <jsp:include page="setup/head.jsp"></jsp:include>
 
 </head>
 <body>
 
 <div id="app">
-  <%--header of admin--%>
-  <jsp:include page="view/header_admin.jsp"></jsp:include>
-  <%--Menu-side of admin--%>
-  <jsp:include page="view/menu_side.jsp"></jsp:include>
-  <%--Thanh hiển thị dẫn mục--%>
-  <section class="is-title-bar">
-    <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-      <ul>
-        <li>Admin</li>
-        <li>Orders</li>
-      </ul>
-    </div>
-  </section>
-  <%--Name and add button--%>
-  <section class="is-hero-bar">
-    <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-      <h1 class="title">
-        Order Tables
-      </h1>
-      <a href="/AddProductController">
-        <%--                <button  class="button red --jb-modal">Add new</button>--%>
-      </a>
-    </div>
+    <%--header of admin--%>
+    <jsp:include page="view/header_admin.jsp"></jsp:include>
+    <%--Menu-side of admin--%>
+    <jsp:include page="view/menu_side.jsp"></jsp:include>
+    <%--Thanh hiển thị dẫn mục--%>
+    <section class="is-title-bar">
+        <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <ul>
+                <li>Admin</li>
+                <li>Orders</li>
+            </ul>
+        </div>
+    </section>
+    <%--Name and add button--%>
+    <section class="is-hero-bar">
+        <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <h1 class="title">
+                Order Tables
+            </h1>
+            <a href="/AddProductController">
+                <%--                <button  class="button red --jb-modal">Add new</button>--%>
+            </a>
+        </div>
 
-  </section>
+    </section>
 
-  <section class="section main-section">
+    <section class="section main-section">
 
-    <%--this is order table--%>
-    <div class="card has-table">
-      <header class="card-header">
-        <p class="card-header-title">
-          <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-          New Orders
-        </p>
-        <a href="#" class="card-header-icon">
-          <span class="icon"><i class="mdi mdi-reload"></i></span>
-        </a>
-      </header>
-      <div class="card-content">
-        <table id="table-new-order" class="">
-          <thead>
-          <%-- this is name of colum    --%>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Id</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th>Total</th>
-            <th>Status</th>
-            <th>Created</th>
-            <th></th>
-          </tr>
-          </thead>
-          <tbody>
+        <%--this is order table--%>
+        <div class="card has-table">
+            <header class="card-header">
+                <p class="card-header-title">
+                    <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+                    New Orders
+                </p>
+                <a href="#" class="card-header-icon">
+                    <span class="icon"><i class="mdi mdi-reload"></i></span>
+                </a>
+            </header>
+            <div class="card-content">
+                <table id="table-new-order" class="">
+                    <thead>
+                    <%-- this is name of colum    --%>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Created</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-          <%-- this is colum of table     --%>
-          <c:set var="data" value="${2}"></c:set>
-          <c:forEach var="user" items="${user}"></c:forEach>
-          <% for (int i = 0; i < 50; i++) {%>
-
-
-          <tr>
-            <td class="image-cell">
-              <div class="image">
-                <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg"
-                     class="rounded-full">
-              </div>
-            </td>
-            <td data-label="Name">Rebecca Bauch</td>
-            <td data-label="Id">Daugherty-Daniel</td>
-            <td data-label="Email">South Cory</td>
-            <td data-label="Phone">South Cory</td>
-            <td data-label="Address">South Cory</td>
-            <td data-label="Total">South Cory</td>
-            <td data-label="Status">
+                    <%-- this is colum of table     --%>
+                    <c:forEach var="o" items="${orders}">
+                        <tr>
+                            <td class="image-cell">
+                                <div class="image">
+                                    <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg"
+                                         class="rounded-full">
+                                </div>
+                            </td>
+                            <td data-label="Name">${o.getShippingName()}</td>
+                            <td data-label="Id">${o.getId()}</td>
+                            <td data-label="Email">${o.getShippingEmail()}</td>
+                            <td data-label="Phone">${o.getShippingPhone()}</td>
+                            <td data-label="Address">${o.getShippingAddress()}</td>
+                            <td data-label="Total">${o.getTotal()}</td>
+                            <td data-label="Status">
 
 
-              <c:if test="${data==1}">
-                <div class="status_order red">Đã hủy ${data} </div>
-              </c:if>
-              <c:if test="${data==2}">
-                <div class="  status_order green ">Đã giao ${data}</div>
-              </c:if>
+                                <c:if test="${o.getStatus()==1}">
+                                    <div class="status_order red"> Đang chuẩn bị</div>
+                                </c:if>
+                                <c:if test="${o.getStatus()==2}">
+                                    <div class="  status_order yellow ">Đang giao</div>
+                                </c:if>
+                                <c:if test="${o.getStatus()==3}">
+                                    <div class="status_order green">Hoàn thành</div>
+                                </c:if>
+                                <c:if test="${o.getStatus()==4}">
+                                    <div class="  status_order red ">Đã hủy</div>
+                                </c:if>
 
-              <%--              <div class="  status_order green ">Đã hủy</div>--%>
-            </td>
-            <td data-label="Created">
-              <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
-            </td>
-            <td class="actions-cell">
-              <div class="buttons right nowrap">
-                <button class="button small green --jb-modal" data-target="sample-modal-2"
-                        type="button">
-                  <span class="icon"><i class="mdi mdi-eye"></i></span>
-                </button>
-                <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                  <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                </button>
-              </div>
-            </td>
-          </tr>
+                                    <%--              <div class="  status_order green ">Đã hủy</div>--%>
+                            </td>
+                            <td data-label="Created">
+                                <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
+                            </td>
+                            <td class="actions-cell">
+                                <div class="buttons right nowrap">
+                                        <%--                --%>
 
-          <%}%>
 
-          </tbody>
-          <tfoot>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Id</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th>Total</th>
-            <th>Status</th>
-            <th>Created</th>
-            <th></th>
-          </tr>
-          </tfoot>
-        </table>
-      </div>
-    </div>
+                                        <%--                <button class="button small green --jb-modal dropdown" data-target="sample-modal-2"--%>
+                                        <%--                        type="button">--%>
+                                        <%--                  <span class="icon"><i class="mdi mdi-eye"></i></span>--%>
+                                        <%--                </button>--%>
+                                        <%--                --%>
 
-  </section>
-  <%--footer  admin--%>
-  <jsp:include page="view/footer_admin.jsp"></jsp:include>
+                                    <div class="navbar-item dropdown has-divider">
+                                        <a class="navbar-link">
+                                                <%--                                            <span class="icon"><i class="mdi mdi-menu"></i></span>--%>
+                                            <span>Sample Menu</span>
+                                                <%--                                            <span class="icon">--%>
+                                                <%--            <i class="mdi mdi-chevron-down"></i>--%>
+                                                <%--          </span>--%>
+                                        </a>
+                                        <div class="navbar-dropdown">
+                                            <a href="/OrdersController?id=${o.getId()}&status=1" class="navbar-item">
+                                                <span>Đang chuẩn bị</span>
+                                            </a>
+                                            <a href="/OrdersController?id=${o.getId()}&status=2" class="navbar-item">
+                                                <span>Đang giao</span>
+                                            </a>
+                                            <a href="/OrdersController?id=${o.getId()}&status=3" class="navbar-item">
+                                                <span>Hoàn thành</span>
+                                            </a>
+                                            <a href="/OrdersController?id=${o.getId()}&status=4" class="navbar-item">
+                                                <span>Đã hủy</span>
+                                            </a>
+                                        </div>
+                                    </div>
 
-  <div id="sample-modal" class="modal">
-    <div class="modal-background --jb-modal-close"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Sample modal</p>
-      </header>
-      <section class="modal-card-body">
-        <p>Xác nhận <b>XÓA</b></p>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button --jb-modal-close">Cancel</button>
-        <button class="button red --jb-modal-close">Confirm</button>
-      </footer>
-    </div>
-  </div>
 
-  <div id="sample-modal-2" class="modal">
-    <div class="modal-background --jb-modal-close"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Sample modal</p>
-      </header>
-      <section class="modal-card-body">
-        <p>Chỉnh sửa dữ liệu và load lên ở đây</p>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button --jb-modal-close">Cancel</button>
-        <button class="button blue --jb-modal-close">Confirm</button>
-      </footer>
-    </div>
-  </div>
+                                        <%--                --%>
+                                    <button class="button small red --jb-modal" data-target="sample-modal"
+                                            type="button">
+                                        <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </c:forEach>
+
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Created</th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </section>
+    <%--footer  admin--%>
+    <jsp:include page="view/footer_admin.jsp"></jsp:include>
+
 
 </div>
 
@@ -196,9 +199,9 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
 
 <script>
-  $(document).ready(function () {
-    $('#table-new-order').DataTable();
-  });
+    $(document).ready(function () {
+        $('#table-new-order').DataTable();
+    });
 </script>
 </body>
 </html>

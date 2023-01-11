@@ -18,12 +18,21 @@ public class OrderService {
         return instance;
     }
 
-    public  List<Order>  getListOrderByUserId(String id){
+    public List<Order> getListOrderByUserId(String id) {
         return jdbi.withExtension(OrderDAO.class, dao -> dao.findByUserId(id));
+    }
+
+    public List<Order> getAllOrder() {
+        return jdbi.withExtension(OrderDAO.class, dao -> dao.getAll());
+    }
+
+    public void updateStatus(String id, int status) {
+        jdbi.useExtension(OrderDAO.class, dao -> dao.updateStatus(status, id));
     }
 
     public static void main(String[] args) {
         System.out.println(new OrderService().getListOrderByUserId("001"));
     }
+
 
 }

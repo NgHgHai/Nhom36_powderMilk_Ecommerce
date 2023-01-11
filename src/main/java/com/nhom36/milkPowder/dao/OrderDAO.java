@@ -11,7 +11,9 @@ import java.util.List;
 
 @RegisterBeanMapper(Order.class)
 public interface OrderDAO {
-    @SqlQuery("select * from order where id = :id")
+    @SqlQuery("SELECT * FROM `order`")
+    List<Order> getAll();
+    @SqlQuery("SELECT * FROM `order` WHERE  id = :id")
     Order findById(@Bind("id") String id);
 
     @SqlQuery("SELECT * FROM `order` WHERE user_id = :userId")
@@ -21,7 +23,8 @@ public interface OrderDAO {
     @SqlUpdate("INSERT INTO `order`(`id`, `user_id`, `shipping_address`, `shipping_phone`, `shipping_email`, `shipping_name`, `shipping_fee`, `total_price`, `status`, `create_at`, `update_at`) " +
             "VALUES (:id,:userId,:shippingAddress,:shippingPhone,:shippingEmail,:shippingName,:shippingFee,:total,:status,now(),now())")
     int insert(@BindBean Order order);
-
+    @SqlUpdate("UPDATE `order` SET `status`=:status WHERE id = :id")
+    int updateStatus(@Bind("status")int status,@Bind("id") String id);
     @SqlUpdate("UPDATE `order` SET `id`=:id,`user_id`=:userId,`shipping_address`=:shippingAddress,`shipping_phone`=:shippingPhone,`shipping_email`=:shippingEmail," +
             "`shipping_name`=:shippingName,`shipping_fee`=:shippingFee,`total_price`=:total,`status`=:status,`update_at`=now() WHERE id = :id")
     int update(@BindBean Order order);

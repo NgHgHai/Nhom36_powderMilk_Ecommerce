@@ -3,38 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-<!--    <filter>-->
-<!--        <filter-name>FilterAdmin</filter-name>-->
-<!--        <filter-class>com.nhom36.milkPowder.filters.FilterAdmin</filter-class>-->
-
-<!--        <init-param>-->
-<!--            <param-name>test-param</param-name>-->
-<!--            <param-value>UTF-8</param-value>-->
-<!--        </init-param>-->
-<!--    </filter>-->
-
-<!--    <filter>-->
-<!--        <filter-name>Home</filter-name>-->
-<!--        <filter-class>com.nhom36.milkPowder.controllers.HomeController</filter-class>-->
-
-<!--    </filter>-->
-
-<!--    <filter-mapping>-->
-<!--        <filter-name>Home</filter-name>-->
-<!--        <url-pattern></url-pattern>-->
-<!--    </filter-mapping>-->
 
 
 <!--    <filter>-->
 
-<!--        <filter-name>FilterAdmin</filter-name>-->
-<!--        <filter-class>-->
-<!--            com.nhom36.milkPowder.filters.FilterAdmin-->
-<!--        </filter-class>-->
+<!--&lt;!&ndash;        <filter-name>FilterAdmin</filter-name>&ndash;&gt;-->
+<!--&lt;!&ndash;        <filter-class>&ndash;&gt;-->
+<!--&lt;!&ndash;            com.nhom36.milkPowder.filters.FilterAdmin&ndash;&gt;-->
+<!--&lt;!&ndash;        </filter-class>&ndash;&gt;-->
 
 <!--        <init-param>-->
 <!--            <param-name>filter</param-name>-->
-<!--            <param-value>UTF-8</param-value>-->
+<!--            <param-value>Initialization Paramter</param-value>-->
 
 <!--        </init-param>-->
 
@@ -42,9 +22,11 @@
 
 <!--    <filter-mapping>-->
 <!--        <filter-name>FilterAdmin</filter-name>-->
-<!--        <url-pattern>/*</url-pattern>-->
+<!--        <url-pattern>/DashboardsController</url-pattern>-->
+
 <!--    </filter-mapping>-->
 <!--    <welcome-file-list>-->
+
 <!--        <welcome-file>Home</welcome-file>-->
 <!--        <welcome-file>index.jsp</welcome-file>-->
 <!--    </welcome-file-list>-->

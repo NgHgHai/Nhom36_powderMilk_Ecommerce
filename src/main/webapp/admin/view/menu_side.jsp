@@ -27,12 +27,12 @@
         <p class="menu-label">Examples</p>
         <ul class="menu-list">
 
-            <li class="--set-active-profile-html">
-                <a href="../ProfileControler">
-                    <span class="icon"><i class="mdi mdi-account-circle"></i></span>
-                    <span class="menu-item-label">Profile</span>
-                </a>
-            </li>
+<%--            <li class="--set-active-profile-html">--%>
+<%--                <a href="../ProfileControler">--%>
+<%--                    <span class="icon"><i class="mdi mdi-account-circle"></i></span>--%>
+<%--                    <span class="menu-item-label">Profile</span>--%>
+<%--                </a>--%>
+<%--            </li>--%>
             <li>
                 <a href="Login">
                     <span class="icon"><i class="mdi mdi-lock"></i></span>
